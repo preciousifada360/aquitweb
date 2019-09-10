@@ -1,0 +1,13 @@
+RewriteEngine on
+Options -Indexes
+
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,END]
+
+RewriteCond %{REQUEST_URI} ^/assets/(.*)$
+RewriteRule ^(.*)$ public/assets/%1 [END]
+
+RewriteCond %{REQUEST_URI} ^/phpmyadmin/(.*)$
+RewriteRule ^(.*)$ configurations/phpmyadmin/%1 [END]
+
+RewriteRule ^(.*)$ server/root/index.php [QSA,NS,NC,NE,B,PT,END]

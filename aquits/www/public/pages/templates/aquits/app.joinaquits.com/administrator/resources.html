@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<style>
+.form-group{
+    position:middle;
+    padding:500px;
+    text-align: center;
+
+}
+</style>
+<html>
+{%include 'aquits/app.joinaquits.com/blocks/admin/header.html' with {'activeController' : 'resources'}%}
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="container">
+            <form class="form-horizontal" role="form" enctype="multipart/form-data" action="{{router.pathFor(administratorResources)}}" method="post" accept-charset="UTF-8">
+                <div class="col-xs-6">
+                    <label for="Title">Title:</label>
+                    <input type="Title" class="form-control" id="title" name="title" placeholder="Enter Title">
+                
+                </div>
+
+                            <div class="col-xs-6">
+                                <div class="btn-group">
+                                        
+                                    <label for="text">Note:</label>
+                                    <textarea class="form-control" name="note"></textarea>
+                                
+                            </div>
+                                </div>
+        
+                <div class="col-xs-12"></div>
+           
+            <div class="col-xs-3"><b>PDF</b></br>
+                <img   id="main-input" src="" width="280px" height="250">
+                    <div class="btn-group">
+                            <label for="pdf" >
+                            <span class="btn btn-warning btn-file" > 
+                            <input type="file" name="pdf"   id="main-input"  accept="application/pdf" hidden/>
+                            Load File</br></label>
+                           
+                            </span></br>
+                            <b>Load Pdf files here</b>
+    
+                        </div>
+                
+                </div>
+                <div class="col-xs-3"><b>Videos</b></br>
+                        <video width="250" height="250" controls>
+                                        <source src="movie.mp4" type="video/mp4">
+                                        <source src="movie.mkv" type="video/mkv">
+                                        <source src="movie.flv" type="video/flv">
+                                        Your browser does not support the video tag.
+                                      
+                                    </video> </br>
+                        <div class="btn-group">
+                                <label for="video" >
+                                <span class="btn btn-primary btn-file" > 
+                                <input type="file"  name="video"  class="iconHolder" id="iconHolder"  hidden/>
+                                Load Video</br></label>
+                               resources
+                                </span></br>
+                                <b></b>
+        
+                            </div>
+                        </div>
+                  
+                        
+                    
+                    <div class="form-group">
+                        <span class="glyphicon glyphicon-submit">
+                        <button type="submit" class="btn btn-info">Submit</button>
+                    </span>
+                    </div>
+                </form>
+                </div>
+        </div>
+
+       
+     </div>
+    </body>
+ </html>

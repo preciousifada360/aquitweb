@@ -1,0 +1,809 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} 
+{%block title%}Acquits | Groups {%endblock%}
+{%block activeNav%}selected{%endblock%} 
+{%block selectedController%}groups{%endblock%} 
+{%block bodyContent%}
+<div class="custom-aquits-select mar-top40 mar-bot20" id="full-width">
+    <div class="sub-menu">
+        <div class="card sub-menu-card">
+            <div class="sub-menu-title">
+                <span style="font-size: 18px;">Groups</span>
+                <!--
+                <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()">
+                    <!--?xml version="1.0" encoding="UTF-8"?
+                    <svg width="17px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch 
+<title>Acquits_Messages-icon</title>
+<desc>Created with Sketch.</desc>
+<defs>
+    <linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+        <stop stop-color="#25A9D9" offset="0%">
+</stop>
+        <stop stop-color="#145972" offset="100%">
+</stop>
+    </linearGradient>
+</defs>
+<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+        <g id="Group" transform="translate(910.000000, 3.000000)">
+            <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+</path>
+            </g>
+        </g>
+    </g>
+</g>
+</svg>
+                    <div class="message-incoming hidden">
+                    </div>
+                </div>
+            -->
+                <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+    </g>
+</g>
+</svg>
+                </div>
+                <div class="pull-left hamburger-btn" id="open-nav">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+    </g>
+</g>
+</svg>
+                </div>
+            </div>
+            <div class="sub-menu-nav">
+                <ul class="sub-menu-tabs centered">
+                    <li class="menu-li active secondary_menu_hover" data-filter="submenu-item-group" style="position:relative">
+                        <span>Group</span>
+                    </li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-about">
+                        <span>About</span>
+                    </li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-faq">
+                        <span>FAQ</span>
+                    </li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-termsandconditions">
+                        <span>Terms and Conditions</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pad-top100">
+        </div>
+        
+        <script>
+            // click on params submenu
+            var submenu_route = "";
+            $(document).ready(function() {
+                window.setTimeout(function() {
+                    $('[data-filter=submenu-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+                }, 1000);
+            })
+        </script>
+        <div id="group-user-index">
+            <div class="sub-menu-panels">
+                <div id="submenu-item-group">
+                    <div id="groups_info">
+                        <div class="container">
+                            {%if message_sent%}
+                                     <div class="alert-info" style="text-align: center;">
+                                        You will be added to a group shortly.
+                                    </div>
+                                {%endif%}  
+                            <div class="row top-section">
+                                <div class="col-md-4 left-side"> 
+                                    <div class="blue-header mar-top50">Strength In Numbers</div>
+                                    <div class="medium-text">Join others seeking freedom in a weekly, video-based group meeting. Acquits Groups are led by a trained facilitator with their own recovery experience.</div>
+                                    <div class="button btn-pink-white mar-top20 sign_up_for_group_btn">Join a group</div>
+                                </div>
+                                <div class="col-md-8 right-side">
+                                    <div id="group-hero">
+                                        <img src="/assets/groups/1.png" alt="Group hero">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="centered" id="group-quote">
+                                        <img src="/assets/groups/quote-f64507e0da095d5a30329b67c6e7667187ea40793e1a731c666e08785143d8e1.png" alt="Quote">
+                                    </div>
+                                    <div id="quote-header">What Others Are Saying About Acquits Groups</div>
+                                    <div id="group-quotes">
+                                        <div class="row">
+                                            <div class="col-sm-8 col-sm-offset-2">
+                                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                    <!-- Indicators -->
+                                                    <ol class="carousel-indicators">
+                                                        <li data-target="#myCarousel" data-slide-to="0" class="active">
+                                                        </li>
+                                                        <li data-target="#myCarousel" data-slide-to="1">
+                                                        </li>
+                                                        <li data-target="#myCarousel" data-slide-to="2">
+                                                        </li>
+                                                        <li data-target="#myCarousel" data-slide-to="3">
+                                                        </li>
+                                                        <li data-target="#myCarousel" data-slide-to="4">
+                                                        </li>
+                                                        <li data-target="#myCarousel" data-slide-to="5">
+                                                        </li>
+                                                    </ol>
+
+                                                    <!-- Wrapper for slides -->
+                                                    <div class="carousel-wrapper-image">
+                                                        <div class="carousel-wrapper">
+                                                            <div class="carousel-inner">
+                                                                <div class="item active">
+                                                                    <p>"This was the turning point in my own recovery. It’s really become a cornerstone for me."</p>
+                                                                </div>
+
+                                                                <div class="item">
+                                                                    <p>"Group was the healthy connection I’d been looking for."</p>
+                                                                </div>
+
+                                                                <div class="item">
+                                                                    <p>"Exactly the accountability I needed to move forward."</p>
+                                                                </div>
+
+                                                                <div class="item">
+                                                                    <p>"I was scared initially, but now I look forward to group every week."</p>
+                                                                </div>
+
+                                                                <div class="item">
+                                                                    <p>"Not sure what I would’ve done without my weekly group."</p>
+                                                                </div>
+
+                                                                <div class="item">
+                                                                    <p>"Group has been a missing link in my efforts to change. I’m so glad I found group, and I love the guys in my group."</p>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <style>
+
+                                                </style>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mar-top20" id="groups-catalog-wrapper">
+                            <div class="pull-down">
+                                <i aria-hidden="true" class="fa fa-angle-down">
+</i>
+                            </div>
+                            <div class="container">
+                                <div class="row centered">
+                                    <div class="row mar-top40">
+                                        <div class="col-sm-8 col-sm-offset-2 centered">
+                                            <div class="large-text blued">Weekly Acquits Groups provide powerful support and accountability. Join for only 1,000 NAira per month. (Try your first month for only 1,000 Naira by using the promo code "New to group")</div>
+                                        </div>
+                                    </div>
+                                    <form action="{{route.pathFor(groups)}}" method="post" role="form">
+                                    <div id="groups-catalog">  
+                                            {% for index,group in groupz %}
+                                        <div class="card">
+                                                
+                                            <div class="card-body small-pad"><div class="groups-catalog-header">{{group.dayOfTheWeek}} with {{group.name}}</div>
+                                                <div class="groups-catalog-day">{{group.time}}(24hrs), CET</div>
+                                                <div class="groups-catalog-spots">{{group.spotLeft}} Spots remaining</div>
+                                                <div class="small-text">
+                                                    <input type="submit" name="grp" class="button btn-pink-white" value="Request Group">
+                                                </div>
+                                                <div class="groups-catalog-status">
+                                                    <div class="groups-active">Status : {{group.status}}</div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div> 
+                                        </form>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="row centered">
+                                    <div class="col-md-8 col-md-offset-2 mar-top20">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="pull-left lefted mar-rig30">
+                                                    <div class="medium-text">Don't see a time that works best for you?</div>
+                                                    <div class="small-text">Reach out, and we will see what we can do about it.</div>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <div class="button btn-blue mar-top6" data-target="#group-suggestions-modal" data-toggle="modal">Request time</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="group-suggestions-modal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content lefted">
+                                                <div class="modal-header">Request A New Group</div>
+                                                <div class="modal-body lefted">
+                                                    <div class="medium-text">Select what day(s) and time(s) work best for you.</div>
+                                                    <div id="group-suggestions-selector">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                    </th>
+                                                                    <th>SUN</th>
+                                                                    <th>MON</th>
+                                                                    <th>TUE</th>
+                                                                    <th>WED</th>
+                                                                    <th>THU</th>
+                                                                    <th>FRI</th>
+                                                                    <th>SAT</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr data-time="6:00AM">
+                                                                    <td class="time">6:00AM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="7:00AM">
+                                                                    <td class="time">7:00AM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="8:00AM">
+                                                                    <td class="time">8:00AM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="9:00AM">
+                                                                    <td class="time">9:00AM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="10:00AM">
+                                                                    <td class="time">10:00AM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="11:00AM">
+                                                                    <td class="time">11:00AM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="12:00PM">
+                                                                    <td class="time">12:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="1:00PM">
+                                                                    <td class="time">1:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="2:00PM">
+                                                                    <td class="time">2:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="3:00PM">
+                                                                    <td class="time">3:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="4:00PM">
+                                                                    <td class="time">4:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="5:00PM">
+                                                                    <td class="time">5:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="6:00PM">
+                                                                    <td class="time">6:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="7:00PM">
+                                                                    <td class="time">7:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="8:00PM">
+                                                                    <td class="time">8:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="9:00PM">
+                                                                    <td class="time">9:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="10:00PM">
+                                                                    <td class="time">10:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="11:00PM">
+                                                                    <td class="time">11:00PM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr data-time="12:00AM">
+                                                                    <td class="time">12:00AM</td>
+                                                                    <td data-day="7">
+                                                                    </td>
+                                                                    <td data-day="1">
+                                                                    </td>
+                                                                    <td data-day="2">
+                                                                    </td>
+                                                                    <td data-day="3">
+                                                                    </td>
+                                                                    <td data-day="4">
+                                                                    </td>
+                                                                    <td data-day="5">
+                                                                    </td>
+                                                                    <td data-day="6">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="small-text">Whether or not this group can launch depends on a leader and other members being available. Please share the range of options that might work for you. We'll keep you updated on the progress we make with
+                                                        your request. Thank you for your patience!</div>
+                                                    <div id="request-group-submit">Request</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        times = ["6:00AM",
+                                            "7:00AM",
+                                            "8:00AM",
+                                            "9:00AM",
+                                            "10:00AM",
+                                            "11:00AM",
+                                            "12:00PM",
+                                            "1:00PM",
+                                            "2:00PM",
+                                            "3:00PM",
+                                            "4:00PM",
+                                            "5:00PM",
+                                            "6:00PM",
+                                            "7:00PM",
+                                            "8:00PM",
+                                            "9:00PM",
+                                            "10:00PM",
+                                            "11:00PM",
+                                            "12:00AM"
+                                        ];
+                                            $('td').not('.time').on('click', function() {
+                                                $(this).toggleClass('selected');
+                                            });
+
+                                            times_hash = {}
+                                            $('#request-group-submit').on('click', function() {
+                                                $('#group-suggestions-selector .selected').each(function() {
+                                                    day = $(this).attr('data-day');
+                                                    time = $(this).closest('tr').attr('data-time')
+                                                    if (times_hash[day] === undefined) {
+                                                        times_hash[day] = [time]
+                                                    } else {
+                                                        times_hash[day].push(time)
+                                                    }
+                                                })
+                                                $.ajax({
+                                                    url: Routes.group_suggestions_path(),
+                                                    type: "post",
+                                                    data: {
+                                                        times_hash: times_hash
+                                                    }
+                                                });
+                                            })
+                                    </script>
+                                </div>
+                            -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" id="submenu-item-about">
+                    <div class="container">
+                        <div id="format">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="large-text">About</div>
+                                    <div class="medium-text">When you join a group, you will be updated as soon as that group is set to begin. Once there are enough people to start (a process that can take a few days, and in some cases more than a week), you will be contacted
+                                        about the start date.</div>
+                                    <div class="medium-text">Groups run 60 minutes - with the time carefully structured to maximize opportunities for support, encouragement, motivation, accountability and collective learning. Although group members can use time to be accountable
+                                        regarding sobriety, that is not required - and only invited if and when someone is ready. Extensive attention goes to ways to grow stronger or "Acquits" other areas of life that get at the roots of compulsive challenges
+                                        like this.</div>
+                                    <div class="medium-text">Group members agree to follow particular guidelines for safety and confidentiality. In between group meetings, you will be free to communicate with any other members in the group during the week via messenger. Early
+                                        on in the group, you will have an option of joining with two other people for a higher level of support and accountability. Each group will continue as long as there are enough people finding benefit to continue
+                                        it.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" id="submenu-item-faq">
+                    <div class="container">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="card faq-table">
+                                <div class="card-body responsive">
+                                    <div class="large-text centered">FAQ</div>
+                                    <div class="card-row">
+                                        <div class="faq-header">It Looks Like Some Groups Will Have To Wait A Little While Until They Have Enough Participants. Will My Credit Card Be Charged While I’m Waiting?
+                                            <div class="fa fa-angle-down expander">
+                                            </div>
+                                        </div>
+                                        <div class="faq-body">No it will not – not until the group starts. </div>
+                                    </div>
+                                    <div class="card-row">
+                                        <div class="faq-header">What If The Group I Picked Never Has Enough Participants?
+                                            <div class="fa fa-angle-down expander">
+                                            </div>
+                                        </div>
+                                        <div class="faq-body">We would let you know that this particular group won’t be happening. In that case, you might need to consider another time that might work for you.</div>
+                                    </div>
+                                    <div class="card-row">
+                                        <div class="faq-header">How Long Do You Expect A Group May Last?
+                                            <div class="fa fa-angle-down expander">
+                                            </div>
+                                        </div>
+                                        <div class="faq-body">We’ve seen similar groups last for many months – some even years – especially if group members find a powerful support and motivation together. If group members drop out, we will offer the spot to someone else.
+                                            If the group does not have enough people to continue, a particular group may be discontinued, with space in other groups made available to those interested in continuing.</div>
+                                    </div>
+                                    <div class="card-row">
+                                        <div class="faq-header">What Happens If I Can’t Make A Group Meeting?
+                                            <div class="fa fa-angle-down expander">
+                                            </div>
+                                        </div>
+                                        <div class="faq-body">Your group leader can catch you up a little on what you missed. Unfortunately, we cannot offer individual refunds for individual meetings missed. Your initial payment makes group meetings available for the period
+                                            ahead.
+                                        </div>
+                                    </div>
+                                    <div class="card-row">
+                                        <div class="faq-header">What If I Change My Mind And Want To Cancel?
+                                            <div class="fa fa-angle-down expander">
+                                            </div>
+                                        </div>
+                                        <div class="faq-body">If group meetings aren’t helping enough or meeting your expectations, you are always welcome to cancel. No further group fee will show up on your account from the time you cancel. </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            expander();
+                        </script>
+                    </div>
+                </div>
+                <div class="hidden" id="submenu-item-termsandconditions">
+                    <div class="container">
+                        <div id="terms_and_conditions">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="large-text">Terms And Conditions</div>
+                                    <p>As a Acquits user signing up for Acquits Groups, you acknowledge that you understand:&nbsp;</p>
+                                    <p>12.1&nbsp; Technical adjustments. Acquits Group participation may require you to configure your software settings on your web-device upon first use.</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.2&nbsp; No diagnosis or assessment. Acquits peer support groups do not involve the diagnosis or treatment of mental disorders as defined by the National Psychiatric Association. Acquits Group support is not a substitute
+                                        for counseling, psychotherapy, psychoanalysis, mental health care, medical treatment or substance abuse treatment and the Acquits user will not use it in place of any form of diagnosis, treatment or therapy.&nbsp;
+                                        Nothing contained in this Site or App is intended to be used as medical advice or to diagnose, treat, cure or prevent any disease.</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.3&nbsp; No prescription or treatment. Although Acquits Group Leaders offer encouragement and while groups provide a chance to explore possibilities, they in no case dictate or “prescribe” a specific course of action.
+                                        The assistance of a Acquits Group is not a substitute for independent professional advice from a medical/health professional – nor does it replace professional advice by legal, financial, business, spiritual or other
+                                        qualified professionals. Acquits users are encouraged to seek independent professional guidance for legal, medical, financial, business, spiritual or other matters. Acquits users should not stop a medication or treatment
+                                        protocol or alter your treatment plan without first consulting their mental health, medical or healthcare provider(s). All decisions in these areas are exclusively that of the individual Acquits user and she/he acknowledges
+                                        that her/his decisions and actions regarding personal mental or emotional wellness are her/his sole responsibility.</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.4&nbsp; Incidental discussion about professional intervention. Discussion of any particular personal or professional intervention during group meetings by any participant does not indicate endorsement from Acquits.&nbsp;
+                                        Acquits does not endorse or recommend the use of any specific professional intervention for addiction – or any other mental, emotional or physical condition.&nbsp; For advice about specific interventions, individuals
+                                        should consult a medical practitioner or mental health care provider.&nbsp;</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.5&nbsp; Acquits Group Leaders. Acquits support groups are overseen by a trained group leader. Information and encouragement shared by this leader is expected to meet a certain ethical and practice standard, with accountability
+                                        and supervision safeguards in place to ensure that happens.&nbsp;&nbsp;</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.6&nbsp; Liability. Acquits users are fully responsible for themselves and their actions within and outside of a Acquits Group. They are liable for possible damages if incurred. Acquits is released from any liability
+                                        claims, except if these are based on intentional harmful behavior of the Acquits group leader.</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.7&nbsp; Confidentiality.&nbsp; Acquits Group Leaders will not at any time, either directly or indirectly, voluntarily use any personal information from Acquits users for the group leader's own benefit, or disclosure,
+                                        or communicate this information to a third party.</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.8&nbsp; Exceptions to confidentiality. For the purposes of Acquits support groups, user information, including email address, may be provided to the designated support group leader so that they may contact users regarding
+                                        the support group.&nbsp; Acquits users also recognize that the Group Leader may consult with their Acquits supervisor or Acquits team leaders as well.&nbsp;</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.9&nbsp; Duty to report. The general requirement that a group leader keeps information confidential does not apply when disclosure is required to comply with government laws governing individuals. When deemed appropriate
+                                        at its sole discretion, Acquits may provide user information, including identifying information that may have been entered into the Site or App by the user, to authorized law enforcement agencies. Such situations
+                                        include but are not limited to child pornography, child abuse, and a rape of a child, as well evidence of the abuse, assault or rape of an adult. Any of these situations would constitute disclosure to the proper
+                                        authorities. In cases of threatened self-harm, or threatened (or actual) harm to an adult friend or family member, we may also take action to disclose information, on a case by case basis.
+                                    </p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.10&nbsp; Group updates. Acquits reserves the right to modify or change the rules of the support groups without prior notification to current or new users. Any substantial modifications or changes, of course, would
+                                        be subsequently shared with current and new users.</p>
+                                    <p>
+                                        <br>
+                                    </p>
+                                    <p>12.11&nbsp; By using Acquits Groups, you agree with all the terms and conditions of this agreement.</p>
+                                    <div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.sign_up_for_group_btn').click(function() {
+            $('[data-filter=submenu-item-group]').click();
+            $("body, html").animate({
+                scrollTop: 800
+            }, 500);
+        })
+    </script>
+</div>
+
+{%endblock%}

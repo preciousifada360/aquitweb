@@ -1,0 +1,239 @@
+
+<div class="add_modal_wrapper_sos">
+    <div class="modal fade in" id="sos" style="display: block;">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button class="close" onclick="close_modal()">
+</button>
+    <div class="centered">
+    <img src="/assets/sos/sos_title-03d0d55b16ec3531ec0a4016b70631397ee2bd089014378eeebfb4dea9176c05.png" alt="Sos title">
+    <p>Feeling triggered? Get some help!</p>
+</div>
+</div>
+<div class="modal-body">
+    <div class="modal-body-outer-container">
+    <div class="modal-body-container slided">
+    <div class="modal-body-wrapper" data-page="0">
+    <div class="sos-choice" data-trigger="1">
+    <img src="/assets/sos/allies-c014eaae3aa8a9b8f00b9bc1923c304ca517cf3b58aee69d2bbae4d904208f56.png" alt="Allies">
+    <div class="sos-choice-text">Message All Your Allies</div>
+</div>
+<div class="sos-choice" data-trigger="2">
+    <img class="mar-lef3" src="/assets/sos/group-82d8f078a0722149cd59f708e3019a0978663aa37f5fedcb300f7d7d7ea88526.png" alt="Group">
+    <div class="sos-choice-text">Message All Your Group Members</div>
+</div>
+<div class="sos-choice" data-trigger="3">
+    <img src="/assets/sos/quote-815759e6491e6aef3f0dda7221e7c433e9bacf066274632023b654b707c2aa79.png" alt="Quote">
+    <div class="sos-choice-text">Read A Motivational Quote</div>
+</div>
+<div class="sos-choice" data-trigger="4">
+    <img class="mar-lef3" src="/assets/sos/why-e8a070aeddf4f2c885836f2525e4465499aa65c3e02f6959272819cae1482f57.png" alt="Why">
+    <div class="sos-choice-text">Check Out Your “Why Statement”</div>
+</div>
+<div class="sos-choice" data-trigger="5" id="meditation-choice">
+    <img class="mar-lef3" src="/assets/resources/Video-c7068e26d588ae599811f28ebf45028b028515592369075efd1a1bc8ca1ec5df.svg" alt="Video">
+    <div class="sos-choice-text">Listen To A Short Meditation</div>
+</div>
+</div>
+<div class="modal-body-wrapper" data-page="1">
+    <div class="medium-text centered mar-top40 mar-bot60">You Have no Allies.<br>Add Allies to help you in your journey.<a href="/ally/new">
+    <div class="underlined mar-top40">Add Now</div>
+</a>
+</div>
+<div class="bottom-controls mar-top30">
+    <div class="button btn-hollow pull-left back">Back</div>
+</div>
+</div>
+<div class="modal-body-wrapper hidden" data-page="2">
+    <div class="medium-text centered mar-top40 mar-bot60">You are not currently signed up for a Fortify Group.<br>Join a Fortify Group to help you in your journey.<a href="/groups">
+    <div class="underlined mar-top40">See Groups</div>
+</a>
+</div>
+<div class="bottom-controls mar-top30">
+    <div class="button btn-hollow pull-left back">Back</div>
+</div>
+</div>
+<div class="modal-body-wrapper hidden" data-page="3">
+    <div class="motivation">“Our tendency,” is to just “sort of operate on whatever it is our brain serves up for us,” and to “just swallow it whole.” -Dr. Steven Hickman</div>
+<div class="bottom-controls">
+    <div class="button btn-hollow pull-left back">Back</div>
+</div>
+</div>
+<div class="modal-body-wrapper hidden" data-page="4">
+    <div class="hidden" id="why-body">
+    <div class="motivation">Record your Why Statement!</div>
+<div class="bottom-controls">
+    <div class="button btn-hollow pull-left back">Back</div>
+<div class="button btn-blue pull-right" id="edit-why">Edit</div>
+</div>
+</div>
+<div id="why-form">
+    <div class="sos-choice-header">My Why Statement</div>
+<form action="/sos/why_statement" accept-charset="UTF-8" method="post">
+    <input name="utf8" value="✓" type="hidden">
+    <input name="authenticity_token" value="iDGeD9BLIzxnZzpGEgkQoivRlhybKNPVGuLmkdfIzyc8S1ZxF0m0tFEu5c0/0H8Qes07Lo5ferDE9EmCSJHIIg==" type="hidden">
+    <textarea name="message" id="message" placeholder="Your Why Statement..">
+    
+</textarea>
+    <div class="bottom-controls">
+    <div class="button btn-hollow pull-left back">Back</div>
+    <input name="commit" value="Update" class="button btn-blue pull-right" data-disable-with="Update" type="submit">
+</div>
+</form>
+</div>
+</div>
+<div class="modal-body-wrapper hidden" data-page="5">
+    <div class="meditation-audio-image-wrapper">
+    <div class="meditation-audio-image mar-bot20 mar-top20" onclick="$('.plyr__control').click();$('.play-sos').toggleClass('hidden');$('.pause-sos').toggleClass('hidden');">
+    <!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="145px" height="145px" viewBox="0 0 145 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="play-sos">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Play</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        
+    </defs>
+    <g id="SOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Play">
+            <polygon id="Rectangle-4" fill="#25A9D9" transform="translate(65.500000, 71.500000) rotate(-45.000000) translate(-65.500000, -71.500000) " points="79.1413769 52 85 91 46 85.1413769">
+                
+            </polygon>
+            <circle id="Oval-4" stroke="#25A9D9" stroke-width="3" cx="72.5" cy="72.5" r="71">
+                
+            </circle>
+        </g>
+    </g>
+</svg>
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="145px" height="145px" viewBox="0 0 145 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pause-sos hidden">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Pause</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        
+    </defs>
+    <g id="SOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pause">
+            <g id="Group-4-Copy-2" stroke="#25A9D9" stroke-width="3">
+                <circle id="Oval-4" cx="72.5" cy="72.5" r="71">
+                    
+                </circle>
+            </g>
+            <g id="Group-7" transform="translate(59.000000, 49.000000)" fill="#25A9D9">
+                <rect id="Rectangle-8" x="0" y="0" width="8" height="47">
+                    
+                </rect>
+                <rect id="Rectangle-8-Copy" x="20" y="0" width="8" height="47">
+                    
+                </rect>
+            </g>
+        </g>
+    </g>
+</svg>
+</div>
+</div>
+<div class="medetation-audio-wrapper mar-bot20">
+    <div tabindex="0" class="plyr plyr--full-ui plyr--audio plyr--html5 plyr--paused plyr--stopped">
+    <audio id="player">
+    <source src="https://s3-us-west-2.amazonaws.com//fortify-production/uploads/meditation/file/5/5StillasaSnowGlobe.mp3">
+</audio>
+<div class="plyr__controls">
+    <button type="button" class="plyr__control" aria-pressed="false" data-plyr="play">
+    <svg class="icon--pressed" role="presentation" focusable="false">
+    <use xlink:href="#plyr-pause">
+    
+</use>
+</svg>
+<svg class="icon--not-pressed" role="presentation" focusable="false">
+    <use xlink:href="#plyr-play">
+    
+</use>
+</svg>
+<span class="label--pressed plyr__sr-only">Pause</span>
+<span class="label--not-pressed plyr__sr-only">Play</span>
+</button>
+<div class="plyr__progress">
+    <label for="plyr-seek-6291" id="plyr-seek-6291-label" class="plyr__sr-only">Seek</label>
+<input data-plyr="seek" min="0" max="100" step="0.01" value="0" autocomplete="off" role="slider" aria-labelledby="plyr-seek-6291-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="plyr-seek-6291" type="range">
+<progress class="plyr__progress--buffer" min="0" max="100" value="1.74962353223765" role="presentation" aria-hidden="true">% buffered</progress>
+<span role="tooltip" class="plyr__tooltip">00:00</span>
+</div>
+<div class="plyr__time plyr__time--current" aria-label="Current time">00:00</div>
+<div class="plyr__time plyr__time--duration" aria-label="Duration">03:36</div>
+</div>
+</div>
+<style type="text/css">.plyr__control{
+  display:none;
+}</style>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>function close_modal(){
+  if($(".close").hasClass("meditation-back")){
+    $('.modal-backdrop').removeClass('modal-white-background')
+    $('.modal-content').removeClass('modal-white-background')
+    $('.modal-body-container').removeClass('slided')
+    $('.modal-body-wrapper:not[data-page=0]').addClass('hidden');
+  } else {
+    $('#sos').modal('hide');
+  }
+}
+
+$(document).ready(function(){
+  const player = new Plyr('#player', {
+    autoplay: false,
+    controls: [
+      'play',
+      'duration',
+      'progress',
+      'current-time'
+    ]
+  });
+
+  $('#sos').modal('toggle')
+  overlay_out()
+
+  $('.modal-body-container .sos-choice').click(function(){
+    $('.modal-body-wrapper').not('[data-page=0]').addClass('hidden')
+    $('.modal-body-wrapper[data-page=' + $(this).attr('data-trigger') + ']').removeClass('hidden')
+    $('.modal-body-container').addClass('slided')function close_modal(){
+  if($(".close").hasClass("meditation-back")){
+    $('.modal-backdrop').removeClass('modal-white-background')
+    $('.modal-content').removeClass('modal-white-background')
+    $('.modal-body-container').removeClass('slided')
+    $('.modal-body-wrapper:not[data-page=0]').addClass('hidden');
+  } else {
+    $('#sos').modal('hide');
+  }
+}
+  })
+
+  $('#sos .back').click(function(){
+    $('.modal-body-container').removeClass('slided')
+    $('.modal-body-wrapper:not[data-page=0]').addClass('hidden');
+  })
+
+  $('#sos #edit-why').click(function(){
+    $('#why-form').removeClass('hidden')
+    $("#why-body").addClass('hidden')
+  })
+
+  $('#meditation-choice').click(function(){
+    $('.modal-backdrop').addClass('modal-white-background')
+    $('.modal-content').addClass('modal-white-background')
+    $('.close').addClass('meditation-back')
+  })
+
+  $('.meditation-back').click(function(e){
+    $('.modal-backdrop').removeClass('modal-white-background')
+    $('.modal-content').removeClass('modal-white-background')
+  })
+
+})</script>
+</div>

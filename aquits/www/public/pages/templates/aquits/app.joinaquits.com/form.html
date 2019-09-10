@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Acquits form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/admin/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="/assets/admin/bootstrap/1.12.2/jquery.min.js"></script>
+    <script src="/assets/admin/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        img {
+            max-width: 180px;
+        }
+        
+        input[type=file] {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Add</h2>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <div class="col-xs-6">
+                    <label for="Title">Title:</label>
+                    <input type="Title" class="form-control" id="Title" placeholder="Enter Title">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-2">
+                    <label for="sel">Select week:</label>
+                    <select class="form-control" id="sel">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
+                    <br>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <label for="image">Slect Image:</label>
+                    <input type='file' onchange="readURL(this);" />
+                    <img id="blah" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-xs-6">
+                    <label for="text">Text</label>
+                    <textarea type="text" class="form-control" id="text" placeholder="type a text"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+</body>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#blah')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+</html>

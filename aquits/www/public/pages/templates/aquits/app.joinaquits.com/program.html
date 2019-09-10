@@ -1,0 +1,184 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} 
+{%block title%}Acquits | Training {%endblock%}
+{%block activeNav%}selected{%endblock%} 
+{%block selectedController%}training{%endblock%} 
+{%block bodyContent%}
+<div class="custom-aquits-select mar-bot20">
+    <div class="sub-menu">
+        <div class="card sub-menu-card">
+            <div class="sub-menu-title">
+                <span style="font-size: 18px;">Training</span>
+                <!--
+                <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()">
+                    <!--?xml version="1.0" encoding="UTF-8"?
+                    <svg width="17px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch
+<title>Acquits_Messages-icon</title>
+<desc>Created with Sketch.</desc>
+<defs>
+<linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+<stop stop-color="#25A9D9" offset="0%">
+</stop>
+<stop stop-color="#145972" offset="100%">
+</stop>
+</linearGradient>
+</defs>
+<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+<g id="Group" transform="translate(910.000000, 3.000000)">
+    <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+        <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+</path>
+    </g>
+</g>
+</g>
+</g>
+</svg>
+                    <div class="message-incoming hidden">
+                    </div>
+                </div>
+            -->
+                <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="Group-8" fill="#B3B3B3">
+<rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+<rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+<rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+</g>
+</g>
+</svg>
+                </div>
+                <div class="pull-left hamburger-btn" id="open-nav">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="Group-8" fill="#B3B3B3">
+<rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+<rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+<rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+</g>
+</g>
+</svg>
+                </div>
+            </div>
+            <div class="sub-menu-nav">
+                <ul class="sub-menu-tabs centered">
+                    <li class="menu-li active secondary_menu_hover" data-filter="submenu-item-weeks" style="position:relative">
+                        <span>Weeks</span>
+                    </li>
+                    <!--
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-categories">
+                        <span>Categories</span>
+                    </li>
+                -->
+                </ul>
+            </div>
+        </div>
+        <div class="pad-top100">
+        </div>
+     
+        <script>
+            // click on params submenu
+            var submenu_route = "";
+            $(document).ready(function() {
+                window.setTimeout(function() {
+                    $('[data-filter=submenu-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+                }, 1000);
+            })
+        </script>
+        <div class="container">
+            <a href="/dashboard/library/lessons/{{attribute(programs,'0').id}}.html">
+                <div class="action-notification green-background">
+                    <div class="action-icon">
+                        <img src="/assets/activity_icons/new/Video_White-0c9b4e60cb3041e23365ae2862916f91bcd7efe0ec5723a387dbf2524b322cda.png" alt="Video white">
+                    </div>
+                    <div class="action-text">
+                        <div class="action-header">A New Moment</div>
+                        <div class="action-content">Welcome, {{logged.user.name}}! Your next lesson is waiting.</div>
+                    </div>
+                    <div class="action-btn">Let's go</div>
+                </div>
+            </a>
+            <div class="sub-menu-panels program">
+                <div id="submenu-item-weeks">
+                    <div id="program">
+                        <div class="category-header">
+                            <div class="category-wrapper">
+                                <div class="title">Building a Foundation</div>
+                                <div class="description">To seek even more healing in your life, it is important to first build a foundation of understanding and knowledge - something that will help you throughout your recovery journey.</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="program-category-courses">
+                                {%for index,program in programs%}
+                                <a href="/dashboard/library/lessons/{{program.id}}">
+                                    <div class="lesson_card">
+                                        <div class="col-sm-4">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="lesson-card-img-holder">
+                                                        <img class="img-circle my-image" src="{{program.iconUrl}}" alt="Course For {{program.title}}">
+                                                    </div>
+                                                    <div class="lesson-card-week-count">Week {{program.weekNo}}</div>
+                                                    <div class="lesson-card-course-title">{{program.title}}</div>
+                                                    <div class="lesson-card-course-description scrollable ps-container">{{program.description}}
+                                                        <div class="ps-scrollbar-x-rail" style="width: 8px; left: 0px; bottom: 3px;">
+                                                            <div class="ps-scrollbar-x" style="left: 0px; width: 0px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="ps-scrollbar-y-rail" style="top: 0px; height: 1344px; right: 3px;">
+                                                            <div class="ps-scrollbar-y" style="top: 0px; height: 0px;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   <!-- <div class="time-bottom">1 hour 53 mins</div> -->
+                                                </div>
+                                                <footer>
+                                                    <div class="row">
+                                                        <div class="progress-horizontal">
+                                                            <div class="col-xs-10">
+                                                                <div class="bar-background">
+                                                                    <div class="bar-content" style="width:0.0%">&nbsp;</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-2">
+                                                                <div class="legend">
+                                                                    <p class="percentage">0%</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </footer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                {%endfor%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" id="submenu-item-categories">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        ajax_call_for_partial('.menu-li[data-filter=submenu-item-categories]', Routes.program_categories_path())
+    </script>
+    <div id="billing-wrapper">
+    </div>
+</div>
+{%endblock%}

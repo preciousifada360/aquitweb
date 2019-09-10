@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Community</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="0%" cy="0%" fx="0%" fy="0%" r="164.034171%" id="radialGradient-1">
+            <stop stop-color="#1D7ADC" offset="0%"></stop>
+            <stop stop-color="#35D4D5" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="[New-Icons]" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Community" transform="translate(-1.000000, -1.000000)" fill="url(#radialGradient-1)">
+            <path d="M21.1384615,5.90769231 L19.1076923,5.90769231 L19.1076923,15.0461538 L5.90769231,15.0461538 L5.90769231,17.0769231 C5.90769231,17.6353846 6.36461538,18.0923077 6.92307692,18.0923077 L18.0923077,18.0923077 L22.1538462,22.1538462 L22.1538462,6.92307692 C22.1538462,6.36461538 21.6969231,5.90769231 21.1384615,5.90769231 L21.1384615,5.90769231 Z M17.0769231,12 L17.0769231,2.86153846 C17.0769231,2.30307692 16.62,1.84615385 16.0615385,1.84615385 L2.86153846,1.84615385 C2.30307692,1.84615385 1.84615385,2.30307692 1.84615385,2.86153846 L1.84615385,17.0769231 L5.90769231,13.0153846 L16.0615385,13.0153846 C16.62,13.0153846 17.0769231,12.5584615 17.0769231,12 L17.0769231,12 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

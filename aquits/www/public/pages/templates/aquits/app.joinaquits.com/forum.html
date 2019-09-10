@@ -1,0 +1,950 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} {%block title%}Acquits | Community {%endblock%}{%block activeNav%}selected{%endblock%} {%block selectedController%}community{%endblock%} {%block bodyContent%}
+<div class="custom-aquits-select mar-bot20">
+    <div class="sub-menu">
+        <div class="card sub-menu-card">
+            <div class="sub-menu-title">
+                <span style="font-size: 18px;">Community</span>
+                <!--
+                <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()">
+                    <!--?xml version="1.0" encoding="UTF-8"?
+                    <svg width="17px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch 
+<title>Acquits_Messages-icon</title>
+<desc>Created with Sketch.</desc>
+<defs>
+    <linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+        <stop stop-color="#25A9D9" offset="0%">
+</stop>
+        <stop stop-color="#145972" offset="100%">
+</stop>
+    </linearGradient>
+</defs>
+<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+        <g id="Group" transform="translate(910.000000, 3.000000)">
+            <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+</path>
+            </g>
+        </g>
+    </g>
+</g>
+</svg>
+                    <div class="message-incoming hidden">
+                    </div>
+                </div>
+            -->
+                <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+    </g>
+</g>
+</svg>
+                </div>
+                <div class="pull-left hamburger-btn" id="open-nav">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+    </g>
+</g>
+</svg>
+                </div>
+            </div>
+            <div class="sub-menu-nav">
+                <ul class="sub-menu-tabs centered">
+                    <li class="menu-li active secondary_menu_hover" data-filter="submenu-item-categories" style="position:relative">
+                        <span>Categories</span>
+                   <!-- </li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-recent">
+                        <span>Recent</span>
+                    </li>
+                    
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-trending">
+                        <span>Trending</span>
+                    </li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-following">
+                        <span>Following</span>
+                        <div class="menu-count">546</div>
+                    </li>
+                -->
+                </ul>
+            </div>
+        </div>
+        <div class="pad-top100">
+        </div>
+        
+        <script>
+            // click on params submenu
+            var submenu_route = "";
+            $(document).ready(function() {
+                window.setTimeout(function() {
+                    $('[data-filter=submenu-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+                }, 1000);
+            })
+        </script>
+        <div class="container">
+            <div class="mar-bot20 clearfix" id="page_header">
+                <div class="centered mar-bot10">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="blue-header">A Place to Share &amp; Explore</div>
+                        <div class="page-description medium-text bolded mar-top10">Come here with burning questions, big curiosities or ongoing challenges. Let’s do this together!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="breadcrumbs hidden">
+                        <li class="underlined hover" id="back-to-community">Community</li>
+                        <li class="second">
+                        </li>
+                        <li class="third">
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 centered">
+                    <button class="button btn-blue mar-top10 pull-right" data-target="#post-modal" data-toggle="modal" id="create-new-post">Create new post</button>
+                </div>
+                <div class="col-md-3 mar-top8">
+                    <input class="search pull-right mar-bot10" id="search" placeholder="Search Forum">
+                </div>
+            </div>
+        </div>
+        <div class="container" id="user-categories">
+            <div class="sub-menu-panels">
+                <div data-filter="categories" id="submenu-item-categories">
+                    <div class="row">
+                        <div class="col-md-12 show-categories" id="index">
+                            <div id="index-second-batch">
+                                <div class="card">
+                                    <header>
+                                        <div class="category-image pull-left">
+                                            <img src="/assets/aquits-production/uploads/forum/category/img_url/237581901/img_url_1507143648.4879842.png" alt="Img url 1507143648.4879842">
+                                        </div>
+                                        <h2>General </h2>
+                                    </header>
+                                    {%for index, f in forum1%}
+                                    <div class="card-body no-padding">
+                                        
+                                        <div class="card-row subcategory-row blue-hover" data-toggle="modal" data-target="#post-comment">
+                                            
+                                            <div class="col-sm-8">
+                                                
+                                                <div class="segmented mar-top-10">
+                                                   <!-- <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> {{f.view}}</div>-->
+                                                </div>
+                                                
+                                                <p class="subcategory-title">{{f.title}}</p>
+                                                <p class="subcategory-body">{{f.content}}</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <!--
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                -->
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">1</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">654</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                {%endfor%}
+                                </div>
+
+
+                                        <!--
+                                <div class="card">
+                                    <header>
+                                        <div class="category-image pull-left">
+                                            <img src="/assets/aquits-production/uploads/forum/category/img_url/515831880/img_url_1507143829.1610677.png" alt="Img url 1507143829.1610677">
+                                        </div>
+                                        <h2>Recovery Journey</h2>
+                                    </header>
+                                    <div class="card-body no-padding">
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920541712" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="male-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-lock">
+</i> Male</div>
+                                                </div>
+                                                <p class="subcategory-title">Ages 18 — 23</p>
+                                                <p class="subcategory-body">Tell us about your journey toward freedom</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">131</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">773</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                       
+                                <script>
+                                    function follow_subcategory(target_element) {
+                                        $(target_element).closest('.post-numbers').find('.following, .follow').toggleClass('hidden');
+                                        subcategory_id = $(target_element).closest('.subcategory-row').attr('data-subcategory-id');
+                                        follow = $(target_element).closest('.subcategory-row').find('.follow').hasClass('hidden');
+                                        $.post({
+                                            url: Routes.forum_following_subcategory_path(subcategory_id),
+                                            datatype: "js",
+                                            data: {
+                                                following: follow
+                                            }
+                                        })
+                                        event.stopPropagation();
+                                    }
+
+                                    function change_background(target_element) {
+                                        $(target_element).html('unfollow');
+                                    }
+
+                                    function change_back(target_element) {
+                                        $(target_element).html('following');
+                                    }
+
+                                    function load_subcategory(target_element) {
+                                        overlay_in();
+                                        subcategory_id = $(target_element).data('subcategory-id')
+                                        $.get({
+                                            url: Routes.forum_subcategory_path(subcategory_id),
+                                            datatype: "js"
+                                        })
+                                    }
+                                </script>
+                                <div class="card">
+                                    <header>
+                                        <div class="category-image pull-left">
+                                            <img src="/assets/aquits-production/uploads/forum/category/img_url/322471/img_url_1507143918.5163279.png" alt="Img url 1507143918.5163279">
+                                        </div>
+                                        <h2>Challenges And Difficult Questions</h2>
+                                    </header>
+                                    <div class="card-body no-padding">
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920542276" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">Exploring Root Contributors</p>
+                                                <p class="subcategory-body">A place to talk about underlying vulnerabilities that might be playing a role for you</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">75</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">492</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920542277" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="male-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-lock">
+</i> Male</div>
+                                                </div>
+                                                <p class="subcategory-title">Getting Through Withdrawal Effects</p>
+                                                <p class="subcategory-body">Talking about how to wait out a craving until it passes</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">61</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">360</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                <script>
+                                    function follow_subcategory(target_element) {
+                                        $(target_element).closest('.post-numbers').find('.following, .follow').toggleClass('hidden');
+                                        subcategory_id = $(target_element).closest('.subcategory-row').attr('data-subcategory-id');
+                                        follow = $(target_element).closest('.subcategory-row').find('.follow').hasClass('hidden');
+                                        $.post({
+                                            url: Routes.forum_following_subcategory_path(subcategory_id),
+                                            datatype: "js",
+                                            data: {
+                                                following: follow
+                                            }
+                                        })
+                                        event.stopPropagation();
+                                    }
+
+                                    function change_background(target_element) {
+                                        $(target_element).html('unfollow');
+                                    }
+
+                                    function change_back(target_element) {
+                                        $(target_element).html('following');
+                                    }
+
+                                    function load_subcategory(target_element) {
+                                        overlay_in();
+                                        subcategory_id = $(target_element).data('subcategory-id')
+                                        $.get({
+                                            url: Routes.forum_subcategory_path(subcategory_id),
+                                            datatype: "js"
+                                        })
+                                    }
+                                </script>
+
+                                <div class="card">
+                                    <header>
+                                        <div class="category-image pull-left">
+                                            <img src="/assets/aquits-production/uploads/forum/category/img_url/886045059/img_url_1507143683.59276.png" alt="Img url 1507143683.59276">
+                                        </div>
+                                        <h2>Insights And Positive Changes</h2>
+                                    </header>
+                                    <div class="card-body no-padding">
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920542274" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">Practical Strategies</p>
+                                                <p class="subcategory-body">Your own experiences and questions about different approaches you have tried</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">152</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">834</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920542281" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">Freedom Plan</p>
+                                                <p class="subcategory-body">Brainstorming ideas for YOUR plan to reach lasting healing</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">40</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">199</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920542275" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">Motivation</p>
+                                                <p class="subcategory-body">Talking about how to preserve (and grow) your appetite for freedom</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">135</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">760</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920542240" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">What's On Your Mind?</p>
+                                                <p class="subcategory-body">Anything else you'd like to talk about right now</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">127</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">656</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    function follow_subcategory(target_element) {
+                                        $(target_element).closest('.post-numbers').find('.following, .follow').toggleClass('hidden');
+                                        subcategory_id = $(target_element).closest('.subcategory-row').attr('data-subcategory-id');
+                                        follow = $(target_element).closest('.subcategory-row').find('.follow').hasClass('hidden');
+                                        $.post({
+                                            url: Routes.forum_following_subcategory_path(subcategory_id),
+                                            datatype: "js",
+                                            data: {
+                                                following: follow
+                                            }
+                                        })
+                                        event.stopPropagation();
+                                    }
+
+                                    function change_background(target_element) {
+                                        $(target_element).html('unfollow');
+                                    }
+
+                                    function change_back(target_element) {
+                                        $(target_element).html('following');
+                                    }
+
+                                    function load_subcategory(target_element) {
+                                        overlay_in();
+                                        subcategory_id = $(target_element).data('subcategory-id')
+                                        $.get({
+                                            url: Routes.forum_subcategory_path(subcategory_id),
+                                            datatype: "js"
+                                        })
+                                    }
+                                </script>
+
+                                <div class="card">
+                                    <header>
+                                        <div class="category-image pull-left">
+                                            <img src="/assets/aquits-production/uploads/forum/category/img_url/886044960/img_url_1507143806.3752759.png" alt="Img url 1507143806.3752759">
+                                        </div>
+                                        <h2>Relationships And Support</h2>
+                                    </header>
+                                    <div class="card-body no-padding">
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920541912" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">Finding an Ally</p>
+                                                <p class="subcategory-body">Tips, suggestions and concerns about getting an accountability partner</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">42</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">201</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920541922" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">Working with Allies</p>
+                                                <p class="subcategory-body">Exploring challenges and what has helped you have a good experience</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">5</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">29</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920542192" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="male-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-lock">
+</i> Male</div>
+                                                </div>
+                                                <p class="subcategory-title">Spouses and Partners</p>
+                                                <p class="subcategory-body">Questions, ideas, and experiences in helping take care of our closest relationships</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">35</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">224</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920541932" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="male-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-lock">
+</i> Male</div>
+                                                </div>
+                                                <p class="subcategory-title">Dating Relationships</p>
+                                                <p class="subcategory-body">Discussions on starting, healing, and improving developing relationships</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">20</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">149</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920541962" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">Language Communities</p>
+                                                <p class="subcategory-body">Find and connect with others who speak your same language</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">9</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">39</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-row subcategory-row blue-hover" data-subcategory-id="920541972" onclick="load_subcategory(this)">
+                                            <div class="col-sm-8">
+                                                <div class="segmented mar-top-10">
+                                                    <div class="all-users mar-rig5 mar-bot6">
+                                                        <i aria-hidden="true" class="fa fa-unlock-alt">
+</i> All Users</div>
+                                                </div>
+                                                <p class="subcategory-title">Spiritual / Religious Communities</p>
+                                                <p class="subcategory-body">Connect with others who share your faith or belief system</p>
+                                            </div>
+                                            <div class="col-sm-4 post-info mar-bot-10">
+                                                <ul class="pull-right post-numbers">
+                                                    <div class="follow" onclick="follow_subcategory(this); return false;">Follow</div>
+                                                    <div class="following hidden" onclick="follow_subcategory(this); return false;" onmouseenter="change_background(this)" onmouseleave="change_back(this)">Following</div>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">96</p>
+                                                        <div class="small-text">Posts</div>
+                                                    </li>
+                                                    <li class="reply-li">
+                                                        <p class="stat-number">805</p>
+                                                        <div class="small-text">Comments</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    function follow_subcategory(target_element) {
+                                        $(target_element).closest('.post-numbers').find('.following, .follow').toggleClass('hidden');
+                                        subcategory_id = $(target_element).closest('.subcategory-row').attr('data-subcategory-id');
+                                        follow = $(target_element).closest('.subcategory-row').find('.follow').hasClass('hidden');
+                                        $.post({
+                                            url: Routes.forum_following_subcategory_path(subcategory_id),
+                                            datatype: "js",
+                                            data: {
+                                                following: follow
+                                            }
+                                        })
+                                        event.stopPropagation();
+                                    }
+
+                                    function change_background(target_element) {
+                                        $(target_element).html('unfollow');
+                                    }
+
+                                    function change_back(target_element) {
+                                        $(target_element).html('following');
+                                    }
+
+                                    function load_subcategory(target_element) {
+                                        overlay_in();
+                                        subcategory_id = $(target_element).data('subcategory-id')
+                                        $.get({
+                                            url: Routes.forum_subcategory_path(subcategory_id),
+                                            datatype: "js"
+                                        })
+                                    }
+                                </script>
+                            </div>
+                            <div id="index-recovery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card hidden" id="subcategory-content">
+                        <div class="card-body no-padding posts-content">
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" data-filter="recent" id="submenu-item-recent">
+                    <div class="row">
+                        <div class="col-md-12 show-categories">
+                            <div class="card" id="subcategory-content">
+                                <div class="card-body no-padding posts-content">
+                                    <div class="centered pad25">Loading Posts...</div>
+                                </div>
+                            </div>
+                            <footer>
+                                <div id="pagination">
+                                </div>
+                                <div id="page_entries_info">
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" data-filter="trending" id="submenu-item-trending">
+                    <div class="row">
+                        <div class="col-md-12 show-categories">
+                            <div class="card" id="subcategory-content">
+                                <div class="card-body no-padding posts-content">
+                                    <div class="centered pad25">Loading Posts...</div>
+                                </div>
+                            </div>
+                            <footer>
+                                <div id="pagination">
+                                </div>
+                                <div id="page_entries_info">
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" data-filter="following" id="submenu-item-following">
+                    <div class="row">
+                        <div class="col-md-12 show-categories">
+                            <div class="card" id="subcategory-content">
+                                <div class="card-body no-padding posts-content">
+                                    <div class="centered pad25">Loading Posts...</div>
+                                </div>
+                            </div>
+                            <footer>
+                                <div id="pagination">
+                                </div>
+                                <div id="page_entries_info">
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" data-filter="myposts" id="submenu-item-myposts">
+                    <div class="row">
+                        <div class="col-md-12 show-categories">
+                            <div class="card" id="subcategory-content">
+                                <div class="card-body no-padding posts-content">
+                                    <div class="centered pad25">Loading Posts...</div>
+                                </div>
+                            </div>
+                            <footer>
+                                <div id="pagination">
+                                </div>
+                                <div id="page_entries_info">
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            -->
+        
+            <div class="add_modal_wrapper">
+                <div class="modal fade" id="post-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">
+</button>
+                                <h4 class="modal-title">CREATE NEW POST</h4>
+                            </div>
+                            <form class="new_forum_post"  accept-charset="UTF-8" action="{{router.pathFor(forum)}}" method="post">
+                                <input name="utf8" type="hidden" value="✓">
+                                <div class="modal-body clearfix">
+                                    <div class="card-body tight">
+                                        <div class="col-md-12">
+                                            <div class="post post-form">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mar-bot10">
+                                                <input aquits_validate="Title is required" placeholder="Post title" class="post-title" type="text" required="required" name="title" id="forum_post_title">
+                                            </div>
+                                            <div class="mar-bot0">
+                                                <textarea required="required" aquits_validate="Content is required" placeholder="What's on your mind?" class="post-content lg" name="content" id="forum_post_content">
+</textarea>
+                                            </div>
+                                            <div class="mar-bot15">
+                                               <!-- <div class="who-can-view-this">
+                                                    <div class="view-this-wrapper">
+                                                        <h4>Who Can View This?</h4>
+                                                        <p>If you would feel more comfortable allowing only other men to view and reply to your post, or if it contains content less relevant or appropriate for female participants, please segment your post
+                                                            below according to what feels best:</p>
+                                                        <div class="picker-selection">
+                                                            <div class="hidden">
+                                                                <input type="checkbox" name="group_ids[]" id="group_ids_" value="101" checked="checked">
+                                                            </div>
+                                                            <div class="hidden">
+                                                                <input type="checkbox" name="group_ids[]" id="group_ids_" value="1" checked="checked">
+                                                            </div>
+                                                            <div class="picker-selection-option">
+                                                                <input type="checkbox" name="view_category" id="placeholder" value="All Category" class="chb">
+                                                                <div class="select-wrapper viewgroup adult">
+                                                                    <i aria-hidden="true" class="fa fa-lock" style="margin-right : 10px;">
+</i>All Users</div>
+                                                            </div>
+                                                            <div class="picker-selection-option">
+                                                                <input type="checkbox" name="view_category" id="group_ids_" value="Male" class="chb">
+                                                                <div class="select-wrapper viewgroup male">
+                                                                    <i aria-hidden="true" class="fa fa-lock" style="margin-right : 10px;">
+</i>Male</div>
+                                                            </div>
+                                                            <div class="picker-selection-option">
+                                                                <input type="checkbox" name="view_category" id="group_ids_" value="Female" class="chb">
+                                                                <div class="select-wrapper viewgroup male">
+                                                                    <i aria-hidden="true" class="fa fa-lock" style="margin-right : 10px;">
+    </i>Female</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
+                                            </div>
+                                            <div class="col-md-3">
+                                                    <input type="submit" name="commit" value="Post" class="button btn-blue pull-right" data-disable-with="Posting..">
+                                                </div><!--
+                                            <div class="row hidden" id="post-submit">
+                                                <div class="col-md-9">
+                                                    <div id="category_field">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input type="submit" name="commit" value="Post" class="button btn-blue pull-right" id="create_post" data-disable-with="Posting..">
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="post-comment">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">
+</button>
+                                <h4 class="modal-title">Drop your comment</h4>
+                            </div>
+                            <form accept-charset="UTF-8" action="{{router.pathFor(forum)}}" method="post">
+                                <input name="utf8" type="hidden" value="✓">
+                                <div class="modal-body clearfix">
+                                    <div class="card-body tight">
+                                        <div class="col-md-12">
+                                            <div class="post post-form">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mar-bot0">
+                                                <textarea required="required" aquits_validate="Content is required" placeholder="Please post a Comment" class="post-content lg" name="comment" id="forum_post_content">
+</textarea>
+                                            </div>
+                                            <div class="mar-bot15">
+                                                <div class="who-can-view-this">
+                                                    <div class="view-this-wrapper">
+                                                        <h5>Who Can View This?</h5>
+                                                        <h6>If you would feel more comfortable allowing only other men to view and reply to your post, or if it contains content less relevant or appropriate for female participants, please segment your post
+                                                            below according to what feels best:</h6>
+                                            </div>
+                                        </div>
+                                            <div class="col-md-3">
+                                                    <input type="submit" name="commit" value="Post" class="button btn-blue pull-right" data-disable-with="Posting..">
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(".chb").change(function() {
+                        $("#post-submit").removeClass("hidden")
+                        $(".chb").prop('checked', false);
+                        $(this).prop('checked', true);
+                        overlay_in();
+                        $('#category_field').html("Loading..")
+                        $.ajax({
+                            url: Routes.forum_subcategories_get_viewables_for_dropdown_path(),
+                            data: {
+                                all_users: ($(this).val() == "{}")
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <script>
+        var timer;
+        var keywords;
+        var forum_filter = "submenu-item-categories";
+
+        $('input#search').on('keyup', function(e) {
+            $('.sub-menu').find('.sub-menu-tabs .menu-li').removeClass('ajaxed')
+            window.clearTimeout(timer);
+            keywords = $(e.target).val();
+            timer = window.setTimeout(function() {
+                goFilter(keywords)
+            }, 500);
+        });
+
+        $('.sub-menu').find('.sub-menu-tabs .menu-li').on('click', function(e) {
+            forum_filter = $(this).data('filter')
+            if (forum_filter == 'submenu-item-categories') {
+                $('#index').removeClass('hidden')
+                $('.sub-menu-bottom').addClass('hidden')
+            } else {
+                if ($(this).hasClass('ajaxed') == false) {
+                    $(this).addClass('ajaxed');
+                    goFilter(keywords)
+                }
+            }
+        });
+
+        $('#back-to-community').click(function() {
+            $('#index').removeClass('hidden')
+            $('.sub-menu-bottom').addClass('hidden')
+            $('.breadcrumbs').addClass('hidden');
+        })
+
+        function goFilter(keywords) {
+            if (forum_filter != 'submenu-item-categories') {
+                $('div#transition-overlay').fadeIn();
+                $.get(
+                    Routes.forum_categories_path(), {
+                        forum_filter: forum_filter,
+                        keywords: keywords,
+                    }
+                ).fail(function() {
+                    overlay_out();
+                    show_ajax_alert("There was an error. Please try again at a later time.")
+                });
+            } else {
+                $('[data-filter=submenu-item-recent]').click();
+            }
+        }
+    </script>
+    <div id="billing-wrapper">
+    </div>
+</div>
+{%endblock%}

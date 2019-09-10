@@ -1,0 +1,643 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} {%block title%}Acquits | Trackers {%endblock%}{%block activeNav%}selected{%endblock%} {%block selectedController%}trackers{%endblock%} {%block bodyContent%}
+<div class="custom-aquits-select mar-bot20">
+    <div class="sub-menu" id="trackers-web">
+        <div class="card sub-menu-card">
+            <div class="sub-menu-title">
+                <span style="font-size: 18px;">Tracker</span>
+                <!--
+                <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()" style="top: 5px;">
+                    <!--?xml version="1.0" encoding="UTF-8"?
+                    <svg width="17px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch 
+<title>FORT_Messages-icon</title>
+<desc>Created with Sketch.</desc>
+<defs>
+    <linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+        <stop stop-color="#25A9D9" offset="0%">
+</stop>
+        <stop stop-color="#145972" offset="100%">
+</stop>
+    </linearGradient>
+</defs>
+<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+        <g id="Group" transform="translate(910.000000, 3.000000)">
+            <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+</path>
+            </g>
+        </g>
+    </g>
+</g>
+</svg>
+                    <div class="message-incoming hidden">
+                    </div>
+                </div>
+            -->
+                <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn" style="top: 10px;">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+    </g>
+</g>
+</svg>
+                </div>
+                <div class="pull-left hamburger-btn" id="open-nav" style="top: 10px;">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+    </g>
+</g>
+</svg>
+                </div>
+            </div>
+            <script>
+                $('#msg-toggle-btn').css('top', '5px');
+                $('.hamburger-btn').css('top', '10px');
+            </script>
+        </div>
+        <div class="pad-top80">
+        </div>
+       
+        <script>
+            // click on params submenu
+            var submenu_route = "";
+            $(document).ready(function() {
+                window.setTimeout(function() {
+                    $('[data-filter=submenu-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+                }, 1000);
+            })
+        </script>
+        <div class="container">
+            <div class="sub-menu-panels">
+                <div id="submenu-item-battletracker">
+                    <div id="battle-tracker-top-stats">
+                        <div class="row mar-bot30 mar-top30 dismissable-banner">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <div class="action-notification-big blue-background">
+                                    <div class="container">
+                                        <div class="col-sm-9">
+                                            <div class="action-text">
+                                                <div class="action-header">Daily Tracker</div>
+                                                <div class="action-content mar-bot5">Here you will be able to assess your aggregated Daily Tracker data to help you identify key patterns and meaningful details about your ongoing recovery journey (advanced analytics available to premium users).
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="action-icon-metrics">
+                                                <!--?xml version="1.0" encoding="UTF-8"?-->
+                                                <svg width="117px" height="89px" viewBox="0 0 117 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+<title>FORT_Tracker</title>
+<desc>Created with Sketch.</desc>
+<defs>
+</defs>
+<g id="Metrics" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="FORT_Tracker" transform="translate(0.000000, 2.000000)">
+        <circle id="Oval-7-Copy-7" fill="#FFFFFF" transform="translate(105.500000, 9.500000) scale(-1, 1) translate(-105.500000, -9.500000) " cx="105.5" cy="9.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-11" fill="#FFFFFF" cx="105.5" cy="42.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-15" fill="#FFFFFF" cx="105.5" cy="75.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-8" fill="#FFFFFF" transform="translate(72.500000, 9.500000) scale(-1, 1) translate(-72.500000, -9.500000) " cx="72.5" cy="9.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-12" fill="#FFFFFF" cx="72.5" cy="42.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-16" fill="#FFFFFF" cx="72.5" cy="75.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-9" fill="#FFFFFF" transform="translate(39.500000, 9.500000) scale(-1, 1) translate(-39.500000, -9.500000) " cx="39.5" cy="9.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-13" fill="#FFFFFF" cx="39.5" cy="42.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-19" stroke="#FFFFFF" stroke-width="2" cx="39.5" cy="42.5" r="10.5">
+</circle>
+        <circle id="Oval-7-Copy-20" stroke="#FFFFFF" stroke-width="2" cx="72.5" cy="75.5" r="10.5">
+</circle>
+        <circle id="Oval-7-Copy-21" stroke="#FFFFFF" stroke-width="2" cx="105.5" cy="9.5" r="10.5">
+</circle>
+        <circle id="Oval-7-Copy-17" fill="#FFFFFF" cx="39.5" cy="75.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-10" fill="#FFFFFF" transform="translate(6.500000, 9.500000) scale(-1, 1) translate(-6.500000, -9.500000) " cx="6.5" cy="9.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-14" fill="#FFFFFF" cx="6.5" cy="42.5" r="6.5">
+</circle>
+        <circle id="Oval-7-Copy-18" fill="#FFFFFF" cx="6.5" cy="75.5" r="6.5">
+</circle>
+    </g>
+</g>
+</svg>
+                                            </div>
+                                        </div>
+                                        <div class="dismiss-banner-button" onclick="dismiss_static_banner('user_tracker');$(this).closest('.dismissable-banner').fadeOut()">
+                                            <!--?xml version="1.0" encoding="UTF-8"?-->
+                                            <svg viewBox="0 0 66 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+<title>Group</title>
+<desc>Created with Sketch.</desc>
+<defs>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group" transform="translate(-1.000000, 0.000000)" fill="#FFFFFF">
+        <rect id="Rectangle-2" transform="translate(33.791887, 32.797471) rotate(45.000000) translate(-33.791887, -32.797471) " x="-10.7081133" y="30.9148427" width="89" height="3.76525671">
+</rect>
+        <rect id="Rectangle-2" transform="translate(33.797471, 32.797471) rotate(-45.000000) translate(-33.797471, -32.797471) " x="-10.702529" y="30.9148427" width="89" height="3.76525671">
+</rect>
+    </g>
+</g>
+</svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="navigation-stats">
+                            <div class="col-sm-2">
+                                <div class="card">Victories
+                                    <div class="ally-user-card-stat blued">0</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="card">Setbacks
+                                    <div class="ally-user-card-stat redded">0</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="card">Current Streak
+                                    <div class="ally-user-card-stat">0</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="card">Longest Streak
+                                    <div class="ally-user-card-stat">0</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">Victory Counter
+                                    <div class="ally-user-card-stat">
+                                        <div class="blue-header centered" id="time-elapsed">
+                                            <div class="tna">No Records</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function() {
+                                initClock();
+                            })
+                        </script>
+                    </div>
+                    <div id="battle-tracker-calendar-container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="battletracker-calendar">
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="pad15">
+                                                    <div class="card-body centered">
+                                                        <div class="large-text centered">
+                                                            <div class="col-xs-2">
+                                                                <a class="fa fa-angle-left navigation_btn" data-remote="true" href="ally/tracker/1010612036-date=2019-02-26">
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-xs-8">March 2019</div>
+                                                            <div class="col-xs-2">
+                                                                <a class="fa fa-angle-right navigation_btn" data-remote="true" href="ally/tracker/1010612036-date=2019-04-26">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <span class="blued mar-rig10">0%</span>
+                                                        <span class="medium-text">Victory Rate</span>
+                                                    </div>
+                                                    <div class="header-line">
+                                                    </div>
+                                                    <div class="card-body" id="battle-tracker-calendar-card-body">
+                                                        <table class="calendar table borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Sun</th>
+                                                                    <th>Mon</th>
+                                                                    <th>Tue</th>
+                                                                    <th>Wed</th>
+                                                                    <th>Thu</th>
+                                                                    <th>Fri</th>
+                                                                    <th>Sat</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="clickable not-month" data-date="&quot;2019-02-24&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">24</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable not-month" data-date="&quot;2019-02-25&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">25</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable not-month" data-date="&quot;2019-02-26&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">26</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable not-month" data-date="&quot;2019-02-27&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">27</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable not-month" data-date="&quot;2019-02-28&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">28</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-01&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">1</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-02&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">2</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="clickable" data-date="&quot;2019-03-03&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">3</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-04&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">4</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-05&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">5</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-06&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">6</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-07&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">7</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-08&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">8</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-09&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">9</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="clickable" data-date="&quot;2019-03-10&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">10</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-11&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">11</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-12&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">12</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-13&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">13</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-14&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">14</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-15&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">15</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-16&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">16</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="clickable" data-date="&quot;2019-03-17&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">17</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-18&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">18</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-19&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">19</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-20&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">20</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-21&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">21</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-22&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">22</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-23&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">23</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="clickable" data-date="&quot;2019-03-24&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">24</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable" data-date="&quot;2019-03-25&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">25</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="clickable today" data-date="&quot;2019-03-26&quot;" data-toggle="modal" data-target="#tracker">
+                                                                        <div class="normal-background">26</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable">
+                                                                        <div class="normal-background">27</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable">
+                                                                        <div class="normal-background">28</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable">
+                                                                        <div class="normal-background">29</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable">
+                                                                        <div class="normal-background">30</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="notclickable">
+                                                                        <div class="normal-background">31</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable not-month">
+                                                                        <div class="normal-background">1</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable not-month">
+                                                                        <div class="normal-background">2</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable not-month">
+                                                                        <div class="normal-background">3</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable not-month">
+                                                                        <div class="normal-background">4</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable not-month">
+                                                                        <div class="normal-background">5</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="notclickable not-month">
+                                                                        <div class="normal-background">6</div>
+                                                                        <div class="maybe-today">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div id="calendar-days-stat">
+                                                    <div id="tracker-key">
+                                                        <div id="tracker-key-header">KEY</div>
+                                                        <div class="key-item">
+                                                            <div class="key-icon victory-key">
+                                                            </div>
+                                                            <div class="key-text top-1">Victory: Responded in a healthy way</div>
+                                                        </div>
+                                                        <div class="key-item mar-top4">
+                                                            <div class="key-icon setback-key">
+                                                            </div>
+                                                            <div class="key-text top-1">Setback: Responded in an unhealthy way</div>
+                                                        </div>
+                                                        <div class="key-item mar-top1">
+                                                            <img class="key-icon journal-key" src="/assets/trackers/triangle-gray-67340c9aa08e966c83b4259c07576181fc213e9d11a5e9d5d1cf0b0f90688e8c.png" alt="Triangle gray">
+                                                            <div class="key-text top1">One or more journal entry for the day</div>
+                                                        </div>
+                                                        <div class="key-item mar-top2">
+                                                            <img class="key-icon star-key" src="/assets/trackers/star-gray-e9235f071284f88e176a9420a0df28118ed25d48afd93e92530a0b1f7529e82c.png" alt="Star gray">
+                                                            <div class="key-text top1">You responded to a difficult day in a healthy way</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="stat-item-new">
+                                                            <div class="stat-item-new-title">Sunday</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress red-bar" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                        </div>
+                                                        <div class="stat-item-new">
+                                                            <div class="stat-item-new-title">Monday</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress red-bar" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                        </div>
+                                                        <div class="stat-item-new">
+                                                            <div class="stat-item-new-title">Tuesday</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress red-bar" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                        </div>
+                                                        <div class="stat-item-new">
+                                                            <div class="stat-item-new-title">Wednesday</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress red-bar" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                        </div>
+                                                        <div class="stat-item-new">
+                                                            <div class="stat-item-new-title">Thursday</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress red-bar" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                        </div>
+                                                        <div class="stat-item-new">
+                                                            <div class="stat-item-new-title">Friday</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress red-bar" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                        </div>
+                                                        <div class="stat-item-new">
+                                                            <div class="stat-item-new-title">Saturday</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                            <div class="stat-item-new-progress-background">
+                                                                <div class="stat-item-new-progress red-bar" data-progress-percentage="0" style="width: 0%;">
+                                                                </div>
+                                                            </div>
+                                                            <div class="stat-item-new-value">0</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        run_custom_bar_stats()
+                                                    })
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $(".calendar td").click(function(e) {
+                                            e.stopPropagation();
+                                            if ($(this).hasClass('clickable')) {
+                                                var date = $(this).data("date");
+                                                $('div#transition-overlay').fadeIn();
+                                                $.get(
+                                                    Routes.tracker_modal_trackers_path(date)
+                                                )
+                                            }
+
+                                            if ($(this).hasClass('clickable-ally')) {
+                                                var date = $(this).data("date");
+                                                $('div#transition-overlay').fadeIn();
+
+                                                $.ajax({
+                                                    url: Routes.tracker_modal_trackers_path(date),
+                                                    type: "GET",
+                                                    data: {
+                                                        viewonly: "true",
+                                                        ally_user_id: "1010612036"
+                                                    },
+                                                    datatype: "js"
+                                                })
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="centered mar-top20 mar-bot20">
+                        <a href="/dashboard/metrics">
+                            <div class="button btn-blue">click here for detailed analytics</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add_modal_wrapper">
+        </div>
+    </div>
+    <div id="billing-wrapper">
+    </div>
+</div>
+{%endblock%}

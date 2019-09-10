@@ -1,0 +1,905 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} {%block title%}Aquits | Home {%endblock%}{%block activeNav%}selected{%endblock%} {%block selectedController%}home{%endblock%} {%block bodyContent%}
+        <div class="custom-aquits-select mar-bot20">
+            <div class="sub-menu">
+                <div class="card sub-menu-card">
+                    <div class="sub-menu-title">
+                        <span style="font-size: 18px;">Home</span>
+                        <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()">
+                            <!--?xml version="1.0" encoding="UTF-8"?-->
+                            <svg width="17px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>FORT_Messages-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#25A9D9" offset="0%">
+</stop>
+            <stop stop-color="#145972" offset="100%">
+</stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+            <g id="Group" transform="translate(910.000000, 3.000000)">
+                <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                    <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+</path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                            <div class="message-incoming hidden">
+                            </div>
+                        </div>
+                        <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn">
+                            <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                            <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8" fill="#B3B3B3">
+            <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+            <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+            <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+        </g>
+    </g>
+</svg>
+                        </div>
+                        <div class="pull-left hamburger-btn" id="open-nav">
+                            <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                            <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8" fill="#B3B3B3">
+            <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+            <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+            <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+        </g>
+    </g>
+</svg>
+                        </div>
+                    </div>
+                    <div class="sub-menu-nav">
+                        <ul class="sub-menu-tabs centered">
+                            <li class="menu-li secondary_menu_hover active ajaxed" data-filter="submenu-item-dashboard" style="position:relative">
+                                <span>Dashboard</span>
+                            </li>
+                            <!--
+                            <li class="menu-li secondary_menu_hover" data-filter="submenu-item-awards">
+                                <span>Awards</span>
+                            </li>
+                            <li class="menu-li secondary_menu_hover" data-filter="submenu-item-freedomplan">
+                                <span>Freedom Plan</span>
+                            </li>
+                            <li class="menu-li secondary_menu_hover" data-filter="submenu-item-journal">
+                                <span>Journal</span>
+                            </li>
+                        -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="pad-top100">
+                </div>
+             
+                <script>
+                    // click on params submenu
+                    var submenu_route = "";
+                    $(document).ready(function() {
+                        window.setTimeout(function() {
+                            $('[data-filter=submenu-item-' + submenu_route + ']').click();
+                            $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+                            $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+                        }, 1000);
+                    })
+                </script>
+                <div id="three-ways-holder">
+                    <div id="three-ways">
+                        <div id="three-ways-part-0">
+                            <div class="mar-bot20 clearfix" id="page_header">
+                                <div class="centered mar-bot10">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <div class="blue-header">3 Ways to Get Started</div>
+                                        <div class="page-description medium-text bolded mar-top10">Learn. Connect. Track.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="three-ways-exit-button">
+                                <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                                <svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+</defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-48" transform="translate(-229.000000, 1.000000)" stroke-width="2" stroke="#979797" fill="#979797">
+            <g id="Group-47" transform="translate(230.000000, 0.000000)">
+                <g id="times_black">
+                    <g id="Icon">
+                        <g id="Page-1">
+                            <g id="Artboard-1">
+                                <g id="Icon">
+                                    <path d="M0.032,0.047 L29.873,29.716" id="Stroke-23">
+</path>
+                                    <path d="M29.8732,0.047 L0.0322,29.716" id="Stroke-25">
+</path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                            </div>
+                            <div class="container" id="three-ways-hero">
+                                <img src="/assets/three-ways/three-ways-top-0794bc87362cb2341ed020768d45fc59c64d55b1a9283020537b5da4ef37a38a.png" alt="Three ways top">
+                            </div>
+                            <div class="three-ways-divider">1</div>
+                        </div>
+                        <div id="three-ways-part-1">
+                            <div class="three-ways-header">Learn</div>
+                            <div class="three-ways-cards-holder">
+                                <div class="three-ways-card">
+                                    <div class="three-ways-card-image">
+                                        <img src="/assets/three-ways/new/training-9c757b714b4eb7191959da06e5b466007cdc641ba7087bffe52174c268c50eff.svg" alt="Training">
+                                    </div>
+                                    <div class="three-ways-card-header">Start Training</div>
+                                    <div class="three-ways-card-body">Begin strengthening or “Acquitsing” your whole life as a powerful way to increase your freedom.</div>
+                                    <a href="/dashboard/program">
+                                        <div class="three-ways-card-link">Start Your Training<i aria-hidden="true" class="fa fa-arrow-right">
+</i>
+                                        </div>
+                                    </a>
+                                    <div class="three-ways-card-border">
+                                    </div>
+                                </div>
+                                <div class="three-ways-card">
+                                    <div class="three-ways-card-image">
+                                        <img src="/assets/three-ways/new/video-57057a2f294fcb4499fd6e43a362339b48bd99dda6a4d8d9881af6eceb6a0902.svg" alt="Video">
+                                    </div>
+                                    <div class="three-ways-card-header">Explore Specific Topics</div>
+                                    <div class="three-ways-card-body">Dig into areas of unique interest to you, checking out all related content.</div>
+                                    <a href="/dashboard/program">
+                                        <div class="three-ways-card-link">Start Exploring<i aria-hidden="true" class="fa fa-arrow-right">
+</i>
+                                        </div>
+                                    </a>
+                                    <div class="three-ways-card-border">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="three-ways-divider">2</div>
+                        </div>
+                        <div id="three-ways-part-2">
+                            <div class="three-ways-header">Connect</div>
+                            <div class="three-ways-cards-holder">
+                                <div class="three-ways-card">
+                                    <div class="three-ways-card-image">
+                                        <img src="/assets/three-ways/new/allies-c744f9649f7940675639b94718ad6e1440ea28bbced95162dfd509cecc345ac5.svg" alt="Allies">
+                                    </div>
+                                    <div class="three-ways-card-header taller-header">Add Your Own Ally</div>
+                                    <div class="three-ways-card-body">Expand your network of support and accountability by reaching out to someone you trust.</div>
+                                    <a href="/dashboard/ally/new">
+                                        <div class="three-ways-card-link">Add Ally<i aria-hidden="true" class="fa fa-arrow-right">
+</i>
+                                        </div>
+                                    </a>
+                                    <div class="three-ways-card-border">
+                                    </div>
+                                </div>
+                                <div class="three-ways-card">
+                                    <div class="three-ways-card-image">
+                                        <img src="/assets/three-ways/new/community-c45e0c8b4e70fc98a60e7902486ca3440843866c2e4205734363b841c417f80a.svg" alt="Community">
+                                    </div>
+                                    <div class="three-ways-card-header taller-header">Participate In Community Forums</div>
+                                    <div class="three-ways-card-body">Brainstorm, share and respond to anything that feels important or challenging.</div>
+                                    <a href="/dashboard/forum">
+                                        <div class="three-ways-card-link">Get Started<i aria-hidden="true" class="fa fa-arrow-right">
+</i>
+                                        </div>
+                                    </a>
+                                    <div class="three-ways-card-border">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="three-ways-cards-holder">
+                                <div class="three-ways-card">
+                                    <div class="three-ways-card-image">
+                                        <img src="/assets/three-ways/new/groups-06d61325ea7a078f5e572f398ff73c2dd51cd760293db5b901a22a047feae03c.svg" alt="Groups">
+                                    </div>
+                                    <div class="three-ways-card-header taller-header">Join A Support Group</div>
+                                    <div class="three-ways-card-body">Find greater strength by connecting regularly with a small team of like-minded peers.</div>
+                                    <a href="/dashboard/groups">
+                                        <div class="three-ways-card-link">Join a Group<i aria-hidden="true" class="fa fa-arrow-right">
+</i>
+                                        </div>
+                                    </a>
+                                    <div class="three-ways-card-border">
+                                    </div>
+                                </div>
+                                <div class="three-ways-card">
+                                    <div class="three-ways-card-image">
+                                        <img src="/assets/three-ways/new/coaching-d5a64d7ef4a33d1196d0ab52f874021697a745cfd2394325397616f6844d88d1.svg" alt="Coaching">
+                                    </div>
+                                    <div class="three-ways-card-header taller-header">Connect With A Personal Coach</div>
+                                    <div class="three-ways-card-body">Secure more individualized support and encouragement from a trained Acquits coach.</div>
+                                    <a href="/dashboard/coach/new">
+                                        <div class="three-ways-card-link">Connect with a Coach<i aria-hidden="true" class="fa fa-arrow-right">
+</i>
+                                        </div>
+                                    </a>
+                                    <div class="three-ways-card-border">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="three-ways-divider">3</div>
+                        </div>
+                        <div id="three-ways-part-3">
+                            <div class="three-ways-header">Track</div>
+                            <div class="three-ways-cards-holder">
+                                <div class="three-ways-card">
+                                    <div class="three-ways-card-image">
+                                        <img src="/assets/three-ways/new/metrics-06fe34b060ce3024d5ec4c4784fe46623ed5293106ac837391db68958958ae19.svg" alt="Metrics">
+                                    </div>
+                                    <div class="three-ways-card-header">Analyze Individual Patterns</div>
+                                    <div class="three-ways-card-body">Take advantage of your personalized Daily Tracker in celebrating victories and monitoring setbacks.</div>
+                                    <a href="/dashboard/trackers">
+                                        <div class="three-ways-card-link">Start Tracking<i aria-hidden="true" class="fa fa-arrow-right">
+</i>
+                                        </div>
+                                    </a>
+                                    <div class="three-ways-card-border">
+                                    </div>
+                                </div>
+                                <div class="three-ways-card">
+                                    <div class="three-ways-card-image">
+                                        <img src="/assets/three-ways/new/inventory-84c8391c09f3c37c89ada29a13ea1359a6393b12b7c221ec4f3d587b96afa7ea.svg" alt="Inventory">
+                                    </div>
+                                    <div class="three-ways-card-header">Take An Inventory</div>
+                                    <div class="three-ways-card-body"> Go deeper than behavioral patterns to explore underlying risk factors that might contribute to your own vulnerability.</div>
+                                    <a href="/dashboard/metrics/">
+                                        <div class="three-ways-card-link">Take Inventory<i aria-hidden="true" class="fa fa-arrow-right">
+</i>
+                                        </div>
+                                    </a>
+                                    <div class="three-ways-card-border">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        $('#three-ways-exit-button').click(function() {
+                            $('#dashboard').removeClass('hidden')
+                            $('#three-ways-holder').html("")
+                        })
+                    </script>
+                </div>
+                <div class="container relative-position hidden" id="dashboard">
+                    <div class="sub-menu-panels">
+                        <div id="submenu-item-dashboard" class="">
+                           <div class="user-dashboard">
+                        <div class="row">
+                            <div class="col-md-12 mar-bot10">
+                                <div class="mar-bot20" id="user-banner-container">
+                                    <div id="big-banner">
+                                        <div class="banner-img">
+                                            <img src="/assets/dashboard/temp_banner-aa357d25169ec09aa2bd89275ba86ef2aebd7c675effdd0600e20a021face7dd.png" alt="Temp banner">
+                                        </div>
+                                        <div class="hidden">
+                                            <form class="edit_user" id="edit_user_1010612036" enctype="multipart/form-data" action="/profile/update" accept-charset="UTF-8" method="post">
+                                                <input name="utf8" type="hidden" value="✓">
+                                                <input type="hidden" name="_method" value="put">
+                                                <input type="hidden" name="authenticity_token" value="SbCt/gHDj4QdJggnM0bIjiaHtvpjtMcR1wbL3dST6uOfYz3br0wJNjVDQicrXezynEpYy4bpsSJpOPYtUwqAXg==">
+                                                <input type="hidden" name="redirect_path" id="redirect_path" value="/">
+                                                <input type="file" name="user[banner]" id="user_banner">
+                                                <input type="submit" name="commit" value="Update User" data-disable-with="Update User">
+                                            </form>
+                                        </div>
+                                       <!-- <div class="edit-button">Edit</div>-->
+                                        <div class="user-profile-info-container">
+                                            <div class="user-avatar-holder-container">
+                                                <div class="user-avatar-holder" style="border: solid #85DFFF 4px;">
+                                                    <img class="user-avatar" src="/assets/aquits-production/uploads/user/avatar/1010612036/avatar_1547804677.867454.png" alt="Avatar 1547804677.867454">
+                                                </div>
+                                            </div>
+                                            <div class="user-info-holder">
+                                                <div class="user-name">{{logged.user.name}}</div>
+                                                <div class="user-points" style="background-color: #85DFFF">2,110</div>
+                                            </div>
+                                        </div>
+                                        <div class="user-stats-container">
+                                            <div class="pull-right">1</div>
+                                            <div class="pull-right">
+                                                <img src="/assets/badges/aquits_Ally-d820803b1a2d3ff4ac351728a3159ab53236f8a260d263b4c34dca7dd2f93f13.png" alt="Aquits ally">
+                                            </div>
+                                            <div class="pull-right mar-rig20">0</div>
+                                            <div class="pull-right">
+                                                <img src="/assets/coins/1-befc53decd9d2d89370c8e70376347d8e83983fca842d261469d193d9063157f.png" alt="1">
+                                            </div>
+                                            <div class="pull-right title mar-rig20">Fighter Level 1</div>
+                                            <div class="pull-right checkmark mar-rig10">
+                                                <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                                                <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+</defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashbaord->-Survey" transform="translate(-1129.000000, -707.000000)">
+            <g id="Group" transform="translate(1129.000000, 707.000000)">
+                <path d="M11.48375,1.50845 L11.48375,1.50845 C11.87575,2.60945 13.13375,3.13145 14.18975,2.62945 L14.18975,2.62945 C15.86575,1.83245 17.61475,3.58145 16.81775,5.25745 L16.81775,5.25745 C16.31575,6.31345 16.83675,7.57145 17.93875,7.96345 L17.93875,7.96345 C19.68775,8.58545 19.68775,11.05845 17.93875,11.68045 L17.93875,11.68045 C16.83675,12.07245 16.31575,13.33045 16.81775,14.38645 L16.81775,14.38645 C17.61475,16.06245 15.86575,17.81145 14.18975,17.01445 L14.18975,17.01445 C13.13375,16.51245 11.87575,17.03345 11.48375,18.13545 C10.86175,19.88445 8.38875,19.88445 7.76675,18.13545 C7.37475,17.03345 6.11675,16.51245 5.06075,17.01445 L5.06075,17.01445 C3.38475,17.81145 1.63575,16.06245 2.43275,14.38645 L2.43275,14.38645 C2.93375,13.33045 2.41275,12.07245 1.31175,11.68045 L1.31175,11.68045 C-0.43725,11.05845 -0.43725,8.58545 1.31175,7.96345 L1.31175,7.96345 C2.41275,7.57145 2.93375,6.31345 2.43275,5.25745 L2.43275,5.25745 C1.63575,3.58145 3.38475,1.83245 5.06075,2.62945 L5.06075,2.62945 C6.11675,3.13145 7.37475,2.60945 7.76675,1.50845 C8.38875,-0.24055 10.86175,-0.24055 11.48375,1.50845" id="Fill-7" fill="#0096E6">
+</path>
+                <path d="M8.1815,12.0882 L6.2925,10.1992 C5.9025,9.8092 5.9025,9.1762 6.2925,8.7852 C6.6835,8.3952 7.3165,8.3952 7.7065,8.7852 L8.8885,9.9672 L12.3665,6.4892 C12.7565,6.0992 13.3895,6.0992 13.7805,6.4892 C14.1705,6.8802 14.1705,7.5132 13.7805,7.9032 L9.5955,12.0882 C9.4005,12.2832 9.1445,12.3812 8.8885,12.3812 C8.6325,12.3812 8.3765,12.2832 8.1815,12.0882 Z" id="Fill-8" fill="#FFFFFF">
+</path>
+            </g>
+        </g>
+    </g>
+</svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $('#big-banner .edit-button').click(function() {
+                                            $('#user_banner').click();
+                                        })
+
+                                        $('#big-banner .edit_user input[type=file]').on('change', function() {
+                                            $(this).closest('form').submit();
+                                            $('div#transition-overlay').fadeIn();
+                                        })
+                                    </script>
+                                </div>
+                                <div id="user-summary-stats-container">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <div class="card">
+                                                <div class="stat-card-header">Recorded Victories</div>
+                                                <div class="stat-card-stat blued">0</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="card">
+                                                <div class="stat-card-header">Longest Streak</div>
+                                                <div class="stat-card-stat">0</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="card">
+                                                <div class="stat-card-header">Activities Completed</div>
+                                                <div class="stat-card-stat">0</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="card">
+                                                <div class="stat-card-header">Freedom Strategies</div>
+                                                <div class="stat-card-stat">0</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="card">
+                                                <div class="stat-card-header">Inventories Taken</div>
+                                                <div class="stat-card-stat">0 / 12</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="card">
+                                                <div class="stat-card-header">Comments &amp; Posts</div>
+                                                <div class="stat-card-stat">0</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="training-progress">
+                                        <div class="text">Training Progress</div>
+                                        <div class="number bolded">0%</div>
+                                        <div class="progress-bar-wrapper">
+                                            <div class="progress-bar-content" style="width: 0%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="action-notification blue-green-background relative-position" id="three-ways-banner">
+                                    <div class="three-ways-banner-header">3 Ways To Get Started</div>
+                                    <div class="three-ways-banner-subheader">Learn. Connect. Track.</div>
+                                    <a href="/dashboard/index-three_ways=true">
+                                        <div class="action-btn">Let's go!</div>
+                                    </a>
+                                    <form class="edit_user" id="edit_user_1010612036" action="/profile/update" accept-charset="UTF-8" data-remote="true" method="post">
+                                        <input name="utf8" type="hidden" value="✓">
+                                        <input type="hidden" name="_method" value="put">
+                                        <input value="true" type="hidden" name="user[three_ways]" id="user_three_ways">
+                                        <input type="submit" name="commit" value="Dismiss" class="three-ways-banner-dismiss" data-disable-with="Dismiss">
+                                    </form>
+                                </div>
+                                <script>
+                                    $(document).ready(function() {
+                                        $('.three-ways-banner-dismiss').click(function() {
+                                            $('#three-ways-banner').fadeOut();
+                                        })
+                                    })
+                                </script>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row mar-top10">
+                                    <div class="col-sm-12">
+                                        <a href="/dashboard/metrics">
+                                            <div class="action-notification red-background">
+                                                <div class="action-icon">
+                                                    <img src="/assets/nav-icons/new/metrics-ad2c3f86984abff1d405b450223deef6bcb7b03ac2310ae0387e994edca63ccb.svg" alt="Metrics">
+                                                </div>
+                                                <div class="action-text">
+                                                    <div class="action-header">Lifestyle Inventory</div>
+                                                    <div class="action-content">Your First <b>
+<em>Weekly Lifestyle Inventory</em>
+</b> is now available.</div>
+                                                </div>
+                                                <div class="action-btn" >Continue</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="/dashboard/metrics">
+                                    <div class="action-notification turquoise-blue-background">
+                                        <div class="action-icon">
+                                            <img src="/assets/nav-icons/new/metrics-ad2c3f86984abff1d405b450223deef6bcb7b03ac2310ae0387e994edca63ccb.svg" alt="Metrics">
+                                        </div>
+                                        <div class="action-text">
+                                            <div class="action-header">Well-Being Survey</div>
+                                            <div class="action-content">Your First <b>
+<em>Monthly Well-Being Survey</em>
+</b> is now available.</div>
+                                        </div>
+                                        <div class="action-btn" >Continue</div>
+                                    </div>
+                                </a>
+                               <!--
+                                <script>
+                                    $('#/dashboard/metrics-btn').click(function() {
+                                        overlay_in()
+                                    })
+                                </script>
+                                
+                            -->
+                                <a href="/dashboard/forum">
+                                    <div class="action-notification pink-background">
+                                        <div class="action-icon">
+                                            <img src="/assets/nav-icons/new/community-6ada1d55fae3d572f3e26318957bfce69bb060ca658f0170d935b6846eb30e22.svg" alt="Community">
+                                        </div>
+                                        <div class="action-text">
+                                            <div class="action-header">Acquits Daily Discussion</div>
+                                            <div class="action-content">Have you ever committed to a longer period of dedicated preparation and inner development that involved sacrificing other things in your life (e.g., food or certain kinds of food)? Did it help you? </div>
+                                        </div>
+                                        <div class="action-btn">See post</div>
+                                    </div>
+                                </a>
+                                <div class="widget-sortable mar-top20 ui-sortable">
+                                    <div class="card" data-dashboard-item-id="835944" id="daily-motivation">
+                                        <header class="ui-sortable-handle">Daily Motivation
+                                            <div class="handle">
+                                                <!--?xml version="1.0" encoding="UTF-8"?-->
+                                                <svg width="100%" height="100%" viewBox="0 0 40 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Grip</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+</defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Grip" fill="#9B9B9B">
+            <path d="M8,16 C12.411,16 16,12.411 16,8 C16,3.589 12.411,0 8,0 C3.589,0 0,3.589 0,8 C0,12.411 3.589,16 8,16" id="Fill-54">
+</path>
+            <path d="M32,16 C36.411,16 40,12.411 40,8 C40,3.589 36.411,0 32,0 C27.589,0 24,3.589 24,8 C24,12.411 27.589,16 32,16" id="Fill-54-Copy">
+</path>
+            <path d="M8,44 C3.589,44 0,47.589 0,52 C0,56.411 3.589,60 8,60 C12.411,60 16,56.411 16,52 C16,47.589 12.411,44 8,44" id="Fill-55">
+</path>
+            <path d="M32,44 C27.589,44 24,47.589 24,52 C24,56.411 27.589,60 32,60 C36.411,60 40,56.411 40,52 C40,47.589 36.411,44 32,44" id="Fill-55-Copy">
+</path>
+            <path d="M8,22 C3.589,22 0,25.589 0,30 C0,34.411 3.589,38 8,38 C12.411,38 16,34.411 16,30 C16,25.589 12.411,22 8,22" id="Fill-56">
+</path>
+            <path d="M32,22 C27.589,22 24,25.589 24,30 C24,34.411 27.589,38 32,38 C36.411,38 40,34.411 40,30 C40,25.589 36.411,22 32,22" id="Fill-56-Copy">
+</path>
+        </g>
+    </g>
+</svg>
+                                            </div>
+                                            <div class="menu">
+                                                <!--?xml version="1.0" encoding="UTF-8"?-->
+                                                <svg width="100%" height="100%" viewBox="0 0 23 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+</defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard/Main-Head" transform="translate(-556.000000, -22.000000)" fill="#D8D8D8">
+            <path d="M570.5,16.5263158 C570.5,18.1949507 569.154125,19.5526316 567.5,19.5526316 C565.845875,19.5526316 564.5,18.1949507 564.5,16.5263158 C564.5,14.8576809 565.845875,13.5 567.5,13.5 C569.154125,13.5 570.5,14.8576809 570.5,16.5263158 Z M564.5,33.4736842 C564.5,31.8050493 565.845875,30.4473684 567.5,30.4473684 C569.154125,30.4473684 570.5,31.8050493 570.5,33.4736842 C570.5,35.1423191 569.154125,36.5 567.5,36.5 C565.845875,36.5 564.5,35.1423191 564.5,33.4736842 Z M564.5,25 C564.5,23.3313651 565.845875,21.9736842 567.5,21.9736842 C569.154125,21.9736842 570.5,23.3313651 570.5,25 C570.5,26.6686349 569.154125,28.0263158 567.5,28.0263158 C565.845875,28.0263158 564.5,26.6686349 564.5,25 Z" id="Combined-Shape" transform="translate(567.500000, 25.000000) rotate(-90.000000) translate(-567.500000, -25.000000) ">
+</path>
+        </g>
+    </g>
+</svg>
+                                            </div>
+                                            <i class="collapseable fa fa-angle-down" data-target="#835944" data-toggle="collapse">
+</i>
+                                            <a class="hidden" rel="nofollow" data-method="delete" href="dashboard_items/835944">
+                                                <div class="remove-dropdown">Remove From Dashboard</div>
+                                            </a>
+                                        </header>
+                                        <div class="panel-collapse collapse in" id="835944">
+                                            <div class="card-body">
+                                                <div class="daily-motivation-body">"Run and you will live awhile. And dying in your bed many years from now, you'll want to trade all the days since for one chance to come back here and tell your enemies that they may take our lives but they
+                                                    will never take our freedom!!" -William Wallace</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <script style="">
+                                        initClock();
+                                    </script>
+                                    <script style="">
+                                        $(document).ready(function() {
+                                            $(".widget-sortable").sortable({
+                                                handle: "header",
+                                                axis: "y",
+                                                original_position: null,
+                                                update: function(event, ui) {
+                                                    var order_counter = 0;
+                                                    widgets_order_array = []
+                                                    $(this).closest('.widget-sortable').children('.card').each(function() {
+                                                        console.log(order_counter)
+                                                        dashboard_item_id = $(this).attr('data-dashboard-item-id');
+                                                        widgets_order_array.push([dashboard_item_id, order_counter])
+                                                        order_counter++;
+                                                    });
+                                                    console.log(widgets_order_array)
+                                                    $.ajax({
+                                                        url: Routes.update_dashboard_items_sort_dashboard_items_path(),
+                                                        type: "patch",
+                                                        datatype: "json",
+                                                        data: {
+                                                            widgets_order_array: widgets_order_array
+                                                        },
+                                                    });
+                                                }
+                                            });
+
+                                            $('.menu').hover(
+                                                function() {
+                                                    $(this).closest('header').find('a').removeClass('hidden')
+                                                },
+                                                function() {
+                                                    $(this).closest('header').find('a').addClass('hidden')
+                                                }
+                                            );
+                                            $('.widget-sortable header a').hover(
+                                                function() {
+                                                    $(this).removeClass('hidden')
+                                                },
+                                                function() {
+                                                    $(this).addClass('hidden')
+                                                }
+                                            );
+                                            $('.widget-sortable header .remove-dropdown').hover(
+                                                function() {
+                                                    $(this).closest('header').find('a').removeClass('hidden')
+                                                },
+                                                function() {
+                                                    $(this).closest('header').find('a').addClass('hidden')
+                                                }
+                                            );
+                                        })
+                                    </script>
+                                </div>
+                                <div id="add-new-widget">
+                                    <div class="card">
+                                        <div class="card-inner">Add New Widget<img src="/assets/dashboard/dotted-3024d2f9fec8c1d233701ad93e8e297cd7511eb805b9ca74686d1ffdaa22c1d9.png" alt="Dotted">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget-sortable-sm ui-sortable">
+                                    <div class="card" id="allies-widget">
+                                        <header class="ui-sortable-handle">Your Allies</header>
+                                        <div class="card-row user striped blue-hover" data-chatroom-id="1061436114" data-user-id="1010612042" onclick="chat_find_or_create($(this))">
+                                            <div class="user-avatar-holder" style="border: solid #85DFFF 2px;">
+                                                <img class="pull-left" src="/assets/aquits-production/uploads/user/avatar/1010612042/avatar_1547806601.2416031.png" alt="Avatar 1547806601.2416031">
+                                            </div>
+                                            <div class="user-name">Emma Balogun</div>
+                                        </div>
+                                        <a href="/dashboard/ally/new">
+                                            <div class="card-row" id="add-new-ally">+ Add New Ally</div>
+                                        </a>
+                                    </div>
+                                    <div class="card" id="coaches-widget">
+                                        <header class="ui-sortable-handle">Your Coaches</header>
+                                        <a href="/dashboard/coach/new">
+                                            <div class="card-row" id="add-new-ally">+ Add Coach</div>
+                                        </a>
+                                    </div>
+                                    <div class="card" id="groups-widget">
+                                        <header class="ui-sortable-handle">Your Group</header>
+                                        <a href="/dashboard/groups">
+                                            <div class="card-row" id="add-new-ally">+ Sign Up For A Group</div>
+                                        </a>
+                                    </div>
+                                    <script style="">
+                                        $(document).ready(function() {
+                                            $(".widget-sortable-sm").sortable({
+                                                handle: "header",
+                                                axis: "y",
+                                                original_position: null,
+                                                update: function(event, ui) {
+                                                    var order_counter = 0;
+                                                    $(this).closest('.widget-sortable-sm').children('.card').each(function() {
+                                                        console.log(order_counter)
+                                                        dashboard_item_id = $(this).attr('data-dashboard-item-id');
+                                                        $.ajax({
+                                                            url: Routes.update_dashboard_items_sort_dashboard_items_path(),
+                                                            type: "patch",
+                                                            datatype: "json",
+                                                            data: {
+                                                                sort: order_counter,
+                                                                dashboard_item_id: dashboard_item_id
+                                                            },
+                                                        });
+                                                        order_counter++;
+                                                    });
+                                                }
+                                            });
+
+                                            $('.widget-sortable-sm header a').hover(
+                                                function() {
+                                                    $(this).removeClass('hidden')
+                                                },
+                                                function() {
+                                                    $(this).addClass('hidden')
+                                                }
+                                            );
+                                            $('.widget-sortable-sm header .remove-dropdown').hover(
+                                                function() {
+                                                    $(this).closest('header').find('a').removeClass('hidden')
+                                                },
+                                                function() {
+                                                    $(this).closest('header').find('a').addClass('hidden')
+                                                }
+                                            );
+                                        })
+                                    </script>
+                                    <div id="mobile-app-banner">
+                                        <div class="mobile-banner-wrapper">
+                                            <img src="/assets/dashboard/mobile-app-banner-db1a176abc441ec913f5fb1fa7671d4418dcd5b05cad9223124b977fe6939909.png" alt="Mobile app banner">
+                                        </div>
+                                        <div class="app-store-links mar-top15">
+                                            <div class="col-sm-6">
+                                                <a target="_blank" href="https://itunes.apple.com/us/app/aquits-app/id1304648824?ls=1&amp;mt=8">
+                                                    <img src="/assets/marketing/new/apple-c98c87a5625c0d53c544154d3811d0ee7acfceb92b439aeef744dfa8b8aa0d64.png" alt="Apple">
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ftnd.aquits">
+                                                    <img src="/assets/marketing/new/google-eb9f6564a00a59ec850660067362a8eafbc11deb10b24e95f71fc18b483fca20.png" alt="Google">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            <script>
+                                $(document).ready(function() {
+                                    overlay_out()
+                                    $('#add-new-widget').click(function() {
+                                        $("#add-new-widget-modal.modal").modal('toggle')
+                                    })
+                                })
+                            </script>
+                        </div>
+                        <div class="hidden" id="submenu-item-awards">
+                        </div>
+                        <div class="hidden" id="submenu-item-journal">
+                        </div>
+                        <div class="hidden" id="submenu-item-freedomplan">
+                            <div class="user-responses">
+                            </div>
+                        </div>
+                        <div class="hidden" id="submenu-secondary-item-responses-quickquestions">
+                            <div class="user-responses">
+                            </div>
+                        </div>
+                        <div class="hidden" id="submenu-secondary-item-responses-actions">
+                            <div class="user-responses">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add_modal_wrapper">
+            </div>
+            <div class="add_new_widget_wrapper">
+                <div class="modal fade" id="add-new-widget-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content smaller-modal">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">
+</button>
+                                <div class="modal-title">ADD NEW WIDGET</div>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/dashboard_items/update_dashboard_items" accept-charset="UTF-8" method="post">
+                                    <input name="utf8" type="hidden" value="✓">
+                                    <input type="hidden" name="authenticity_token" value="jAdkj+l2FQiXs6G8W+2OiZdkI14W0fr1oRTHXZKyCdRa1PSqR/mTur/W67xD9qr1LanNb/OMjMYfKvqtFStjaQ==">
+                                    <div class="flex-container">
+                                        <div class="dashboard-item active">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835944" checked="checked">
+</span>
+                                            <span>Daily Motivation</span>
+                                        </div>
+                                        <div class="dashboard-item">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835943">
+</span>
+                                            <span>Goals</span>
+                                        </div>
+                                        <div class="dashboard-item">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835942">
+</span>
+                                            <span>Freedom Plan</span>
+                                        </div>
+                                        <div class="dashboard-item">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835941">
+</span>
+                                            <span>Journal Entry</span>
+                                        </div>
+                                        <div class="dashboard-item">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835940">
+</span>
+                                            <span>Community</span>
+                                        </div>
+                                        <div class="dashboard-item">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835939">
+</span>
+                                            <span>Surveys</span>
+                                        </div>
+                                        <div class="dashboard-item">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835938">
+</span>
+                                            <span>Inventory Results</span>
+                                        </div>
+                                        <div class="dashboard-item">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835937">
+</span>
+                                            <span>Victories Setbacks</span>
+                                        </div>
+                                        <div class="dashboard-item active">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835936" checked="checked">
+</span>
+                                            <span>Recent Activity</span>
+                                        </div>
+                                        <div class="dashboard-item">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835935">
+</span>
+                                            <span>Training Progress</span>
+                                        </div>
+                                        <div class="dashboard-item active">
+                                            <span class="hidden">
+<input type="checkbox" name="dashboard_items[]" id="dashboard_items_" value="835934" checked="checked">
+</span>
+                                            <span>Victory Counter</span>
+                                        </div>
+                                    </div>
+                                    <input type="submit" name="commit" value="Add to dashboard" class="submit-widget-modal" data-disable-with="Updating">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $('.dashboard-item').click(function() {
+                        $(this).toggleClass('active')
+                        if ($(this).hasClass('active')) {
+                            $(this).find('input[type=checkbox]').prop('checked', true)
+                        } else {
+                            $(this).find('input[type=checkbox]').prop('checked', false)
+                        }
+                    })
+                </script>
+            </div>
+            <script>
+                // For ajaxing tab content.
+                ajax_call_for_partial('.menu-li[data-filter=submenu-item-dashboard]', Routes.profile_dashboard_path())
+                ajax_call_for_partial('.menu-li[data-filter=submenu-item-awards]', Routes.profile_awards_path());
+                ajax_call_for_partial('.menu-li[data-filter=submenu-item-freedomplan]', Routes.profile_freedomplan_path())
+                ajax_call_for_partial('.menu-li[data-filter=submenu-item-journal]', Routes.profile_journal_path())
+
+                $(document).ready(function() {
+                    $('.sub-menu-tabs .menu-li').click(function() {
+                        if ($(this).attr('data-filter') != 'submenu-item-dashboard') {
+                            $('#dashboard').removeClass('hidden')
+                            $('#three-ways-holder').html("")
+                        }
+                    })
+
+                    if ("profile" == "profile" && "dashboard" == "dashboard" && "user" == "user" && "" == "") {
+                        window.setTimeout(function() {
+                            $('.menu-li[data-filter=submenu-item-dashboard]').click();
+                            overlay_out();
+                        }, 500);
+                    }
+                })
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <script>
+                var checkAgent = function(regex) {
+                    //console.log(navigator.userAgent.toLowerCase())
+                    return regex.test(navigator.userAgent.toLowerCase());
+                };
+                var isChrome = checkAgent(/chrome/);
+                var isFirefox = checkAgent(/firefox/);
+                var isEdge = checkAgent(/edge/);
+
+                if ((!isChrome && !isFirefox) || isEdge) {
+                    check_num = localStorage.getItem("broswer_check");
+                    //console.log(check_num);
+                    localStorage.setItem("broswer_check", parseInt(check_num) + 1);
+                    if (parseInt(check_num) < 2) {
+                        $('#modals-wrapper').append("<div class=\"modal fade\" id=\"chrome-modal\"> <
+                            div class = \"modal-dialog\"> <
+                            div class = \"modal-content\"> <
+                            div class = \"modal-header\"> <
+                            button class = \"close\" data-dismiss=\"modal\"> <\ / button > <
+                            img src = \"//assets/chrome-logo-a09d3adf8564f37093792f72e9dea6eeaec8fa1a7c96d94edd746f3c57644870.jpg\" alt=\"Chrome logo\" /> <
+                            h4 class = \"modal-title\">Use Google Chrome<\/h4> <\ / div > <
+                            div class = \"modal-body clearfix\"> <
+                            div class = \"medium-text\">For a better experience, use Google Chrome.<\/div> <
+                            a class = \"button btn-blue\" id=\"install-chrome\" target=\"_blank\" href=\"https://www.google.com/chrome/browser\">Install google chrome<\/a> <\ / div > < \/div> <\ / div > < \/div>");
+                        }
+                    }
+
+                    $(document).ready(function() {
+                        if ("true" === "true") {
+                            $.ajax({
+                                url: Routes.three_ways_path(),
+                                datatype: "js"
+                            });
+                        }
+                    })
+            </script>
+            <div id="billing-wrapper">
+            </div>
+        </div>
+   {%endblock%}

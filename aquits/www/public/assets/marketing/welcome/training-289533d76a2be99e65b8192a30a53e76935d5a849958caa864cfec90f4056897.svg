@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>FORT_Training@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="1.44424438%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#17EAD9" offset="0%"></stop>
+            <stop stop-color="#6078EA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Marketing-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FORT_Training" transform="translate(-5.000000, -5.000000)" fill="url(#linearGradient-1)">
+            <path d="M30,5.2173913 C16.32,5.2173913 5.2173913,16.32 5.2173913,30 C5.2173913,43.68 16.32,54.7826087 30,54.7826087 C43.68,54.7826087 54.7826087,43.68 54.7826087,30 C54.7826087,16.32 43.68,5.2173913 30,5.2173913 L30,5.2173913 Z M25.0434783,41.1521739 L25.0434783,18.8478261 L39.9130435,30 L25.0434783,41.1521739 L25.0434783,41.1521739 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

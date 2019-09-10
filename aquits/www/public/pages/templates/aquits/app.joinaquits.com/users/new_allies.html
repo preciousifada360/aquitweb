@@ -1,0 +1,134 @@
+{%extends 'aquits/app.joinaquits.com/users/create_account.html'%} {%block title%} Acquits | New Ally {%endblock%} {%block headerText%}
+<div class="row">
+    <div class="col-sm-12 centered mar-top10 mar-bot40">
+        <h2>Become An Ally</h2>
+        <h3>Support someone on their journey to overcome pornography</h3>
+    </div>
+</div>
+{%endblock%} {%block middleText%}
+<div class="section-4 centered marketing-stat overflow-hidden">
+    <h1>Support Those You Love</h1>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h2>Become the ultimate ally and accountability partner to those overcoming pornography.</h2>
+        </div>
+    </div>
+    <div class="marketing-stat-item">
+        <h3>
+            <span data-count-up="85">85</span>
+            <span>%</span>
+        </h3>
+        <h5>Aquit users report an 85% decrease in depressive symptions</h5>
+    </div>
+    <div class="marketing-stat-divider">
+    </div>
+    <div class="marketing-stat-item">
+        <h3>
+            <span data-count-up="90">90</span>
+            <span>%</span>
+        </h3>
+        <h5>Over 90% reported that Acquits helped move them toward longer-term change.</h5>
+    </div>
+    <div class="marketing-stat-divider">
+    </div>
+    <div class="marketing-stat-item">
+        <h3>
+            <span data-count-up="88">88</span>
+            <span>%</span>
+        </h3>
+        <h5>Users report an 88% reduction in porn use.</h5>
+    </div>
+</div>
+{%endblock%} {%block form%}
+<form class="recurly-form" id="new_user" action="{{router.pathFor('usersNew_Allies')}}" accept-charset="UTF-8" method="post">
+    <div class="card how-it-works-wrapper card-wrapper">
+        <div class="card-wrapper slider-wrapper">
+            <div class="form-wrapper" id="left-side">
+                <div class="row mar-bot20 mar-top30">
+                    <div class="col-xs-12 col-12" style="margin: 5px;color:rgb(236, 52, 52);text-align: center;" id="formError">
+                        {%if error is defined%} {{error|lower|capitalize}} {%endif%}
+                    </div>
+                    <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                        <h3 class="subscription-header centered mar-top20">Sign Up For Free To Be An Aquit Ally For Someone You Care About</h3>
+                        <h4 class="centered mar-top5">Support those struggling with porn.</h4>
+                        <div class="row mar-top20">
+                            <div class="col-sm-6 mar-bot20">
+                                <div class="field">
+                                    <input type="text" id="first_name" placeholder="First Name" aquits_validate="Name is required" onkeyup="combine_name()" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mar-bot20">
+                                <div class="field">
+                                    <input type="text" id="last_name" placeholder="Last Name" aquits_validate="Name is required" onkeyup="combine_name()" />
+                                    <input id="name" type="hidden" name="username" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field mar-bot20">
+                            <input placeholder="Email" aquits_validate="Email is required" onchange="handleChangeEmail(this)" type="text" value="" name="email" id="user_email" />
+                            <div class="mar-top10 redded" id="email-error">
+                            </div>
+                        </div>
+                        <div class="row mar-bot30">
+                            <div class="col-sm-6">
+                                <div class="field">
+                                    <input placeholder="Password" aqiuts_validate="Password is required" onchange="handleChangePassword(this)" type="password" name="password" id="user_password" />
+                                </div>
+                                <div class="mar-top10 redded" id="password-error">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="field">
+                                    <input placeholder="Confirm Password" aquits_validate="Confirmation is required" onchange="handleChangeConfirmPassword(this)" type="password" name="user[password_confirmation]" id="user_password_confirmation" />
+                                </div>
+                                <div class="mar-top10 redded" id="confirm-password-error">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="birthday-section">
+                            <h4 class="mar-bot20 mar-left10">Date Of Birth</h4>
+                            <div class="birthday-wrapper">
+                                <div class="field">
+                                    <input placeholder="Date of birth" aquits_validate="Date of birth is required" type="date" name="date" onChange="console.log(this.value);" />
+
+                                </div>
+                            </div>
+                            <div class="redded mar-top10" id="birthday-error">
+                            </div>
+                        </div>
+                        <div class="field mar-bot10">
+                            <label for="I_am_13_Years_Old_or_Older">I am 13 years old or older</label>
+                            <input type="checkbox" name="over_13" id="over_13" required="required" />
+                        </div>
+                        <div class="field mar-bot30 terms">I agree to the <a target="_blank" href="/terms">Terms &amp; Services</a>
+                            <input type="checkbox" name="terms" id="terms" required="required" />
+                        </div>
+                        <div class="row">
+                            <div class="field mar-left10 mar-bot30">
+                                <input type="hidden" name="role" id="role" value="ally" />
+                                <input id="submitBtn" type="submit" name="commit" value="Sign up" class="submit marketing-button pink col-xs-12" data-disable-with="Submitting..." data-disable-with="Submitting..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{%endblock%}{%block middleOption%}{%endblock%} {%block switchOption%}
+<div class="signup-section-nav">
+    <a href="create_account">
+        <div class="signup-section-nav-item">
+            <img src="/assets/marketing/new/individuals-809c9f4e31bdcc7b6c4878b95dc68743f41f457ce0c38386cff48225ec835f5f.svg" alt="Individuals" />
+            <span>Individuals</span>
+        </div>
+    </a>
+    <a href="new_allies">
+        <div class="signup-section-nav-item">
+            <img src="/assets/marketing/new/allies-87e5286ed8d9229317068903bae0791ad8067a027382c59bb928db3041cc1660.svg" alt="Allies" />
+            <span>Allies</span>
+            <div class="signup-section-nav-item-active"></div>
+        </div>
+    </a>
+</div>
+{%endblock%}

@@ -1,0 +1,460 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} {%block title%}Acquits | Webinars {%endblock%}{%block activeNav%}selected{%endblock%} {%block selectedController%}webinars{%endblock%} {%block bodyContent%}
+<div class="custom-aquits-select mar-top40 mar-bot20" id="full-width">
+        <div class="sub-menu">
+        <div class="card sub-menu-card">
+        <div class="sub-menu-title">
+        <span>Webinars</span>
+        <!--
+        <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()">
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg width="17px" height="16px" viewbox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch 
+            <title>FORT_Messages-icon</title>
+            <desc>Created with Sketch.</desc>
+            <defs>
+                <lineargradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+                    <stop stop-color="#25A9D9" offset="0%">
+                    </stop>
+                    <stop stop-color="#145972" offset="100%">
+                    </stop>
+                </lineargradient>
+            </defs>
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+                    <g id="Group" transform="translate(910.000000, 3.000000)">
+                        <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                            <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <div class="message-incoming hidden">
+        </div>
+        </div>
+    -->
+        <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <svg width="17px" height="17px" viewbox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Group-8" fill="#B3B3B3">
+                    <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+                    </rect>
+                    <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+                    </rect>
+                    <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+                    </rect>
+                </g>
+            </g>
+        </svg>
+        </div>
+        <div class="pull-left hamburger-btn" id="open-nav">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <svg width="17px" height="17px" viewbox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Group-8" fill="#B3B3B3">
+                    <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+                    </rect>
+                    <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+                    </rect>
+                    <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+                    </rect>
+                </g>
+            </g>
+        </svg>
+        </div>
+        </div>
+        <div class="sub-menu-nav">
+        <ul class="sub-menu-tabs centered">
+        <li class="menu-li active secondary_menu_hover" data-filter="submenu-item-webinars" style="position:relative">
+        <span>Webinars</span>
+        </li>
+        <li class="menu-li secondary_menu_hover" data-filter="submenu-item-format">
+        <span>Format</span>
+        </li>
+        <li class="menu-li secondary_menu_hover" data-filter="submenu-item-faq">
+        <span>FAQ</span>
+        </li>
+        <li class="menu-li secondary_menu_hover" data-filter="submenu-item-termsandconditions">
+        <span>Terms and Conditions</span>
+        </li>
+        </ul>
+        </div>
+        </div>
+        <div class="pad-top100">
+        </div>
+        
+        <script>// click on params submenu
+        var submenu_route = "";
+        $(document).ready(function(){
+          window.setTimeout( function() {
+            $('[data-filter=submenu-item-' + submenu_route + ']').click();
+            $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+            $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+          },1000);
+        })</script>
+        <div class="mar-bot20 clearfix" id="page_header">
+        <div class="centered mar-bot10">
+        <div class="col-sm-6 col-sm-offset-3">
+        <div class="blue-header">Live Guidance &amp; Encouragement</div>
+        <div class="page-description medium-text bolded mar-top10">Find inspiration from experts and individuals who have achieved lasting freedom.</div>
+        </div>
+        </div>
+        </div>
+        <div class="container" id="resources">
+        <div class="sub-menu-panels">
+        <div id="submenu-item-webinars">
+        <div class="container">
+        <div class="col-md-12">
+        </div>
+        </div>
+
+        <div id="webinars_catalog">
+        <div id="webinars_catalog_upcoming">
+        <div class="container">
+
+        <div class="mar-top20">
+        <div class="webinar-cards-holder upcoming" id="resources">
+        <div id="resources-shares">
+          <!--oooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+          {%for index, w in web%}
+        <div class="resources_share share-card col-sm-4 catalog_card" id="resources_share_969671663">
+        <div class="catalog_card card video webinar all-types blue-hover open-share action-btn" data-target="#add-ally" data-toggle="modal">
+        <header>
+        <div>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg viewbox="0 0 30 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+            <title>Webinars</title>
+            <desc>Created with Sketch.</desc>
+            <defs>
+                <radialgradient cx="86.2754522%" cy="-20.0679593%" fx="86.2754522%" fy="-20.0679593%" r="156.966783%" gradienttransform="translate(0.862755,-0.200680),scale(1.000000,0.736842),rotate(112.267906),translate(-0.862755,0.200680)" id="radialGradient-1">
+                    <stop stop-color="#FFC800" offset="0%">
+                    </stop>
+                    <stop stop-color="#FE0059" offset="100%">
+                    </stop>
+                </radialgradient>
+            </defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Old-aquits-Landing-Page" transform="translate(-758.000000, -1171.000000)" fill="url(#radialGradient-1)">
+                    <g id="Webinars" transform="translate(748.000000, 1167.000000)">
+                        <path d="M25,29.1666667 C28.4583333,29.1666667 31.2291667,26.375 31.2291667,22.9166667 L31.25,10.4166667 C31.25,6.95833333 28.4583333,4.16666667 25,4.16666667 C21.5416667,4.16666667 18.75,6.95833333 18.75,10.4166667 L18.75,22.9166667 C18.75,26.375 21.5416667,29.1666667 25,29.1666667 L25,29.1666667 Z M36.0416667,22.9166667 C36.0416667,29.1666667 30.75,33.5416667 25,33.5416667 C19.25,33.5416667 13.9583333,29.1666667 13.9583333,22.9166667 L10.4166667,22.9166667 C10.4166667,30.0208333 16.0833333,35.8958333 22.9166667,36.9166667 L22.9166667,43.75 L27.0833333,43.75 L27.0833333,36.9166667 C33.9166667,35.9166667 39.5833333,30.0416667 39.5833333,22.9166667 L36.0416667,22.9166667 L36.0416667,22.9166667 Z" id="Shape">
+                        </path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        </div>
+        <div>
+        <div class="resource-title" id="rap">{{w.title}}</div>
+        </div>
+        </header>
+        <div>
+        <div class="card-body no-padding">
+        <img class="pull-left large bordered" src="/assets/aquits-production/uploads/webinar/banner/990983400/webinar_1509299185.261707.png" alt="Webinar 1555528348.3533673" />
+        </div>
+        <div class="clearfix">
+        </div>
+        </div>
+        <footer>
+        <div class="catalog_date"><!--data should be here BUT JUST MONTH AND DAY--></div>
+        <div class="catalog_date_details"><!--data should be here --><br /> {{w.time}}(24hrs) WST</div>
+        <p class="catalog_content_text" id="rap">{{w.note}}</p>
+        <div class="mar-top20">
+        <span class="likes">
+        <span class="like-partial">
+        <a disable_with="Loading..." data-remote="true" rel="nofollow" data-method="post" href="/resources/shares/969671663/like">
+        <i class="fa fa-heart unliked">
+        </i>
+        </a>
+        </span>
+        <span class="likes-count">4 Likes</span>
+        </span>
+        <ul class="actions">
+        <li class="comments">
+        <span class="comments-count">0</span>
+        <a class="open-share" href="#">Comments </a>
+        </li>
+        </ul>
+        </div>
+        </footer>
+        </div>
+        </div>
+        {%endfor%}
+        <!--oooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div id="webinars_catalog_previous">
+        <div class="pull-down">
+        <i aria-hidden="true" class="fa fa-angle-down">
+        </i>
+        </div>
+        </div>
+        </div>
+        <script>
+            $('.open-share').on('click', function(e){
+          $('div#transition-overlay').fadeIn();
+          e.preventDefault();
+        
+          var parent = $(this).parents('.resources_share');
+          var parent_id = parent.attr('id');
+          var share_id = parent_id.replace('resources_share_', "");
+        
+          $.ajax({
+            url: Routes.resources_share_path( share_id ),
+            share_type: "get",
+            datashare_type: "js",
+            success: function(data) {
+              $('div#transition-overlay').fadeOut();
+              //console.log('success');
+            },
+            error: function(e) {
+              //console.log('sorry');
+            }
+          })
+        });
+        
+        $('#webinars_catalog').on('click', '.reply a', function(e){
+          var parent_id = $(this).parents('.comment').attr('id');
+          var id = parent_id.replace('comment_', '');
+        
+          $(".replies-of-comment-" + id).find('.addReply').css('display', 'block');
+        });
+        
+        $('#following-tabbar a.js-unfollow, .user-info a.js-unfollow').hover(function(){
+        
+          $('.default', this).toggle();
+          $('.hover', this).toggle();
+          $('.glyphicon-ok-sign', this).toggle();
+          $('.glyphicon-remove-sign', this).toggle();
+        });
+        
+        var share_type = "all share_types";
+        var user_id = "";
+        
+        $('.resource-categories').find('.menu-li').on('click', function(e) {
+          share_type = $(this).data('category');
+          $('#resources-shares .resources_share').addClass('hidden');
+          $('.'+share_type).parent().removeClass('hidden');
+        });
+        
+        var timer;
+        
+        $('input#search').on('keyup', function(e) {
+          // clear any existing timer which will exist if the user is actively typing
+          window.clearTimeout(timer);
+        
+          keywords = $(e.target).val();
+        
+          timer = window.setTimeout(sendParams(keywords), 200);
+        });
+        
+        function sendParams(keywords) {
+          $.get(
+            Routes.resources_path(),
+            {
+              keywords: keywords,
+              target: "user",
+              share_type: share_type,
+              user_id: user_id
+            },
+            function() {
+        
+              window.setTimeout( function() {
+                $('.scrollable').perfectScrollbar({
+                  suppressScrollX:true,
+                  includePadding:true
+                });
+              },200);
+            }
+          );
+        }</script>
+        </div>
+        <div class="hidden" id="submenu-item-format">
+        <div class="container">
+        <div id="format">
+        <div class="card">
+        <div class="card-body">
+        <div class="large-text">Format</div>
+        <div class="medium-text">When you show up at a webinar, the video-conferencing feature will feature the presenting speaker.  A comment feature on the bottom will offer a chance for questions throughout.  Each webinar will also be available in an archive after the presentation date.</div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="hidden" id="submenu-item-faq">
+        <div class="container">
+        <div class="col-sm-8 col-sm-offset-2">
+        <div class="card faq-table">
+        <div class="card-body responsive">
+        <div class="large-text centered">FAQ</div>
+        <div class="card-row">
+        <div class="faq-header">How long are webinars?<div class="fa fa-angle-down expander">
+        </div>
+        </div>
+        <div class="faq-body">They are usually 1 hour – but sometimes may be a little shorter or a little longer. </div>
+        </div>
+        <div class="card-row">
+        <div class="faq-header">Is it possible to ask live questions to presenters?<div class="fa fa-angle-down expander">
+        </div>
+        </div>
+        <div class="faq-body">Yes – via the comment system.</div>
+        </div>
+        <div class="card-row">
+        <div class="faq-header">How do you decide on webinar presenters?  Is that something I could do sometimes?<div class="fa fa-angle-down expander">
+        </div>
+        </div>
+        <div class="faq-body">We’re always on the look-out for insightful, encouraging researchers and professionals in the area.  We’re also interested in featuring the stories of people who have had success in reaching some lasting freedom. If you fall in one of those categories, for sure send us a note! (info@joinaquits.com)</div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="hidden" id="submenu-item-termsandconditions">
+        <div class="container">
+        <div id="terms_and_conditions">
+        <div class="card">
+        <div class="card-body">
+        <div class="large-text">Terms And Conditions</div>
+        <p>As a aquits user participating in a aquits Webinar, you acknowledge that you understand:&nbsp;<br>
+        </p>
+        <p>
+        <br>
+        </p>
+        <p>13.1&nbsp; Technical adjustments. Webinar participation may require you to configure your software settings on your web-device upon first use.</p>
+        <p>
+        <br>
+        </p>
+        <p>13.2&nbsp; Ownership. The materials and replay of webinars are for aquits users only and should not be forwarded on to third parties. Webinar participants will enter into a separate arrangement whereby their visual, audio and written content become owned by aquits.&nbsp;&nbsp;</p>
+        <div>
+        <br>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        {%for index, w in web%}
+        <div class="add_modal_wrapper">
+            <div class="modal fade" id="add-ally">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="card video-modal">
+                            <header>
+                                <button class="close" data-dismiss="modal">
+                                  </button>
+                            <div class="card-share-header">
+                            <div class="col-xs-1">
+                            <div class="webinars-wrapper">
+                            <!--?xml version="1.0" encoding="UTF-8"?-->
+                        <svg viewBox="0 0 30 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+                            <title>Webinars</title>
+                            <desc>Created with Sketch.</desc>
+                            <defs>
+                                <radialGradient cx="86.2754522%" cy="-20.0679593%" fx="86.2754522%" fy="-20.0679593%" r="156.966783%" gradientTransform="translate(0.862755,-0.200680),scale(1.000000,0.736842),rotate(112.267906),translate(-0.862755,0.200680)" id="radialGradient-1">
+                                    <stop stop-color="#FFC800" offset="0%">
+                                        
+                                    </stop>
+                                    <stop stop-color="#FE0059" offset="100%">
+                                        
+                                    </stop>
+                                </radialGradient>
+                            </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Old-Fortify-Landing-Page" transform="translate(-758.000000, -1171.000000)" fill="url(#radialGradient-1)">
+                                    <g id="Webinars" transform="translate(748.000000, 1167.000000)">
+                                        <path d="M25,29.1666667 C28.4583333,29.1666667 31.2291667,26.375 31.2291667,22.9166667 L31.25,10.4166667 C31.25,6.95833333 28.4583333,4.16666667 25,4.16666667 C21.5416667,4.16666667 18.75,6.95833333 18.75,10.4166667 L18.75,22.9166667 C18.75,26.375 21.5416667,29.1666667 25,29.1666667 L25,29.1666667 Z M36.0416667,22.9166667 C36.0416667,29.1666667 30.75,33.5416667 25,33.5416667 C19.25,33.5416667 13.9583333,29.1666667 13.9583333,22.9166667 L10.4166667,22.9166667 C10.4166667,30.0208333 16.0833333,35.8958333 22.9166667,36.9166667 L22.9166667,43.75 L27.0833333,43.75 L27.0833333,36.9166667 C33.9166667,35.9166667 39.5833333,30.0416667 39.5833333,22.9166667 L36.0416667,22.9166667 L36.0416667,22.9166667 Z" id="Shape">
+                                            
+                                        </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        </div>
+                        </div>
+                        
+                        <div class="col-xs-11">
+                            <h3>{{w.title}}</h3>
+                        </div>
+                        </div>
+                        </header>
+                        <div class="card-body no-padding">
+                            <div class="card-row">
+                            <div class="video-container">
+                            <img class="pull-left large bordered">
+                            <iframe src="{{w.video}}" frameborder="0" width="90%" preload="none" height="90%" style="width:90%;height:300px;">
+                              No video Found
+                            </iframe>
+                            <div class="coming_soon_backdrop">
+                            
+                        </div>
+                        <div class="coming_soon">
+                            <div class="large-text">Coming Soon</div>
+                        <div class="medium-text"><!--data should be here --></div>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="card-row" id="rap">{{w.content}}
+                          
+                        <div class="like-flag-section">
+                            <span class="like-partial">
+                            <a disable_with="Loading..." data-remote="true" rel="nofollow" data-method="post" href="/resources/shares/969671663/like">
+                            <i class="fa fa-heart unliked">
+                            
+                        </i>
+                        </a>
+                        </span>
+                            <span class="likes-count">4 Likes</span>
+                        </div>
+                        </div>
+                        <div id="viewable-groups-partial">
+                            
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $(document).on('click', '#add-ally .switch label', function(e) {
+                        e.stopPropagation()
+                        e.preventDefault()
+                        if ($(this).closest('.switch').find('input:checked').length == 0) {
+                            $(this).closest('.switch').find(':checkbox').prop('checked', true);
+                        } else {
+                            $(this).closest('.switch').find(':checkbox').prop('checked', false);
+                        }
+                    })
+                })
+
+                $('.modal').on('submit', 'form', function(event) {
+                    if ($('#tos').prop('checked')) {
+                        return true // jquery will now submit the form
+                    } else {
+                        event.preventDefault()
+                        $("label[for='tos']").addClass('redded')
+                        return false // jquery will not submit the form
+                    }
+                })
+
+                $('#relationship_relationship').prepend("<option value='' disabled='disabled'> --------------- </option>");
+            </script>
+        </div>
+        {%endfor%}
+
+        <script>expander();</script>
+        </div>
+{%endblock%}

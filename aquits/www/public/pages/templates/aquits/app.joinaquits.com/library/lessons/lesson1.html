@@ -1,0 +1,403 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} 
+{%block title%}Acquits | Lessons {%endblock%}
+{%block activeNav%}selected{%endblock%} 
+{%block selectedController%}Lesson{%endblock%} {%block bodyContent%}
+{%set currLessonIndex = 0%}
+{%set currLesson = attribute(lessons,currLessonIndex)%}
+<div class="custom-aquits-select mar-bot20">
+    <div class="sub-menu">
+        <div class="card sub-menu-card">
+            <div class="sub-menu-title">
+                <span>{{currLesson.title}}</span>
+                <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg width="17px" height="16px" viewbox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+<title>FORT_Messages-icon</title>
+<desc>Created with Sketch.</desc>
+<defs>
+    <lineargradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+        <stop stop-color="#25A9D9" offset="0%">
+
+        </stop>
+        <stop stop-color="#145972" offset="100%">
+
+        </stop>
+    </lineargradient>
+</defs>
+<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+        <g id="Group" transform="translate(910.000000, 3.000000)">
+            <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+
+                </path>
+            </g>
+        </g>
+    </g>
+</g>
+</svg>
+                    <div class="message-incoming hidden">
+
+                    </div>
+                </div>
+                <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn">
+                    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                    <svg width="17px" height="17px" viewbox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+
+        </rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+
+        </rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+
+        </rect>
+    </g>
+</g>
+</svg>
+</div>
+                <div class="pull-left hamburger-btn" id="open-nav">
+                    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                    <svg width="17px" height="17px" viewbox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+
+        </rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+
+        </rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+
+        </rect>
+    </g>
+</g>
+</svg>
+</div>
+            </div>
+            <script>
+                $('#msg-toggle-btn').css('top', '5px');
+                $('.hamburger-btn').css('top', '10px');
+            </script>
+        </div>
+        <div class="pad-top80">
+
+        </div>
+        </div>
+        <script>
+            // click on params submenu
+            var submenu_route = "";
+            $(document).ready(function() {
+                window.setTimeout(function() {
+                    $('[data-filter=submenu-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+                }, 1000);
+            })
+        </script>
+        <div class="container">
+            <div class="lesson lesson-show-user">
+                <div class="row mar-top-30">
+                    <ul class="breadcrumbs">
+                        <li>
+                            <a href="/dashboard/program">Training</a>
+                        </li>
+                        <li>{{currLesson.trainingTitle}}</li>
+                        <li>{{currLesson.title}}</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="lesson-main-card">
+                            <div class="lesson-main-container">
+                                <div class="col-md-8 padding-none">
+                                    <div class="video-container">
+                                        <div class="video-quiz-player relative-position">
+                                            <div id="rewatch">
+                                                <div class="large-text">Good job! You finished this activity. Would you like to move on to the next activity?</div>
+                                                <a class="button btn-blue" href="/library/lessons/1050931332">Yes, continue</a>
+                                                <a class="button btn-pink-white mar-lef10 no">No, close</a>
+                                                <a class="rewatch button btn-white-pink">Rewatch lesson</a>
+                                            </div>
+                                            <iframe src="{{currLesson.videoUrl}}" frameborder="0" preload="none" width="100%" height="100%" style="width:100%;height:400px;">
+                                                No Video Found
+                                            </iframe>
+
+
+                                        
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 padding-none">
+                                    <div id="lesson-sidebar">
+                                        <div id="sidebar-header">
+                                            <div id="sidebar-week">Week {{currLesson.trainingWeekNo}} - Lesson {{currLessonIndex}} of {{lessons|length}}</div>
+                                            <div id="sidebar-lesson-title">{{currLesson.title}}</div>
+                                            <div id="sidebar-lesson-progress">
+                                                <div id="lesson-progress-bar">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 6.25%; background-color: #24aad9;">
+                                                        </div>
+                                                    </div>
+                                                  <!--  <div class="progress-num">6%</div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="sidebar-lessons-holder">
+                                            <div class="lesson-item current">
+                                                <div class="lesson-icon-active">
+                                                    <img src="/assets/activity_icons/new/Video_White-0c9b4e60cb3041e23365ae2862916f91bcd7efe0ec5723a387dbf2524b322cda.png" alt="Video white" />
+                                                </div>
+                                                <div class="lesson-details">
+                                                    <div class="lesson-title">{{currLesson.title}}</div>
+                                                    <div class="lesson-duration">2 mins</div>
+                                                </div>
+                                                <div class="lesson-status">
+
+                                                </div>
+                                            </div>
+                                            {%for index,lesson in lessons%}
+                                            {%if (index > 0) %}
+                                            <a href="/library/lessons/1050931332">
+                                                <div class="lesson-item">
+                                                    <div class="lesson-icon-active">
+                                                        <img src="{{lesson.imageUrl}}" alt="Action" />
+                                                    </div>
+                                                    <div class="lesson-icon">
+                                                        <img src="{{lesson.imageUrl}}" alt="Action white" />
+                                                    </div>
+                                                    <div class="lesson-details">
+                                                        <div class="lesson-title">{{lesson.title}}</div>
+                                                        <div class="lesson-duration">15 mins</div>
+                                                    </div>
+                                                    <div class="lesson-status">
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            {%endif%}
+                                            {%endfor%}
+                                        </div>
+                                    </div>
+                                    <script>
+                                        window.setTimeout(function() {
+                                            var current_item = $('.lesson-item.current').position().top;
+                                            var first_item = $('.lesson-item').first().position().top;
+                                            $('#sidebar-lessons-holder').animate({
+                                                scrollTop: current_item - first_item + "px"
+                                            }, 300);
+                                        }, 1500)
+
+                                        //adjust so the font fits
+                                        title_div = $('#sidebar-lesson-title');
+                                        title_length = title_div.html().length;
+
+                                        if (title_length > 45) {
+                                            title_div.css('font-size', '15px')
+                                        } else if (title_length > 30) {
+                                            title_div.css('font-size', '17px')
+                                        }
+                                    </script>
+                                </div>
+                                <div class="clearfix">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card sub-menu-bottom">
+                            <div class="card sub-menu-bottom-wrapper">
+                                <div class="sub-menu-nav mar-top0">
+                                    <ul class="sub-menu-bottom-tabs centered">
+                                        <li data-filter="submenu-bottom-item-about">
+                                            <span>About</span>
+                                        </li>
+                                        <li  data-filter="submenu-bottom-item-comments">
+                                            <span>Comments</span>
+                                        </li>
+                                        <!--
+                                        <li data-filter="submenu-bottom-item-deeperdives">
+                                            <span>Deeper Diclass="active"ves</span>
+                                        </li>
+                                        <li data-filter="submenu-bottom-item-transcript">
+                                            <span>Transcript</span>
+                                        </li>
+                                    -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                submenu_bottom();
+                            </script>
+                            <div class="card-body sub-menu-bottom-panels">
+                                <div class="active" id="submenu-bottom-item-about">
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="top">
+                                            <div class="clearfix">
+
+                                            </div>
+                                        </div>
+                                        <div class="bottom mar-top10">
+                                            <div class="submenu-bottom-time small-text">Read this.
+                                                <div class="medium-text">
+                                                    {{currLesson.content}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden" id="submenu-bottom-item-comments">
+                                    <div class="row">
+                                        <div class="col-sm-10 col-sm-offset-1" id="lesson_comments">
+                                            <div class="row comments-container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="makeComment">
+                                                            <div class="new-comment">
+                                                                <form class="new_comment" id="new_comment" action="{{router.pathFor(less)}}" method="post">
+                                                                    <input name="utf8" type="hidden" value="&#x2713;" />
+                                                                    <input type="hidden" name="commentable_share_type" id="commentable_share_type" value="library/lesson/video" />
+                                                                    <input type="hidden"
+                                                                        name="comment[parent_id]" id="comment_parent_id" />
+                                                                    <div class="whois">
+                                                                        <div class="whois-holder" style="border:solid 2px #85DFFF">
+                                                                            <img class="img img-circle" src="/assets/avatars/1-db44809490c3b9f9d1faf8533e5a9d6f255727c97d6fc3ffdcffd42cb32738b0.png" alt="Avatar 1555590882.3353314" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="new-comment-input relative-position">
+                                                                        <textarea placeholder="Share Your Thoughts..." name="content" id="comment_body">
+                                                                        </textarea>
+                                                                        <div class="new-comment-footer clearfix">
+                                                                            <input type="submit" name="commit" value="Send" class="button btn-blue pull-right responsive-btn" data-disable-with="Sending.." data-disable-with="Sending.." />
+                                                                           
+                                                                            <div class="pull-right picker-wrapper">
+                                                                                <div class="picker-selection-option">
+                                                                                     
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div >
+                                                                    Comments
+                                                                    {% for index,l in less%}
+                                                                    <textarea placheholder="comments" readonly="readonly">{{l.content}}</textarea>
+                                                                    {% endfor %}
+                                                                    <div class="send-message-toggle">
+                                                                        <input type="checkbox" name="enter_ddad15e39a51be699f84" id="enter_ddad15e39a51be699f84" value="1" class="cmn-toggle cmn-toggle-round" />
+                                                                        <label for="enter_ddad15e39a51be699f84">
+
+                                                                    </label>
+                                                                        <script>
+                                                                            $(document).ready(function() {
+                                                                                $('.new-comment label').html('').unbind().click(function() {
+                                                                                    if ($(this).closest('form').find('.send-message-toggle input[type=checkbox]').is(':checked') == true) {
+                                                                                        console.log(1);
+                                                                                        $(this).closest('form').find('input[type=submit]').removeClass('btn-grey').addClass('btn-blue').prop("disabled", false);;
+                                                                                    } else {
+                                                                                        console.log(2);
+                                                                                        $(this).closest('form').find('input[type=submit]').addClass('btn-grey').removeClass('btn-blue').prop("disabled", true);;
+                                                                                    }
+                                                                                });
+                                                                            })
+                                                                        </script>
+                                                                    </div>
+                                                                    <div class="send-message-toggle-text">Press Enter To Send Message</div>
+                                                                </form>
+                                                                <script>
+                                                                    $('.new-comment textarea').keypress(function(e) {
+                                                                        if (e.which == 13) {
+                                                                            if ($(this).val() != "" && $(this).closest('form').find('.send-message-toggle input[type=checkbox]').is(":checked") == true) {
+                                                                                $(this).closest('form').submit();
+                                                                                $(this).val('');
+                                                                            }
+                                                                        }
+                                                                    });
+
+                                                                    $('.new-comment input[type=submit]').click(function(e) {
+                                                                        target_form = $(this).closest('form')
+                                                                        setTimeout(function() {
+                                                                            target_form.find('textarea').val('');
+                                                                        }, 500);
+                                                                    })
+
+                                                                    $(".chb").change(function() {
+                                                                        $(".chb").prop('checked', false);
+                                                                        $(this).prop('checked', true);
+                                                                    });
+                                                                </script>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="commentList">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4 col-sm-offset-4 centered">
+                                                        <div class="button btn-blue hover" id="load-more-comments">Load more</div>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    $('#load-more-comments').click(function() {
+                                                        if ($('.commentList').find(".next").length > 0) {
+                                                            $('.commentList').find(".next a").click();
+                                                            $('.commentList').find("#paginate").hide();
+                                                            $(this).html('Loading more resources...');
+                                                        } else {
+                                                            $(this).html("That's all! ");
+                                                        }
+                                                    })
+                                                </script>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden" id="submenu-bottom-item-deeperdives">
+
+                                </div>
+                                <div class="hidden" id="submenu-bottom-item-transcript">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="resources">
+                            <div id="share-modal">
+
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            window.setTimeout(function() {
+                resize_lesson();
+            }, 500);
+
+            function resize_lesson() {
+                $('#lesson-sidebar').height($("#lesson-main-card").height());
+                $('#sidebar-lessons-holder').height($("#lesson-main-card").height() - 90);
+            }
+
+            if ("user" != "user") {
+                $('input[type=submit].btn-blue').removeClass('btn-blue').addClass('btn-disabled').prop('disabled', "true");
+            }
+        })
+    </script>
+    <div id="billing-wrapper">
+
+    </div>
+</div>
+{%endblock%}

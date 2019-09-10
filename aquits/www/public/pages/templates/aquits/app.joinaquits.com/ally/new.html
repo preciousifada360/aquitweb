@@ -1,0 +1,644 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} {%block title%}Acquits | Ally {%endblock%}{%block activeNav%}selected{%endblock%} {%block selectedController%}allies{%endblock%} {%block bodyContent%}
+<div class="custom-aquits-select mar-bot20">
+    <div class="sub-menu">
+        <div class="card sub-menu-card">
+            <div class="sub-menu-title">
+                <span style="font-size: 18px;">Allies</span>
+                <!--
+                <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()">
+                    <!--?xml version="1.0" encoding="UTF-8"?
+                    <svg width="17px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch
+    <title>Acquits_Messages-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#25A9D9" offset="0%">
+</stop>
+            <stop stop-color="#145972" offset="100%">
+</stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+            <g id="Group" transform="translate(910.000000, 3.000000)">
+                <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                    <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+</path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                    <div class="message-incoming hidden">
+                    </div>
+                </div>
+            -->
+                <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8" fill="#B3B3B3">
+            <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+            <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+            <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+        </g>
+    </g>
+</svg>
+                </div>
+                <div class="pull-left hamburger-btn" id="open-nav">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8" fill="#B3B3B3">
+            <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+</rect>
+            <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+</rect>
+            <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+</rect>
+        </g>
+    </g>
+</svg>
+                </div>
+            </div>
+            <div class="sub-menu-nav">
+                <ul class="sub-menu-tabs centered">
+                    <li class="menu-li active secondary_menu_hover" data-filter="submenu-item-allies" style="position:relative">
+                        <span>Allies</span>
+                    </li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-about">
+                        <span>About</span>
+                    </li>
+                    <!--<li class="menu-li secondary_menu_hover" data-filter="submenu-item-faq">
+                        <span>FAQ</span>
+                    </li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-termsandconditions">
+                        <span>Terms And Conditions</span>-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pad-top100">
+        </div>
+       
+     
+        <script>
+            // click on params submenu
+            var submenu_route = "";
+            $(document).ready(function() {
+                window.setTimeout(function() {
+                    $('[data-filter=submenu-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+                }, 1000);
+            })
+        </script>
+        {%if message_sent%}
+                    <div class="alert-info" style="text-align: center;">
+                        An Email has been sent to your Ally
+                    </div>
+                    {%endif%}
+
+        <div class="mar-bot20 clearfix" id="page_header">
+            <div class="centered mar-bot10">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="blue-header">Support From Those You Trust</div>
+                    <div class="page-description medium-text bolded mar-top10">Connect with someone you trust in your real (offline) life. Connecting with your first ally is completely free.</div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="allies">
+            <div class="sub-menu-panels">
+                <div id="submenu-item-allies">
+                    <div class="col-sm-8 col-sm-offset-2" id="ally_ribbon">
+                        <div class="action-notification green-background">
+                            <div class="action-text">
+                                <div class="action-header">Sign Up An Ally Today!</div>
+                                <div class="action-content">Connect with someone you trust in your life.</div>
+                            </div>
+                            <div class="action-btn" data-target="#add-ally" data-toggle="modal">Add ally</div>
+                        </div>
+                    </div>
+                    <div id="ally_cards_container">
+                        <div class="row">
+                              
+                            <div class="individual_ally_card_container">
+                                 <!--
+
+                                <div class="individual_ally_card card">
+
+                                    <div class="row small-padding active">
+
+                                        <div class="col-sm-12">
+                                           
+                                            <div class="ally_card_image">
+                                                <img class="img-circle" src="/assets/aquits-production/uploads/user/avatar/1010612042/avatar_1547806601.2416031.png" alt="Avatar 1547806601.2416031">
+                                                <div class="pull-left" id="message_icon">
+                                                    <i class="span a-envelope" data-chatroom-id="" data-user-id="1010612042" onclick="chat_find_or_create($(this))">
+xml version="1.0" encoding="UTF-8" standalone="no"?
+<svg width="16px" height="16px" viewBox="0 0 21 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Message-Icon---New-Copy-2" transform="translate(-1188.000000, -81.000000)" fill="#3399CC">
+            <g id="Group-2" transform="translate(1176.000000, 67.000000)">
+                <path d="M30.9375,27.7734375 C30.9375,27.9602051 30.7727051,28.125 30.5859375,28.125 L14.4140625,28.125 C14.2272949,28.125 14.0625,27.9602051 14.0625,27.7734375 L14.0625,19.3359375 C14.2932129,19.5996094 14.5458984,19.8413086 14.8205566,20.0610352 C16.3916016,21.2695312 17.9736328,22.5 19.5007324,23.7744141 C20.324707,24.4665527 21.3464355,25.3125 22.4890137,25.3125 L22.5,25.3125 L22.5109863,25.3125 C23.6535645,25.3125 24.675293,24.4665527 25.4992676,23.7744141 C27.0263672,22.5 28.6083984,21.2695312 30.1794434,20.0610352 C30.4541016,19.8413086 30.7067871,19.5996094 30.9375,19.3359375 L30.9375,27.7734375 Z M30.9375,16.2268066 C30.9375,17.1606445 30.0366211,18.380127 29.3225098,18.9404297 C27.8503418,20.0939941 26.3781738,21.2585449 24.9169922,22.4230957 C24.3347168,22.8955078 23.2800293,23.90625 22.5109863,23.90625 L22.5,23.90625 L22.4890137,23.90625 C21.7199707,23.90625 20.6652832,22.8955078 20.0830078,22.4230957 C18.6218262,21.2585449 17.1496582,20.0939941 15.6774902,18.9404297 C14.6887207,18.1604004 14.0625,17.0727539 14.0625,15.8203125 C14.0625,15.6335449 14.2272949,15.46875 14.4140625,15.46875 L30.5859375,15.46875 C31.003418,15.46875 30.9375,15.9521484 30.9375,16.2268066 L30.9375,16.2268066 Z M32.34375,15.8203125 C32.34375,14.8535156 31.5527344,14.0625 30.5859375,14.0625 L14.4140625,14.0625 C13.4472656,14.0625 12.65625,14.8535156 12.65625,15.8203125 L12.65625,27.7734375 C12.65625,28.7402344 13.4472656,29.53125 14.4140625,29.53125 L30.5859375,29.53125 C31.5527344,29.53125 32.34375,28.7402344 32.34375,27.7734375 L32.34375,15.8203125 Z" id="-copy">
+</path>
+            </g>
+        </g>
+    </g>
+</svg>
+</i>
+                                                </div>
+                                                <div class="clearfix">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="centered mar-top10">
+
+                                                <div class="ally_name_label">Emma Balogun</div>Mentor
+                                                <div class="active-relationship-text">Active</div>
+                                            </div>
+                                        -->
+                                        </div>
+                                    </div>
+                                    <div class="ca-details clearfix">
+                                        <div class="col-xs-12">
+                                            <!--
+                                            <div class="row">
+                                                <div class="row">
+                                                    <form class="form-horizontal" role="form" action="{{router.pathFor(ally)}}" method="get" accept-charset="UTF-8">
+                                                        <input name="utf8" type="hidden" value="✓">
+                                                        <input type="hidden" name="_method" value="patch">
+                                                        <div class="col-xs-8 col-xs-offset-2 mar-top10">
+                                                            <div class="setting mar-bot40">
+                                                                <p class="pull-left">Freedom Plan</p>
+                                                                <div class="pull-right">
+                                                                    <div class="switch">
+                                                                        <input name="relationship[strategies]" type="hidden" value="0">
+                                                                        <input class="cmn-toggle cmn-toggle-round listo" type="checkbox" value="1" checked="checked" name="relationship[strategies]" id="relationship_strategies">
+                                                                        <label onclick="submit_toggle_form($(this))">
+</label>
+                                                         <form           </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-8 col-xs-offset-2">
+                                                            <div class="setting mar-bot40">
+                                                                <p class="pull-left">Quick Questions</p>
+                                                                <div class="pull-right">
+                                                                    <div class="switch">
+                                                                        <input name="relationship[quick_questions]" type="hidden" value="0">
+                                                                        <input class="cmn-toggle cmn-toggle-round listo" type="checkbox" value="1" checked="checked" name="relationship[quick_questions]" id="relationship_quick_questions">
+                                                                        <label onclick="submit_toggle_form($(this))">
+</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-8 col-xs-offset-2">
+                                                            <div class="setting mar-bot40">
+                                                                <p class="pull-left">Actions</p>
+                                                                <div class="pull-right">
+                                                                    <div class="switch">
+                                                                        <input name="relationship[actions]" type="hidden" value="0">
+                                                                        <input class="cmn-toggle cmn-toggle-round listo" type="checkbox" value="1" checked="checked" name="relationship[actions]" id="relationship_actions">
+                                                                        <label onclick="submit_toggle_form($(this))">
+</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-8 col-xs-offset-2">
+                                                            <div class="setting mar-bot40">
+                                                                <p class="pull-left">Survey Results</p>
+                                                                <div class="pull-right">
+                                                                    <div class="switch">
+                                                                        <input name="relationship[surveys]" type="hidden" value="0">
+                                                                        <input class="cmn-toggle cmn-toggle-round listo" type="checkbox" value="1" checked="checked" name="relationship[surveys]" id="relationship_surveys">
+                                                                        <label onclick="submit_toggle_form($(this))">
+</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-8 col-xs-offset-2">
+                                                            <div class="setting mar-bot40">
+                                                                <p class="pull-left">Inventories</p>
+                                                                <div class="pull-right">
+                                                                    <div class="switch">
+                                                                        <input name="relationship[inventories]" type="hidden" value="0">
+                                                                        <input class="cmn-toggle cmn-toggle-round listo" type="checkbox" value="1" checked="checked" name="relationship[inventories]" id="relationship_inventories">
+                                                                        <label onclick="submit_toggle_form($(this))">
+</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-8 col-xs-offset-2">
+                                                            <div class="setting mar-bot40">
+                                                                <p class="pull-left">Lifestyle Inventories</p>
+                                                                <div class="pull-right">
+                                                                    <div class="switch">
+                                                                        <input name="relationship[lifestyle]" type="hidden" value="0">
+                                                                        <input class="cmn-toggle cmn-toggle-round listo" type="checkbox" value="1" checked="checked" name="relationship[lifestyle]" id="relationship_lifestyle">
+                                                                        <label onclick="submit_toggle_form($(this))">
+</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input type="submit" name="commit" value="Update Relationship" class="hidden" data-disable-with="Update Relationship">
+                                                        <div class="col-xs-8 col-xs-offset-2">Last Login<span class="pull-right">None</span>
+                                                        </div>
+                                                    </form>
+                                                    <div class="col-xs-12">
+                                                        <div class="remove_ally_btn blued underlined">
+                                                            <a data-confirm="Are you sure you want to remove this ally? All your conversations between you and this user will be lost." class="mar-top30" rel="nofollow" data-method="delete" href="new">Remove Ally</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                $('.ca-overview').on('click', function() {
+                                    if ($(this).hasClass('active')) {
+                                        $(this).next().slideUp();
+                                        $(this).removeClass('active');
+                                    } else {
+                                        $(this).addClass('active');
+                                        $(this).next().slideDown();
+                                    }
+                                });
+                                $('.ca-overview').removeClass('ca-overview');
+                            </script>
+                            <script>
+                                function submit_toggle_form(target_element) {
+                                    if ($(target_element).closest('.switch').find('input:checked').length == 0) {
+                                        $(target_element).closest('.switch').find(':checkbox').prop('checked', true);
+                                    } else {
+                                        $(target_element).closest('.switch').find(':checkbox').prop('checked', false);
+                                    }
+                                    $(target_element).closest('form').submit();
+                                }
+                            </script>
+                             -->
+                            <div class="individual_ally_card_container">
+                                <div class="card" id="add_ally_card">
+                                    <div class="row small-padding active">
+                                        <div class="plus_sign_container">
+                                            <div class="fa fa-plus fa-5x">
+                                            </div>
+                                            <div class="add_button_container">
+                                                <a class="md button btn-blue" data-target="#add-ally" data-toggle="modal">Add Ally</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" id="submenu-item-about">
+                    <div id="format">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="large-text">About</div>
+                                <div class="medium-text">When you sign up an ally, the person you designate will receive an email invitation that includes information about what being an ally means. And by the way, Acquits allies are someone in your real life (not just online).
+                                    While it would be nice to get all our accountability online, there are many reasons why connecting in real life can be powerful. We encourage you to talk with an ally directly prior to receiving the email. As long as
+                                    that ally is on board, they will begin having access to details about you progress, at whatever level you determine. Aside from some initial guidance and support from us at the beginning, your ally will be independent.
+                                    You and your ally can work out the relationship that feels best.</div>
+                                <div class="medium-text">
+                                </div>
+                                <div class="medium-text">
+                                </div>
+                                <div class="medium-text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" id="submenu-item-faq">
+                    <div id="faqs">
+                        <div class="card faq-table">
+                            <div class="card-body responsive">
+                                <div class="large-text centered">FAQ</div>
+                                <div class="card-row">
+                                    <div class="faq-header">Can Anyone Be An Ally?
+                                        <div class="fa fa-angle-down expander">
+                                        </div>
+                                    </div>
+                                    <div class="faq-body">As long as they’re providing the kind of support you need! Our experience and observation is that not everyone is willing or able to provide truly helpful support as an ally. So be smart about who you pick!</div>
+                                </div>
+                                <div class="card-row">
+                                    <div class="faq-header">It Feels A Little Scary To Ask Someone To Help Me Like This. Any Thoughts For Me?
+                                        <div class="fa fa-angle-down expander">
+                                        </div>
+                                    </div>
+                                    <div class="faq-body">Join the club! Our surveys show that high percentages of Acquits users feel similar fears or worries. Opening up and being vulnerable is inherently stretching for many of us. All we can say is that it’s worth it! We
+                                        can’t tell you how many times someone told us that getting accountable was a crucial part of finding lasting freedom. Maybe it will be for you too.</div>
+                                </div>
+                                <div class="card-row">
+                                    <div class="faq-header">What If I Don’t Want My Ally To See Everything On My Dashboard?
+                                        <div class="fa fa-angle-down expander">
+                                        </div>
+                                    </div>
+                                    <div class="faq-body">You get to decide what the person does or doesn’t see.</div>
+                                </div>
+                                <div class="card-row">
+                                    <div class="faq-header">How Often Will My Ally Get A Report On How I’m Doing?
+                                        <div class="fa fa-angle-down expander">
+                                        </div>
+                                    </div>
+                                    <div class="faq-body">That’s also up to you and your ally to decide – with customizable options available.</div>
+                                </div>
+                                <div class="card-row">
+                                    <div class="faq-header">Can I Ask Someone Else In Acquits To Be My Ally?
+                                        <div class="fa fa-angle-down expander">
+                                        </div>
+                                    </div>
+                                    <div class="faq-body">Unfortunately no. There are important legal and liability reasons why we cannot facilitate the direct sharing of contact information on the website (basically, it could be abused or taken advantage of big-time…otherwise,
+                                        we probably would!). While online accountability has the advantage of being more private, there is a power to the in-person connection that it also misses. So we are also legitimately interested in encouraging people
+                                        to re-connect with “IRL” relationships, as one Acquits participant called them. If it takes time to warm up to that, it’s okay! All that being said, seeking and sharing support on the forum is totally fine. And
+                                        this can include accountability. There are lots of threads on the forum where that can happen.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        expander();
+                    </script>
+                </div>
+                <div class="hidden" id="submenu-item-termsandconditions">
+                    <div id="terms_and_conditions">
+                        <div class="card">
+                           <div class="card-body">
+                               <!-- <div class="large-text">Terms And Conditions</div>-->
+                                <p>As a Acquits user using the Acquits ally feature, you acknowledge that you understand:&nbsp;</p>
+                                <p>
+                                    <br>
+                                </p>
+                                <p>15.1&nbsp; No substitute. Acquits allies are not a substitute for counseling, psychotherapy, psychoanalysis, mental health care or substance abuse treatment and Acquits users will not use it in place of any form of diagnosis,
+                                    treatment or therapy.&nbsp; Nothing contained in this Site or App is intended to be used as medical advice or to diagnose, treat, cure or prevent any disease. The assistance of a Acquits ally is not a substitute for
+                                    independent professional advice from a medical/health professional – nor does it replace professional advice by legal, financial, business, spiritual or other qualified professionals. Acquits users are encouraged to
+                                    seek independent professional guidance for legal, medical, financial, business, spiritual or other matters. Acquits users should not stop a medication or treatment protocol or alter your treatment plan without first
+                                    consulting their mental health, medical or healthcare provider(s). All decisions in these areas are exclusively that of the individual Acquits user and she/he acknowledges that her/his decisions and actions regarding
+                                    personal mental or emotional wellness are her/his sole responsibility.</p>
+                                <p>
+                                    <br>
+                                </p>
+                                <p>15.2&nbsp; Acquits allies... Acquits allies receive general guidance to encourage patience, generosity and other basic behavioral qualities that contribute to safety and positive support.&nbsp; This guidance does not constitute
+                                    “training” and Acquits does not take or presume responsibility for the actions (or lack of action) for allies that Acquits users recruit and access on the Acquits platform. Unlike Acquits Coaches or Acquits Group leaders,
+                                    Acquits allies are thus independent relationships that Acquits users identify in their own community and networks as possible supports to their recovery.&nbsp; No supervision or approval is provided by Acquits that
+                                    would warrant approval or authorization of a particular ally.&nbsp; Given all this, you agree to not hold Acquits responsible for advice an ally may or may not give.&nbsp;</p>
+                                <p>
+                                    <br>
+                                </p>
+                                <p>15.3&nbsp; Liability... Acquits users are fully responsible for themselves and their actions within and outside of the ally relationship. You are liable for any and all Claims resulting from or relating to any action by
+                                    you. You further agree to indemnify and hold harmless Acquits and its officers, directors and agents, from and against any and all damages, loss, cost, liability or expense (including attorney fees and costs) incurred
+                                    by any such party in connection with any complaints, demands, claims, or legal actions alleging illness, injury, death, or damage caused by you except in the event the Claims are solely the result of the gross negligence
+                                    or willful misconduct of Acquits.&nbsp;&nbsp;</p>
+                                <p>
+                                    <br>
+                                </p>
+                                <p>15.4&nbsp; Ally updates... Acquits reserves the right to modify or change the rules of allies without prior notification to current or new users. Any substantial modifications or changes, of course, would be subsequently
+                                    shared with current and new users.</p>
+                                <p>
+                                    <br>
+                                </p>
+                                <p>15.5&nbsp; By using Acquits allies, you agree with all the terms and conditions of this agreement.</p>
+                                <div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add_modal_wrapper">
+            <div class="modal fade" id="add-ally">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal">
+</button>
+                            <div class="modal-title">ADD NEW ALLY</div>
+                        </div>
+                        <div class="modal-body">
+                            <form class="new_relationship" id="new_relationship" action="{{router.pathFor(ally)}}" accept-charset="UTF-8" method="post">
+                                <input name="utf8" type="hidden" value="✓">
+                                <input type="hidden" name="authenticity_token" value="+GERWr/RwzOtxcD+yTGX+YRdm8yyVVGsJzMDbq64hzsusoF/EV5FgYWgiv7RKrOFPpB1/VcIJ5+ZDT6eKSHthg==">
+                                <div class="row">
+                                    <div class="col-md-6 mar-bot10">
+                                        <input aquits_validate="Name is required" placeholder="Ally First And Last Name" type="text" name="name" id="relationship_user_name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input aquits_validate="Email is required" placeholder="Ally Email" onchange="handleChangeEmail(this)" type="text" value="" name="email" id="relationship_user_email" required>
+                                        <div class="mar-top10 redded" id="email-error">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mar-top10">
+                                        <div class="modal-title">Select a relationship</div>
+                                        <select  class="custompicker mar-bot10" aquits_validate="Please pick a relationship" name="relate" id="relationship_relationship" style="display: none;" placeholder="What is your relationship?">
+<option value="Parent">Parent</option>
+<option value="Professional Therapist">Professional Therapist</option>
+<option value="Mentor">Mentor</option>
+<option value="Friend">Friend</option>
+<option value="Significant Other">Significant Other</option>
+<option value="Other">Other</option>
+</select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="ally-modal-notice">We recommend that you personally reach out to a potential ally prior to connecting them with Acquits. If you need help, read 'How to Break the ice' in the FAQ's on the Ally page. </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="header-blue mar-top10">Permissions</div>
+                                        <p>Choose what your Ally will have access to see.</p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                    <div class="ally-access-settings">
+                                        <div class="col-md-12">
+                                            <div class="setting">
+                                                <div class="col-xs-2">
+                                                    <img src="/assets/allies/checkmark-140006f62de40c47d70bd9466162ce5ed806702f9b08cbb4e7f69442f1bfe315.png" alt="Checkmark">
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="setting-label">Daily Tracker</div>
+                                                    <div class="setting-description">Analysis from your daily tracking of victories and setbacks.</div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                            <div class="setting">
+                                                <div class="col-xs-2">
+                                                    <img src="/assets/allies/checkmark-140006f62de40c47d70bd9466162ce5ed806702f9b08cbb4e7f69442f1bfe315.png" alt="Checkmark">
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="setting-label">Awards</div>
+                                                    <div class="setting-description">A summary of ongoing achievements throughout Acquits (Ranks, Badges, Coins &amp; Points).</div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                            <div class="setting">
+                                                <div class="col-xs-2">
+                                                    <div class="switch">
+                                                        <input name="relationship[strategies]" type="hidden" value="0">
+                                                        <input class="cmn-toggle cmn-toggle-round" type="checkbox" value="1" checked="checked" name="relationship[strategies]" id="relationship_strategies">
+                                                        <label for="relationship_strategies">.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="setting-label">Freedom Plan</div>
+                                                    <div class="setting-description">Your personalized plan for reaching long-term freedom. </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                            <div class="setting">
+                                                <div class="col-xs-2">
+                                                    <div class="switch">
+                                                        <input name="relationship[quick_questions]" type="hidden" value="0">
+                                                        <input class="cmn-toggle cmn-toggle-round" type="checkbox" value="1" checked="checked" name="relationship[quick_questions]" id="relationship_quick_questions">
+                                                        <label for="relationship_quick_questions">.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="setting-label">Quick Questions</div>
+                                                    <div class="setting-description">Your reflections and thoughts in response to key questions throughout Acquits.</div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                            <div class="setting">
+                                                <div class="col-xs-2">
+                                                    <div class="switch">
+                                                        <input name="relationship[actions]" type="hidden" value="0">
+                                                        <input class="cmn-toggle cmn-toggle-round" type="checkbox" value="1" checked="checked" name="relationship[actions]" id="relationship_actions">
+                                                        <label for="relationship_actions">.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="setting-label">Actions</div>
+                                                    <div class="setting-description">Your response to a variety of different suggested activities to try throughout Acquits.</div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                            <div class="setting">
+                                                <div class="col-xs-2">
+                                                    <div class="switch">
+                                                        <input name="relationship[surveys]" type="hidden" value="0">
+                                                        <input class="cmn-toggle cmn-toggle-round" type="checkbox" value="1" checked="checked" name="relationship[surveys]" id="relationship_surveys">
+                                                        <label for="relationship_surveys">.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="setting-label">Survey Results</div>
+                                                    <div class="setting-description">Data associated with your periodic surveys to help you measure your progress.</div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                            <div class="setting">
+                                                <div class="col-xs-2">
+                                                    <div class="switch">
+                                                        <input name="relationship[inventories]" type="hidden" value="0">
+                                                        <input class="cmn-toggle cmn-toggle-round" type="checkbox" value="1" checked="checked" name="relationship[inventories]" id="relationship_inventories">
+                                                        <label for="relationship_inventories">.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="setting-label">Strength And Vulnerability Inventories</div>
+                                                    <div class="setting-description">Data associated with your Strength &amp; Vulnerability Inventories which provide information on a number of different possible risk factors. </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                            <div class="setting">
+                                                <div class="col-xs-2">
+                                                    <div class="switch">
+                                                        <input name="relationship[lifestyle]" type="hidden" value="0">
+                                                        <input class="cmn-toggle cmn-toggle-round" type="checkbox" value="1" checked="checked" name="relationship[lifestyle]" id="relationship_lifestyle">
+                                                        <label for="relationship_lifestyle">.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="setting-label">Weekly Lifestyle Inventories</div>
+                                                    <div class="setting-description">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="header-blue mar-top10">Message To Ally</div>
+                                        <p>Your accountability partner will receive the following message with an email invite.</p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <textarea name="relationship[message]" id="relationship_message">Hey, I'm so glad that you are willing to be one of my allies in this fight. I know how important accountability is and how critical having someone in your corner can be. So your support means a lot. I really want to overcome this thing once and for all, so thank you so much for being willing to help me out!</textarea>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkbox-tos">
+                                            <input type="checkbox" name="tos" id="tos" value="1">
+                                            <label for="tos">I understand that my ally will be granted access to my information as outlined above.</label>
+                                        </div>
+                                        <input type="submit" name="commit" value="Add Ally" class="button btn-blue pull-right" data-disable-with="Add Ally">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $(document).on('click', '#add-ally .switch label', function(e) {
+                        e.stopPropagation()
+                        e.preventDefault()
+                        if ($(this).closest('.switch').find('input:checked').length == 0) {
+                            $(this).closest('.switch').find(':checkbox').prop('checked', true);
+                        } else {
+                            $(this).closest('.switch').find(':checkbox').prop('checked', false);
+                        }
+                    })
+                })
+
+                $('.modal').on('submit', 'form', function(event) {
+                    if ($('#tos').prop('checked')) {
+                        return true // jquery will now submit the form
+                    } else {
+                        event.preventDefault()
+                        $("label[for='tos']").addClass('redded')
+                        return false // jquery will not submit the form
+                    }
+                })
+
+                $('#relationship_relationship').prepend("<option value='' disabled='disabled'> --------------- </option>");
+            </script>
+        </div>
+    </div>
+    <div id="billing-wrapper">
+    </div>
+</div>
+
+{%endblock%}

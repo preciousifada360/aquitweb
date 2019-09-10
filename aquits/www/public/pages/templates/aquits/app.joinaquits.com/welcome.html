@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Acquits | Welcome</title>
+    {%include 'aquits/app.joinaquits.com/blocks/headers/homepage.html'%}
+</head>
+
+<body id="marketing">
+    <nav class="affix-top transparent-background">
+        <div class="container">
+            <div class="brand">
+                <a class="" href="/">
+                    <div class="brand lo">
+                        <img src="/assets/images/aquits7.png">
+                    </div>
+                </a>
+            </div>
+            <div class="pull-right hidden-md hidden-lg">
+                <div class="dropdown"><span class="glyphicon glyphicon-align-justify navbar-hamburger-menu" data-toggle="dropdown"></span>
+                    <ul class="dropdown-menu">
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/users/create_account">Sign Up For Free</a></li>
+                        <li><a href="/users/new_allies">For Allies</a></li>
+                        <li><a href="/sign-up">Pricing</a></li>
+                        <li><a href="/testimonials">Testimonials</a></li>
+                        <!--
+                        <li><a href="http://blog.joinaquits.com">Blog</a></li>
+                    -->
+                    </ul>
+                </div>
+            </div>
+            <div class="links">
+                <ul class="hidden-sm hidden-xs">
+                    <li class="pull-right">
+                        <a href="/login">
+                            <div class="marketing-button white arrow">Login<i aria-hidden="true" class="fa fa-arrow-right"></i></div>
+                        </a>
+                    </li>
+                    <li class="pull-right underlined">
+                        <li class="pull-right"><a href="/sign-up">Pricing</a></li>
+                        <li class="pull-right"><a href="/users/new_allies">For Allies</a></li>
+                        <li class="pull-right"><a href="/testimonials">Testimonials</a></li>
+                        <!--<li class="pull-right"><a href="http://blog.joinaquits.com">Blog</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="absolute-position full-width z-index">
+            <div class="container">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 mar-top20">
+                    <div id="application-notifications-container">
+                        <div class="ajax-notifications notifications hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="welcome">
+            <div class="section-1 centered">
+                <div class="video-wrapper">
+                    <div class="fullscreen-bg" id="marketing-index-video">
+                    <video autoplay="autoplay" loop="loop" muted="muted" src="/assets/aquits-production/marketing-background.mp4"></video>
+                </div>
+                    <div class="fullscreen-bg-picture"><img src="/assets/marketing/new/hero-d9c28b86576bd877cf3babd8fc9be278ac4506c2525688e34e9caf57db7e8465.png" alt="Hero" /></div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <h2 class="shadow">Quit Porn for Good</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                            <h3 class="shadow">Science-Based Support for Lasting Change</h3>
+                            <h4 class="mar-bot40">Acquits Your Life with 10 Minutes a Day</h4>
+                            <a href="/users/create_account">
+                                <div class="marketing-button arrow pink">Sign Up For Free<i aria-hidden="true" class="fa fa-arrow-right"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="play-btn">
+                    <div class="modal fade" id="marketing-video-modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content transparent-background">
+                                <div id="marketing-video"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-1">
+                <div class="row">
+                    <!--
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1 mar-top15">See How Acquits Works</div>
+                            <div class="col-md-3 col-sm-4 mar-top-6">
+                                <div class="marketing-button arrow white mar-top20" data-function="play-video">Play Video<i aria-hidden="true" class="fa fa-arrow-right"></i></div>
+                            </div>
+                            <script>
+                                $('[data-function=play-video]').on('click', function() {
+                                    $.get(Routes.marketing_video_path());
+                                    overlay_in();
+                                })
+
+                                $('#marketing-video-modal').on('hidden.bs.modal', function(e) {
+                                    $('#marketing-video').html("")
+                                })bu;
+                            </script>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+                
+            <div class="section-2">
+                <div class="mar-top40">
+                    <div class="phone-slider-outer-wrapper">
+                        <div class="phone-slider-wrapper">
+                            <img class="phone" src="/assets/marketing/welcome/iphone-80053ea644b67268b3e48493752c7802d07d13f04d91bad1147d1969e4b0a5cd.png" alt="Iphone" />
+                            <div class="slider-inner-wrapper">
+                                <div class="phone-image" data-attr="6">
+                                    <img src="/assets/marketing/welcome/6-99bca10fa09c97a20653d0bb83226fcff03672469dbb2655de22b8141a5737e1.png" alt="6" />
+                                </div>
+                                <div class="phone-image" data-attr="7">
+                                    <img src="/assets/marketing/welcome/7-dbcc3bbc390262d55c588c5507c28408f1c3b766f3c72e5b7a5fb483f0580432.png" alt="7" />
+                                </div>
+
+                                <div class="phone-image" data-attr="1">
+                                    <img src="/assets/marketing/welcome/1-304f06e98029fda02880391865d17fc805f4f6fcf5b8e53f32bdcbfe49493da7.png" alt="1" />
+                                </div>
+                                <div class="phone-image" data-attr="2">
+                                    <img src="/assets/marketing/welcome/2-2735c411517860f258773e1ac55ace3902e7addc9d32795ce94b4787a34acea5.png" alt="2" />
+                                </div>
+                                <div class="phone-image" data-attr="3">
+                                    <img src="/assets/marketing/welcome/3-82c29d6692670d5ea3af422debffb557f0f9b4cd13076044b486368dd705a9b9.png" alt="3" />
+                                </div>
+                                <div class="phone-image" data-attr="4">
+                                    <img src="/assets/marketing/welcome/4-fa37d34cc5bcbba3abccddbd55ebfe0ce4dca5d6fbbc9c1dd532ed0db531d473.png" alt="4" />
+                                </div>
+                                <div class="phone-image" data-attr="5">
+                                    <img src="/assets/marketing/welcome/5-a7ff8a8a239fb202b84695e952564336f8bfab53a2e40459eb09da9f9b4a98b4.png" alt="5" />
+                                </div>
+                                <div class="phone-image" data-attr="6">
+                                    <img src="/assets/marketing/welcome/6-99bca10fa09c97a20653d0bb83226fcff03672469dbb2655de22b8141a5737e1.png" alt="6" />
+                                </div>
+                                <div class="phone-image" data-attr="7">
+                                    <img src="/assets/marketing/welcome/7-dbcc3bbc390262d55c588c5507c28408f1c3b766f3c72e5b7a5fb483f0580432.png" alt="7" />
+                                </div>
+
+                                <div class="phone-image" data-attr="1">
+                                    <img src="/assets/marketing/welcome/1-304f06e98029fda02880391865d17fc805f4f6fcf5b8e53f32bdcbfe49493da7.png" alt="1" />
+                                </div>
+                                <div class="phone-image" data-attr="2">
+                                    <img src="/assets/marketing/welcome/2-2735c411517860f258773e1ac55ace3902e7addc9d32795ce94b4787a34acea5.png" alt="2" />
+                                </div>
+                                <div class="phone-image" data-attr="3">
+                                    <img src="/assets/marketing/welcome/3-82c29d6692670d5ea3af422debffb557f0f9b4cd13076044b486368dd705a9b9.png" alt="3" />
+                                </div>
+                                <div class="phone-image" data-attr="4">
+                                    <img src="/assets/marketing/welcome/4-fa37d34cc5bcbba3abccddbd55ebfe0ce4dca5d6fbbc9c1dd532ed0db531d473.png" alt="4" />
+                                </div>
+                                <div class="phone-image" data-attr="5">
+                                    <img src="/assets/marketing/welcome/5-a7ff8a8a239fb202b84695e952564336f8bfab53a2e40459eb09da9f9b4a98b4.png" alt="5" />
+                                </div>
+                            </div>
+
+                            <div class="phone-right-control" data-control="right">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <div class="phone-left-control" data-control="left">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="slider-text-container">
+                            <div class="slider-text-item hidden " data-attr="1">
+                                <div class="slider-dot active"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <h2>Personal Dashboard</h2>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <h5>Acquits is a science-based recovery tool to help individuals quit pornography.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-text-item hidden" data-attr="2">
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot active"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <h2>Expand Your Knowledge</h2>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <h5>Take our science-based training with you wherever you go.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-text-item" data-attr="3">
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot active"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <h2>Daily Tracking</h2>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <h5>Track daily victories and setbacks to discover patterns and valuable insights.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-text-item hidden" data-attr="4">
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot active"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <h2>Community Support</h2>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <h5>Share your own thoughts, experiences, and questions—brainstorming with other facing similar challenges.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-text-item hidden" data-attr="5">
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot active"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <h2>Incentive-Based Progress</h2>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <h5>Recovery doesn't have to be boring. Earn points, badges, coins, and different ranks as you move toward lasting freedom.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-text-item hidden" data-attr="6">
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot active"></div>
+                                <div class="slider-dot"></div>
+                                <h2>Invite Your Own Support Team</h2>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <h5>Invite whomever you want to join your support team and share in this journey with you.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-text-item hidden" data-attr="7">
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot"></div>
+                                <div class="slider-dot active"></div>
+                                <h2>Live Insights from Experts</h2>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <h5>Learn from renowned therapists and other professionals who can strengthen your understanding and commitment.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+                        var slider_rotator;
+
+                        $(document).on('ready', function() {
+                            $(document).on('click', '[data-control=right]', function() {
+                                clearInterval(slider_rotator);
+                                rotate_right()
+                            })
+ 
+                            function rotate_right() {
+                                first_element = $('.slider-inner-wrapper .phone-image').first();
+                                $('.slider-inner-wrapper').append(first_element);
+                                right_control = $('[data-control=right]');
+                                window.setTimeout(function() {
+                                    right_control.attr('data-control', "right");
+                                }, 500);
+                                data_page = $('.slider-inner-wrapper .phone-image:nth-child(5)').attr('data-attr')
+                                $('.slider-text-item').addClass('hidden')
+                                $('.slider-text-item[data-attr=' + data_page + ']').removeClass('hidden')
+                            }
+
+                            $(document).on('click', '[data-control=left]', function() {
+                                clearInterval(slider_rotator);
+                                last_element = $('.slider-inner-wrapper .phone-image').last();
+                                $('.slider-inner-wrapper').prepend(last_element);
+                                left_control = $('[data-control=left]');
+                                left_control.attr('data-control', "");
+                                window.setTimeout(function() {
+                                    left_control.attr('data-control', "left");
+                                }, 500);
+                                data_page = $('.slider-inner-wrapper .phone-image:nth-child(5)').attr('data-attr')
+                                $('.slider-text-item').addClass('hidden')
+                                $('.slider-text-item[data-attr=' + data_page + ']').removeClass('hidden')
+                            })
+
+                            slider_rotator = setInte rval(function() {
+                                rotate_right()
+                            }, 3000);
+
+                        });
+                    </script>
+                </div>
+                <div class="centered mar-top10">
+                    <div class="container mar-bot50">
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-4">
+                                <div class="row"><!--
+                                    <div class="col-xs-6 centered">
+                                        <div class="app-store-links">
+                                            <a target="_blank" href="https://itunes.apple.com/us/app/aquits-app/id1304648824?ls=1&amp;mt=8"><img src="/assets/marketing/new/apple-c98c87a5625c0d53c544154d3811d0ee7acfceb92b439aeef744dfa8b8aa0d64.png" alt="Apple" /></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 centered">
+                                        <div class="app-store-links">
+                                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ftnd.aquits"><img src="/assets/marketing/new/google-eb9f6564a00a59ec850660067362a8eafbc11deb10b24e95f71fc18b483fca20.png" alt="Google" /></a>
+                                        </div>
+                                    -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 centered">
+                                <a href="/users/create_account">
+                                    <div class="marketing-button arrow pink-outline mar-top20">Learn More<i aria-hidden="true" class="fa fa-arrow-right"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-3">
+                <div class="container" id="tabber-container"></div>
+            </div>
+
+            <!--
+            <div class="section-4 centered marketing-stat">
+                <h1>Building A Better Life</h1>
+                <div class="row">
+                    <div class="col-sm-6 a col-sm-offset-3">
+                        <h2>Join the largest community online in overcoming pornography</h2>
+                    </div>a 
+                </div>
+                <div class="marketing-stat-item">
+                    <h3><span data-count-up="85">85</span><span>%</span></h3>
+                    <h5>Acquits users report an 85% decrease in depressive symptoms</h5>
+                </div>
+                <div class="marketing-stat-divider">a </div>
+                <div class="marketing-stat-item">
+                    <h3><span data-count-up="90">90</span><span>%</span></h3>
+                    <h5>Over 90% reported that Acquits helped move them toward longer-term change.</h5>
+                </div>
+                <div class="marketing-stat-divider"></div>
+                <div class="marketing-stat-item">
+                    <h3><span data-count-up="88">88</span><span>%</span></h3>
+                    <h5>Users report an 88% reduction in porn use.</h5>
+                </div>
+                <script>
+                    var start_point = 0;
+                    var count_upper;
+                    var counter_is_on = false;
+                    clearInterval(count_upper);
+
+                    $(document).ready(function() {
+                        $(document).scroll(function() {
+                            if (counter_is_on == false) {
+                                if ($(window).scrollTop() + $('.marketing-stat').height() > $('.marketing-stat').offset().top) {
+                                    counter_is_on = true;
+                                    count_up();
+                                }
+                            }
+                        })
+                    })
+
+                    function count_up() {
+                        $('[data-count-up]').html(0);
+                        count_upper = setInterval(function() {
+                            $('[data-count-up]').each(function() {
+                                if (parseInt($(this).html()) < parseInt($(this).attr('data-count-up'))) {
+                                    $(this).html(start_point)
+                                }
+                            })
+                            start_point++;
+                            if (start_point > 100) {
+                                clearInterval(count_upper);
+                            }
+                        }, 20);
+                    }
+                </script>
+            </div>
+                -->
+            <div class="section-5">
+                <div class="container" id="testimonials">
+                    <div class="centered">
+                        <h2>What Others Are Saying About Acquits</h2>
+                    </div>
+                    <div class="testimonial-container">
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
+                                <div class="testimonail-card-wrapper">
+                                    <div class="saying-card">
+                                        <div class="card testimonial-card container">
+                                            <div class="testimonial-wrapper">
+                                                <div class="testimonial-body-wrapper">
+                                                    <div class="centered">
+                                                        <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars" /></div>
+                                                    </div>
+                                                    <div class="testimonial-text clearfix">
+                                                        <h5>&quot;There is a lot of good research and material in Acquits and it allows one to keep good track of everything happening. It&#39;s helping me make changes in my life and that&#39;s what it&#39;s
+                                                            there for.&quot;</h5>
+                                                    </div>
+                                                    <div class="testimonial-bottom-wrapper">
+                                                        <div class="testimonial-image-wrapper clearfix">
+                                                            <div class="saying-card-image-holder pull-left color-6"><img src="/assets/avatars/51-f39ffde2beee357ec143833cc8501f62b7aca215fb748ea1631ae03663da3e29.png" alt="51" /></div>
+                                                            <div class="saying-card-name clearfix container pull-left">
+                                                                <div class="testimonial-text-wrapper">
+                                                                    <div class="testimonial-name color-6">Brad</div>
+                                                                    <div class="saying-card-viewable">Male User</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="saying-card">
+                                        <div class="card testimonial-card container">
+                                            <div class="testimonial-wrapper">
+                                                <div class="testimonial-body-wrapper">
+                                                    <div class="centered">
+                                                        <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars" /></div>
+                                                    </div>
+                                                    <div class="testimonial-text clearfix">
+                                                        <h5>&quot;I would say the webinars are my favorite part of Acquits. Each and every webinar is engaging, with both the professional conversations and the Acquits chats giving me energy and motivation
+                                                            to fight! The surveys also help me reflect on my progress in all aspects, not only in recovery!&quot;</h5>
+                                                    </div>
+                                                    <div class="testimonial-bottom-wrapper">
+                                                        <div class="testimonial-image-wrapper clearfix">
+                                                            <div class="saying-card-image-holder pull-left color-1"><img src="/assets/avatars/194-6b0c888b07d200a117363cf41ad9260917eb095e286e63db03011834450c76f6.png" alt="194" /></div>
+                                                            <div class="saying-card-name clearfix container pull-left">
+                                                                <div class="testimonial-text-wrapper">
+                                                                    <div class="testimonial-name color-1">Jared</div>
+                                                                    <div class="saying-card-viewable">Male User</div>
+                                                                </div>
+                                                            </div>a 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="saying-card">
+                                        <div class="card testimonial-card container">
+                                            <div class="testimonial-wrapper">
+                                                <div class="testimonial-body-wrapper">
+                                                    <div class="centered">
+                                                        <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars" /></div>
+                                                    </div>
+                                                    <div class="testimonial-text clearfix">
+                                                        <h5>&quot;The new Acquits has been incredibly helpful for me to find freedom and I&#39;ve seen the results of applying what I&#39;ve learned. Also, I really like how the forum lets you seek help and
+                                                            give it to those who are in need of advice.&quot;</h5>
+                                                    </div>
+                                                    <div class="testimonial-bottom-wrapper">
+                                                        <div class="testimonial-image-wrapper clearfix">
+                                                            <div class="saying-card-image-holder pull-left color-4"><img src="/assets/avatars/193-14b5bb9167c57d6af0828152c79c1a6f6cc38190919e7a3206df5414ed15e28b.png" alt="193" /></div>
+                                                            <div class="saying-card-name clearfix container pull-left">
+                                                                <div class="testimonial-text-wrapper">
+                                                                    <div class="testimonial-name color-4">Jeremy</div>
+                                                                    <div class="saying-card-viewable">Male User</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="saying-card">
+                                        <div class="card testimonial-card container">
+                                            <div class="testimonial-wrapper">
+                                                <div class="testimonial-body-wrapper">
+                                                    <div class="centered">
+                                                        <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars" /></div>
+                                                    </div>
+                                                    <div class="testimonial-text clearfix">
+                                                        <h5>&quot;Acquits is awesome, it has helped me a lot! Although I didn’t achieve my goal so far, it is the best tool that I’ve ever encountered. It’s not my first attempt to quit but, so far, it has been
+                                                            the best.&quot;</h5>
+                                                    </div>
+                                                    <div class="testimonial-bottom-wrapper">
+                                                        <div class="testimonial-image-wrapper clearfix">
+                                                            <div class="saying-card-image-holder pull-left color-1"><img src="/assets/avatars/148-9baf8a28b07d716aee661f8fe223bd4281aaa1ce8a1d90b5b71b1d9cb3469ab7.png" alt="148" /></div>
+                                                            <div class="saying-card-name clearfix container pull-left">
+                                                                <div class="testimonial-text-wrapper">
+                                                                    <div class="testimonial-name color-1">Chad</div>
+                                                                    <div class="saying-card-viewable">Male User</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="saying-card">
+                                        <div class="card testimonial-card container">
+                                            <div class="testimonial-wrapper">
+                                                <div class="testimonial-body-wrapper">
+                                                    <div class="centered">
+                                                        <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars" /></div>
+                                                    </div>
+                                                    <div class="testimonial-text clearfix">
+                                                        <h5>&quot;Acquits has been amazing. I love the community stuff and it has been a huge encouragement to help overcome struggles with porn. It has also given some very handy tools and practical explanations.&quot;</h5>
+                                                    </div>
+                                                    <div class="testimonial-bottom-wrapper">
+                                                        <div class="testimonial-image-wrapper clearfix">
+                                                            <div class="saying-card-image-holder pull-left color-1"><img src="/assets/avatars/95-34c4c0eb48651dfea8594927805f498664131cea728d9100bfe0c23631de490d.png" alt="95" /></div>
+                                                            <div class="saying-card-name clearfix container pull-left">
+                                                                <div class="testimonial-text-wrapper">
+                                                                    <div class="testimonial-name color-1">Jose</div>
+                                                                    <div class="saying-card-viewable">Male User</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="saying-card">
+                                        <div class="card testimonial-card container">
+                                            <div class="testimonial-wrapper">
+                                                <div class="testimonial-body-wrapper">
+                                                    <div class="centered">
+                                                        <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars" /></div>
+                                                    </div>
+                                                    <div class="testimonial-text clearfix">
+                                                        <h5>&quot;What I really like about the new platform is that I knew I am not alone in my fight. I knew it earlier as well. But literally being connected to that community is a different experience altogether!
+                                                            I really feel optimistic that I can finally beat it!&quot;</h5>
+                                                    </div>
+                                                    <div class="testimonial-bottom-wrapper">
+                                                        <div class="testimonial-image-wrapper clearfix">
+                                                            <div class="saying-card-image-holder pull-left color-4"><img src="/assets/avatars/5-848597e21dc0b8f8fb9a1f3d6592923c67d3b6163423b145616e491ebb0f0556.png" alt="5" /></div>
+                                                            <div class="saying-card-name clearfix container pull-left">
+                                                                <div class="testimonial-text-wrapper">
+                                                                    <div class="testimonial-name color-4">Sheena</div>
+                                                                    <div class="saying-card-viewable">Female User</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-footer mar-top30">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-8 mar-top10">
+                                        <div class="large-text blued centered">Ready for sustainable change? Sign up for Acquits today.</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%include 'aquits/app.joinaquits.com/blocks/footers/homefooter.html'%}
+            <script>
+                console.log('')
+
+                $(document).ready(function() {
+                    ajax_call_auto(Routes.get_index_assets_path(), {
+                        page: 'index'
+                    })
+                })
+
+                $(window).resize(function() {
+                    width = window.innerWidth
+                    height = window.innerHeight
+                    if (width / height >= 1140 / 536) {
+                        $('.section-1').addClass('width-is-bigger')
+                    } else {
+                        $('.section-1').removeClass('width-is-bigger')
+                    }
+                });
+            </script>
+            <script>
+                localStorage.removeItem("affiliate_url");
+            </script>
+        </div>
+    </div>
+    <div id="transition-overlay" style="display:none;">
+        <div class="spin-wrap">
+            <div class="loader-wrapper"><img src="/assets/loader-25c780675f29102a41804833cd3d2ae84147548b51fd411510b5ca844f1bd036.gif" alt="Loader" /></div>
+        </div>
+    </div>
+</body>
+
+</html>

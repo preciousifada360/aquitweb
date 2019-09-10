@@ -1,0 +1,250 @@
+
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%}
+ {%block title%}Aquits | Communication {%endblock%}
+{%block activeNav%}selected{%endblock%} 
+{%block selectedController%}messages{%endblock%} 
+{%block bodyContent%}
+<div class="custom-aquits-select mar-bot20">
+  <div class="sub-menu">
+  <div class="card sub-menu-card">
+  <div class="sub-menu-title">
+  <span>Communication Center</span>
+<div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn" style="top: 10px;">
+  <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8" fill="#B3B3B3">
+            <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+            </rect>
+            <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+            </rect>
+            <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+            </rect>
+        </g>
+    </g>
+</svg>
+</div>
+<div class="pull-left hamburger-btn" id="open-nav" style="top: 10px;">
+  <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8" fill="#B3B3B3">
+            <rect id="Rectangle-2" x="0" y="0" width="30" height="3">
+            </rect>
+            <rect id="Rectangle-2" x="0" y="12" width="30" height="3">
+            </rect>
+            <rect id="Rectangle-2" x="0" y="24" width="30" height="3">
+            </rect>
+        </g>
+    </g>
+</svg>
+</div>
+</div>
+<script>$('#msg-toggle-btn').css('top','5px');
+$('.hamburger-btn').css('top','10px');</script>
+</div>
+<div class="pad-top80">
+</div>
+
+
+<script>// click on params submenu
+var submenu_route = "";
+$(document).ready(function(){
+  window.setTimeout( function() {
+    $('[data-filter=submenu-item-' + submenu_route + ']').click();
+    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+  },1000);
+})</script>
+<div class="container" id="message_page">
+  <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+  <div class="card" id="no-messages">
+  <div class="message-header">Messages</div>
+<div class="card-body mar-bot40">
+  <div class="no-message-relationships centered mar-top30">
+  <div class="blue-message-header">Connect With Others Through Messaging</div>
+<div class="message-bar-svg-wrapper">
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="17px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>FORT_Messages-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#25A9D9" offset="0%">
+            </stop>
+            <stop stop-color="#145972" offset="100%">
+            </stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+            <g id="Group" transform="translate(910.000000, 3.000000)">
+                <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                    <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape">
+                    </path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+</div>
+<div class="message-bar-subheader-text">Connect with real-life allies and recovery experts and group members.</div>
+<div class="message-bar-subbody-text mar-top15 mar-bot10">Don't try and do this alone! We reccommend finding someone you trust that you can count on to help you with your recovery as your ally. If you are looking for more support, consider joining a support group of signing up for a personal recovery coach.</div>
+<a href="/dashboard/ally/new">
+  <div class="message-bar-add-ally-container">
+  <div class="message-bar-add-ally centered">Add Ally</div>
+</div>
+</a>
+<a href="/dashboard/groups">
+  <div class="message-bar-add-ally-container">
+  <div class="message-bar-add-ally centered">Join a Weekly Group</div>
+</div>
+</a>
+</div>
+</div>
+<div class="message-addon-holder">
+  <a href="/dashboard/coach/new">
+  <div class="add-coach-message-bar">
+  <div class="add-coach-card">
+  <div class="add-coach-message-container">
+  <div class="add-coach-image-holder pull-left mar-top5">
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="30px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_textsms copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+    </defs>
+    <g id="Side-Nav" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_textsms-copy-2" transform="translate(-2.000000, -2.000000)" fill="#FFFFFF">
+            <path d="M20,2 L4,2 C2.9,2 2.01,2.9 2.01,4 L2,22 L6,18 L20,18 C21.1,18 22,17.1 22,16 L22,4 C22,2.9 21.1,2 20,2 L20,2 Z M9,11 L7,11 L7,9 L9,9 L9,11 L9,11 Z M13,11 L11,11 L11,9 L13,9 L13,11 L13,11 Z M17,11 L15,11 L15,9 L17,9 L17,11 L17,11 Z" id="Shape">
+            </path>
+        </g>
+    </g>
+</svg>
+</div>
+<div class="add-coach-message-bar-text-holder">
+  <div class="add-coach-messages-text">Message with a Recovery Expert</div>
+<div class="small-text">Personal Guidance &amp; Encouragement</div>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="index-page" id="messagebar-ghost">
+</div>
+<script>$('.chats_input').focus(function(){
+ $('#messagebar-ghost').addClass('expanded-message-ghost')
+ apply_height($(this))
+})
+$('.chats_input').focusout(function(){
+ $('#messagebar-ghost').removeClass('expanded-message-ghost')
+ apply_height($(this))
+})
+$('.chats_input').on('keyup', function(e) {
+  // clear any existing timer which will exist if the user is actively typing
+  apply_height($(this))
+});
+
+function apply_height(this_target){
+  $('#messagebar-ghost.index-page').width(this_target.width());
+  $('#messagebar-ghost').html(removeTags(this_target.val()));
+  current_height = $('#messagebar-ghost').height()
+  if (current_height < 80){
+    current_height = 80;
+  }
+  else if (current_height > 400){
+    current_height = 400;
+  }
+
+  this_target.css('height',(current_height - 18) + 'px');
+  this_target.closest('.message-form').css('height',(current_height + 40) + 'px');
+  this_target.closest('.messages-baby').find('.messages-holder').css('height', 'calc(100vh - ' + (this_target.closest('.message-form').height() + 111) + 'px - 110px)');
+
+  var sHeight = this_target.closest('.messages-baby').find('.messages-holder-inner').height();
+  this_target.closest('.messages-baby').find('.messages-holder').scrollTop(sHeight);
+}</script>
+<script>$(document).ready(function(){
+  $('.mar-top20').remove()
+
+  $('html').removeClass('message-active');
+  $('html').removeClass('message-folder-view-mode');
+  $('html').removeClass('message-detail-view-mode');
+
+  addon_height = $('#message_page .message-addon-holder').height() + 52;
+  $('#message_page .message-people-holder').css('height','calc(100% - ' + addon_height + 'px')
+
+  check_new_message();
+  $('#message_page .messages-holder').unbind();
+  $('#message_page .messages-holder').scroll(function(){
+    $(this).attr('data-scroll',$(this).scrollTop())
+  })
+  $('#message_page .messages-holder').each(function(){
+    if($(this).attr('data-scroll') != -1){
+      $(this).scrollTop($(this).attr('data-scroll'));
+    }
+    else{
+      $(this).scrollTop($(this).find('.messages-holder-inner').height());
+    }
+  })
+
+  $(document).on('click', '#message_page .message-person', function() {
+    chat_room_id = $(this).data("chatroomholder-id");
+
+    if ($(this).hasClass('ajaxed')){
+      //do nothing
+    }
+    else {
+      $(this).addClass('ajaxed');
+      load_messages($('#message_page .messages-baby.'+chat_room_id).find('.load-more-span'));
+      //ajax it - for later optimization
+    }
+
+    $('#message_page .username .message-person').toggleClass("user-active", false);
+    $(this).toggleClass("user-active", true);
+    // SHOW THE MESSAGES
+    $('#message_page .messages-baby').addClass("hidden");
+    $('#message_page .messages-baby.'+chat_room_id).removeClass("hidden");
+
+    $('html').attr('data-messageroom-page-id', chat_room_id)
+
+    // MARK THE MESSAGES AS READ AND UPDATE THE BADGE
+    if("" != "true"){
+      $(this).find('.readornot').removeClass('pinkbg');
+      $(this).find('.readornot').addClass('hidden')
+      $(this).find('.message_count').html("0");
+      $.post( Routes.read_messages_chat_room_path(chat_room_id), function(data){});
+      check_new_message()
+    }
+  });
+
+  $('#folder-wrapper .card').css({'height':$('#people-wrapper').height(), 'overflow-y':'scroll'})
+  $(window).resize(function(){
+    //$('#folder-wrapper .card').css({'height':$('#people-wrapper').height(), 'overflow-y':'scroll'})
+  });
+})
+
+$(document).ready(function(){
+  chat_room_id_from_link = ""
+  if(chat_room_id_from_link){
+    open_messagebar(chat_room_id_from_link)
+  }
+  else{
+    window.setTimeout( function() {
+      $('#message_page .message-folder').first().click();
+      $('#message_page .message-person').first().click();
+    },1000);
+  }
+})</script>
+</div>
+<div id="billing-wrapper">
+</div>
+</div>
+{%endblock%}

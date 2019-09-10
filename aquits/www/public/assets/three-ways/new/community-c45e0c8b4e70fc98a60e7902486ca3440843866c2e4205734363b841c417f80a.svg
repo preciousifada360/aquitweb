@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>3-Ways_Community@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="8.53872329%" cy="-38.379229%" fx="8.53872329%" fy="-38.379229%" r="176.481775%" id="radialGradient-1">
+            <stop stop-color="#9761FA" offset="0%"></stop>
+            <stop stop-color="#F71C7A" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="User-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3-Ways-to-Get-Started---Teen-Copy-2" transform="translate(-649.000000, -1235.000000)" fill="url(#radialGradient-1)">
+            <g id="3-Ways_Community" transform="translate(646.000000, 1232.000000)">
+                <path d="M35,10 L31.6666667,10 L31.6666667,25 L10,25 L10,28.3333333 C10,29.25 10.75,30 11.6666667,30 L30,30 L36.6666667,36.6666667 L36.6666667,11.6666667 C36.6666667,10.75 35.9166667,10 35,10 L35,10 Z M28.3333333,20 L28.3333333,5 C28.3333333,4.08333333 27.5833333,3.33333333 26.6666667,3.33333333 L5,3.33333333 C4.08333333,3.33333333 3.33333333,4.08333333 3.33333333,5 L3.33333333,28.3333333 L10,21.6666667 L26.6666667,21.6666667 C27.5833333,21.6666667 28.3333333,20.9166667 28.3333333,20 L28.3333333,20 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

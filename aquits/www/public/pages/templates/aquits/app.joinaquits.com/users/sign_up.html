@@ -1,0 +1,174 @@
+{%extends 'aquits/app.joinaquits.com/users/create_account.html'%} {%block title%} Acquits | Sign Up {%endblock%} {%block switchOption%}{%endblock%}{%block form%}
+<form class="recurly-form" id="new_user" {%block formAction%}action="{{router.pathFor('Users_SignUp')}}" {%endblock%} accept-charset="UTF-8" method="post">
+    <div class="col-xs-12 col-12" style="margin: 5px;color:rgb(236, 52, 52);text-align: center;" id="formError">
+        {%if error is defined%} {{error|lower|capitalize}} {%endif%}
+    </div>
+    <div class="card how-it-works-wrapper card-wrapper">
+        <div class="card-wrapper slider-wrapper">
+            <div class="form-wrapper" id="left-side">
+                <div class="row mar-bot20">
+                    <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                        <div id="adult-one-time">
+                            {%block formHeader_1%}
+                            <h3 class="subscription-header centered mar-top20">Monthly Signup</h3>
+                            <div class="centered underline">Commitment free. Cancel anytime.</div>
+                            {%endblock%}
+                            <div class="row mar-top20">
+                                <div class="col-sm-6 mar-bot20">
+                                    <div class="field">
+                                        <input type="text" id="first_name" placeholder="First Name" aquits_validate="Name is required" data-recurly="first_name" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 mar-bot20">
+                                    <div class="field">
+                                        <input type="text" id="last_name" placeholder="Last Name" aquits_validate="Name is required" data-recurly="last_name" />
+                                        <input id="name" type="hidden" name="user[name]" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field mar-bot20">
+                                <input placeholder="Email" aquits_validate="Email is required" onchange="handleChangeEmail(this)" data-recurly="email" type="text" value="" name="user[email]" id="user_email" />
+                                <div class="mar-top10 redded" id="email-error">
+                                </div>
+                            </div>
+                            <div class="row mar-bot30">
+                                <div class="col-sm-6">
+                                    <div class="field">
+                                        <input placeholder="Password" aquits_validate="Password is required" onchange="handleChangePassword(this)" type="password" name="user[password]" id="user_password" />
+                                    </div>
+                                    <div class="mar-top10 redded" id="password-error">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="field">
+                                        <input placeholder="Confirm Password" aquits_validate="Confirmation is required" onchange="handleChangeConfirmPassword(this)" type="password" name="user[password_confirmation]" id="user_password_confirmation" />
+                                    </div>
+                                    <div class="mar-top10 redded" id="confirm-password-error">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="birthday-section">
+                                <h4 class="mar-bot20">Date Of Birth</h4>
+                                <div class="field">
+                                    <input placeholder="date" aquits_validate="Date is required" onchange="handleChangeDateOfBirth(this)" type="date" name="date" id="date" />
+                                </div>
+                                <div class="redded mar-top10" id="birthday-error">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="birthday-teen-prompt hidden mar-bot15">
+                                        <p class="centered" id="teen-prompt">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="marketing-button pink arrow col-xs-12" id="continue">Continue</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrapper" id="right-side">
+                <div class="row">
+                    <div class="mar-bot30 col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                        <div class="mar-top30" id="back">
+                            <i aria-hidden="true" class="fa fa-arrow-left">
+    </i> Back</div>
+                        {%block formHeader_2%}
+                        <h3 class="mar-bot30 centered">Monthly</h3>
+                        {%endblock%}
+                        <div class="sponsor-wrapper mar-top10 mar-bot15">
+                            <h3>Sponsor a Youth</h3>
+                            <p>Every day, we have teens contacting us for help to get away from a compulsive pornography problem. Thanks to contributions from adult participants, we’ve been able to give most youth free access to a teen-version of Acquits.</p>
+                            <br />
+                            <p>If you would like to help us continue to provide free access to youth, consider sponsoring a youth participating in Acquits.</p>
+                        </div>
+                        <div class="sponsor">
+                            <div class="field">
+                                <label for="Sponsor_a_Youth_for__75">Sponsor a youth for $75</label>
+                                <input type="checkbox" name="sponsor_youth" id="sponsor_youth" value="1" onchange="totalAmount()" />
+                            </div>
+                        </div>
+                        <div class="mar-top20">
+                            <h3>Promo Code</h3>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="field">
+                                        <div class="error mar-bot40">
+                                            <input type="text" name="promo_code" id="promo_code" />
+                                            <div class="mar-top10 redded" id="coupons-error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {%block formCharges%}
+                        <div class="charges">
+                            <h3 class="mar-bot20 total-amount">Today&#39;s Charges (USD): <span>$</span>
+                                <input type="number" name="total_amount" id="total_amount" value="9.99" readonly="readonly" max="9999" aquits_validate="Must have signup plan amount" />
+                            </h3>
+                        </div>
+                        {%endblock%}
+                        <div class="field mar-bot30 terms">I agree to the <a target="_blank" href="/terms">Terms &amp; Services</a>
+                            <input type="checkbox" name="over_21" id="over_21" required="required" />
+                        </div>
+                        <div class="field">
+                            <input id="submitBtn" type="submit" name="commit" value="Sign up" class="submit marketing-button pink col-xs-12 " data-disable-with="Submitting..." data-disable-with="Submitting..." />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/paystack/paystackV2.js"></script>
+    <script>
+        $(function() {
+            var transactionData = {
+                email: "test@hhh,sss",
+                amount: 100,
+                key: "pk_test_6416105e8a6650ed6f2bc6ec9a220443da49ac76"
+            };
+
+            Paystack.Transaction.request(transactionData, function(transactionResponse) {
+                console.log('here');
+                console.log(transactionResponse);
+
+                var transaction = new Paystack.Transaction(transactionResponse),
+                    card = new Paystack.Card({
+                        number: "5060666666666666666",
+                        cvv: "123",
+                        month: "12",
+                        year: "22"
+                    });
+
+                /*
+                // Payment method instances usually provide validation functions
+                if (card.isValid()) {
+                    // Set the payment method on the transaction
+                    transaction.setPaymentMethod(Transaction.PaymentMethods.CARD, card);
+                }
+
+                // Charge the payment method
+                const chargeResponse = await transaction.card.charge();
+
+                // Handle the charge responses
+                if (chargeResponse.status === "success") {
+                    alert("Payment completed!");
+                }
+
+                // Another charge response example
+                if (chargeResponse.status === "auth") {
+                    const token = 123456;
+                    const authenticationResponse = await transaction.card.authenticate(token);
+                    if (authenticationResponse.status === "success") {
+                        alert("Payment completed!");
+                    }
+                }
+
+                */
+            });
+        });
+    </script>
+</form>
+{%endblock%}

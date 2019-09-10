@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>FORT_Community@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="0%" x2="-8.71809896%" y2="110.917232%" id="linearGradient-1">
+            <stop stop-color="#FA8BFF" offset="0%"></stop>
+            <stop stop-color="#86B3FF" offset="48.5389679%"></stop>
+            <stop stop-color="#2CD1FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Marketing-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FORT_Community" transform="translate(-5.000000, -5.000000)" fill="url(#linearGradient-1)">
+            <path d="M52.5,15 L47.5,15 L47.5,37.5 L15,37.5 L15,42.5 C15,43.875 16.125,45 17.5,45 L45,45 L55,55 L55,17.5 C55,16.125 53.875,15 52.5,15 L52.5,15 Z M42.5,30 L42.5,7.5 C42.5,6.125 41.375,5 40,5 L7.5,5 C6.125,5 5,6.125 5,7.5 L5,42.5 L15,32.5 L40,32.5 C41.375,32.5 42.5,31.375 42.5,30 L42.5,30 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

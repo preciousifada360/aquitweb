@@ -1,0 +1,10 @@
+{%extends 'aquits/app.joinaquits.com/users/sign_up.html'%} {%block title%} Acquits | Annual Access {%endblock%} {%block form%}{%block formAction%}action="{{router.pathFor('Users_Annual_Plan')}}"{%endblock%}{%block formHeader_1%}
+<h3 class="subscription-header centered mar-top20">Annual Signup</h3>{%endblock%}{%block formHeader_2%}
+<h3 class="mar-bot30 centered">Annual Signup</h3>
+{%endblock%}{%block formCharges%}
+<div class="charges">
+    <h3 class="mar-bot20 total-amount">Today&#39;s Charges (USD): <span>$</span>
+        <input type="number" name="total_amount" id="total_amount" value="59.99" readonly="readonly" max="9999" aquits_validate="Must have signup plan amount" />
+    </h3>
+</div>
+{%endblock%}

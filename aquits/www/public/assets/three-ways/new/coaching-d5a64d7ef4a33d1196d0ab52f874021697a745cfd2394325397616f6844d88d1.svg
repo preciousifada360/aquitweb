@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="31px" viewBox="0 0 33 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>3-Ways_Coaching</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="8.53872329%" cy="-38.379229%" fx="8.53872329%" fy="-38.379229%" r="176.481775%" gradientTransform="translate(0.085387,-0.383792),scale(0.935484,1.000000),rotate(59.050157),translate(-0.085387,0.383792)" id="radialGradient-1">
+            <stop stop-color="#9761FA" offset="0%"></stop>
+            <stop stop-color="#F71C7A" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="User-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3-Ways_Coaching" transform="translate(-4.000000, -5.000000)" fill="url(#radialGradient-1)">
+            <g id="ic_textsms-copy" transform="translate(3.157895, 5.263158)">
+                <path d="M30.4210526,0 L4.31578947,0 C2.52105263,0 1.06894737,1.37368421 1.06894737,3.05263158 L1.05263158,30.5263158 L7.57894737,24.4210526 L30.4210526,24.4210526 C32.2157895,24.4210526 33.6842105,23.0473684 33.6842105,21.3684211 L33.6842105,3.05263158 C33.6842105,1.37368421 32.2157895,0 30.4210526,0 L30.4210526,0 Z M12.4905046,13.8469886 L9.12642431,13.8469886 L9.12642431,10.6999457 L12.4905046,10.6999457 L12.4905046,13.8469886 L12.4905046,13.8469886 Z M19.2186652,13.8469886 L15.8545849,13.8469886 L15.8545849,10.6999457 L19.2186652,10.6999457 L19.2186652,13.8469886 L19.2186652,13.8469886 Z M25.6104178,13.8469886 L22.2463375,13.8469886 L22.2463375,10.6999457 L25.6104178,10.6999457 L25.6104178,13.8469886 L25.6104178,13.8469886 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

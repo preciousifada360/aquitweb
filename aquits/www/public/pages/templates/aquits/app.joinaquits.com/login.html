@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Acqiuts | Sign In</title>
+    {%include 'aquits/app.joinaquits.com/blocks/headers/newheader.html'%}
+    <script>
+        //For timezone on message
+        var time_offset = "-6";
+    </script>
+</head>
+
+<body class="minimal">
+    <div class="notifications">
+        <div class="ajax-notifications hidden">
+        </div>
+    </div>
+    {%if message_sent%}
+         <div class="alert-info" style="text-align: center;">
+            Please provide login details again.
+        </div>
+    {%endif%} 
+    <div class="custom-aquits-select">
+        <div id="signin">
+            <div class="container">
+                <div class="row signin">
+                    <div class="col-lg-6 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 signin">
+                        <div class="authform embossed mar-bot100">
+                            <form novalidate="novalidate" role="form" class="form-signin" id="new_user" action="{{router.pathFor('login')}}" accept-charset="UTF-8" method="post">
+                                <div class="form-body clearfix">
+                                    <div class="signin-title">
+                                        <a class="" href="login">
+                                            <img src="/assets/email/logo.png" alt="aquits logo stacked white" />
+                                        </a>
+                                    </div>
+                                    {%if error is defined%}
+                                    <p id = "errorHolder" style="color:red;margin-bottom:10px;">{{error}}</p>
+                                    {%endif%}
+                                    <input autofocus="autofocus" class="form-control" placeholder="E-mail address" required="required" aquits_validate="Password is required" type="email" value="" name="user[email]" id="user_email" />
+                                    <input class="form-control" placeholder="Password" aquits_validate="Password is required" type="password" name="user[password]" id="user_password" />
+                                    <div class="clearfix">
+                                    </div>
+                                    <input type="submit" id = "loginBtn" name="commit" value="Login" class="marketing-button white mar-bot20 no-shadow" data-disable-with="Login" />
+                                </div>
+                            </form>
+                            <div class="temporary">
+                                <a class="pull-left" href="sign-up">Need an account? </a>
+                                <a class="pull-right" href="users/password/new">Forgot password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%include 'aquits/app.joinaquits.com/blocks/footers/homefooter.html'%}
+    </div>
+    <div id="transition-overlay" style="display:none;">
+        <div class="spin-wrap">
+            <div class="loader-wrapper">
+                <img src="/assets/loader-25c780675f29102a41804833cd3d2ae84147548b51fd411510b5ca844f1bd036.gif" alt="Loader" />
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            var loginBtn = $('#loginBtn'),
+                loader = $('#transition-overlay'),
+                form = self.closest('form'),
+                errorContainer = $('#errorHolder'),
+                showLoader = function(){
+                    loader.css({
+                        'display': 'block'
+                    });
+                },
+                removeLoader = function(){
+                    loader.css({
+                        'display': 'none'
+                    });
+                };
+
+            loginBtn.on('click', function(){
+                e.preventDefault();
+                var self = $(this),
+                data = form.serialize();
+
+                showLoader();
+                $.ajax({
+                    'url': form.attr('action'),
+                    'method': form.attr('method'),
+                    'data': data,
+                    'success': function(resp){
+                        if(($.type(resp) === 'object') && ($.type(resp.status) === 'string') && ($.type(resp.response) === 'string')){
+                            if(resp.status === 'ok'){
+                                return window.location.href = '/dashboard';
+                            }else{
+                                removeLoader();
+                                errorContainer.html(resp.response ? resp.response : 'An error occurred');
+                            }
+                        }else{
+                            removeLoader();
+                            errorContainer.html('An error occurred.');
+                        }
+                    },
+                    'error' : function(resp){
+                        removeLoader();
+                        errorContainer.html('An error occurred..');
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

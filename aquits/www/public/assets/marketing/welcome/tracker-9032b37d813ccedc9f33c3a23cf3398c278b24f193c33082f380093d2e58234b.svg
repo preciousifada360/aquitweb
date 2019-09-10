@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="27px" viewBox="0 0 24 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>FORT_Track</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#25A9D9" offset="0%"></stop>
+            <stop stop-color="#145972" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Sign-Up---Subscriptions-[Student---2]-Copy-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-272.000000, -708.000000)">
+        <g id="FORT_Track" transform="translate(268.000000, 707.000000)" fill="url(#linearGradient-1)">
+            <path d="M16,21.3333333 C18.209139,21.3333333 20,19.5424723 20,17.3333333 C20,15.1241943 18.209139,13.3333333 16,13.3333333 C13.790861,13.3333333 12,15.1241943 12,17.3333333 C12,19.5424723 13.790861,21.3333333 16,21.3333333 Z M25.3333333,4 L24,4 L24,1.33333333 L21.3333333,1.33333333 L21.3333333,4 L10.6666667,4 L10.6666667,1.33333333 L8,1.33333333 L8,4 L6.66666667,4 C5.18666667,4 4.01333333,5.2 4.01333333,6.66666667 L4,25.3333333 C4,26.8 5.18666667,28 6.66666667,28 L25.3333333,28 C26.8,28 28,26.8 28,25.3333333 L28,6.66666667 C28,5.2 26.8,4 25.3333333,4 L25.3333333,4 Z M6.66666667,25.3333333 L6.66666667,10.6666667 L25.3333333,10.6666667 L25.3333333,25.3333333 L6.66666667,25.3333333 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

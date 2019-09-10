@@ -1,0 +1,815 @@
+{%extends 'aquits/app.joinaquits.com/blocks/dashboard/index.html'%} {%block title%}Acquits | Coach {%endblock%}{%block activeNav%}selected{%endblock%} {%block selectedController%}coaching{%endblock%} {%block bodyContent%}
+<div class="custom-aquits-select mar-bot20">
+    <div class="sub-menu">
+        <div class="card sub-menu-card">
+            <div class="sub-menu-title"><span style="font-size: 18px;">Coaching</span>
+                <!--
+                <div class="pull-right" id="msg-toggle-btn" onclick="open_messagebar()">
+                    <!--?xml version="1.0" encoding="UTF-8"?
+                    <svg width="17px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch
+<title>Acquits_Messages-icon</title>
+<desc>Created with Sketch.</desc>
+<defs>
+    <linearGradient x1="96.7163086%" y1="5.61805556%" x2="19.7582384%" y2="100%" id="linearGradient-1">
+        <stop stop-color="#25A9D9" offset="0%"></stop>
+        <stop stop-color="#145972" offset="100%"></stop>
+    </linearGradient>
+</defs>
+<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Nav/Page-Navigation" transform="translate(-920.000000, -16.000000)" fill="url(#linearGradient-1)">
+        <g id="Group" transform="translate(910.000000, 3.000000)">
+            <g id="FORT_Messages-icon" transform="translate(8.000000, 9.000000)">
+                <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 L20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 L20,8 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</g>
+</svg>
+                    <div class="message-incoming hidden"></div>
+                </div>
+            -->
+                <div class="pull-left hamburger-btn toggle-nav" id="nav-toggle-btn">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3"></rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3"></rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3"></rect>
+    </g>
+</g>
+</svg></div>
+                <div class="pull-left hamburger-btn" id="open-nav">
+                    <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                    <svg width="17px" height="17px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-8" fill="#B3B3B3">
+        <rect id="Rectangle-2" x="0" y="0" width="30" height="3"></rect>
+        <rect id="Rectangle-2" x="0" y="12" width="30" height="3"></rect>
+        <rect id="Rectangle-2" x="0" y="24" width="30" height="3"></rect>
+    </g>
+</g>
+</svg></div>
+            </div>
+            <div class="sub-menu-nav">
+                <ul class="sub-menu-tabs centered">
+                    <li class="menu-li active secondary_menu_hover" data-filter="submenu-item-coaching" style="position:relative"><span>Coaching</span></li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-about"><span>About</span></li> 
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-faq"><span>FAQ</span></li>
+                    <li class="menu-li secondary_menu_hover" data-filter="submenu-item-termsandconditions"><span>Terms And Conditions</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pad-top100"></div>
+       
+       
+        <script>
+            // click on params submenu
+            var submenu_route = "";
+            $(document).ready(function() {
+                window.setTimeout(function() {
+                    $('[data-filter=submenu-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').click();
+                    $('[data-filter=submenu-secondary-item-' + submenu_route + ']').closest('.secondary_menu').hide();
+                }, 1000);
+            })
+        </script>
+        <div class="sub-menu-panels">
+            <div id="submenu-item-coaching">
+                <div class="container">
+                    <script>
+                        (function() {
+                            var w = window;
+                            var ic = w.Intercom;
+                            if (typeof ic === "function" && (typeof intercomSettings !== 'undefined')) {
+                                ic('reattach_activator');
+                                ic('update', intercomSettings);
+                            } else {
+                                var d = document;
+                                var i = function() {
+                                    i.c(arguments)
+                                };
+                                i.q = [];
+                                i.c = function(args) {
+                                    i.q.push(args)
+                                };
+                                w.Intercom = i;
+
+                                function l() {
+                                    var s = d.createElement('script');
+                                    s.type = 'text/javascript';
+                                    s.async = true;
+                                    s.src = 'https://widget.intercom.io/widget/llbuwyda';
+                                    var x = d.getElementsByTagName('script')[0];
+                                    x.parentNode.insertBefore(s, x);
+                                }
+
+                                if (w.attachEvent) {
+                                    w.attachEvent('onload', l);
+                                } else {
+                                    w.addEventListener('load', l, false);
+                                }
+                            }
+                        })()
+
+                        function intercom_init(email, user_id, user_hash) {
+                            if ($('.profile-menu').length > 0) {
+                                window.Intercom('boot', {
+                                    app_id: 'llbuwyda',
+                                    email: email,
+                                    user_id: user_id,
+                                    user_hash: user_hash,
+                                    custom_launcher_selector: '.intercom'
+                                });
+                            }
+                        }
+                    </script>
+                    <script>
+                        $(document).ready(function() {
+                            intercom_init('ifeanyiejindu1@gmail.com',
+                                '1010612036',
+                                '395bce6abf5344e8993267b72291dd0e5ca6728a43ef04c770bae8b48e76b20e')
+                        })
+                    </script>
+
+{%if message_sent%}
+<div class= "alert-info" style="text-align: center;">A coach has been notified </div>
+{%endif%}  
+                    <div class="row">
+                        <div id="coaching_info">
+                            <div class="container" id="new-coach">
+                                <div class="row top-section">
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="blue-header-bolded mar-top50">Unlimited Messaging with a Acquits Recovery Expert</div>
+                                        <div class="add-ally">
+                                            <div class="add-ally-container">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <div class="white-bold-text">Try your first month for only</div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="white-bold-text">
+                                                            <div class="bigger-text">$4.95</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="add_button_container">
+                                                    <a class="md button btn-blue" data-target="#add-ally" data-toggle="modal"> ADD COACH</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="coaching-regular-pricing">
+                                            <div class="small-text">After your second month your coaching subscription will automatically renew at 1,000 Naira monthly.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div id="coaching-image"><img src="/assets/coaching/coaching-convo-70f0915920dac1a6e4a0f43236149730255dd0e3e9f57b18e1a22ec3ddcd37ea.png" alt="Coaching convo"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="container mar-top50" id="testimonials">
+                                            <div class="blue-header centered">What Others Are Saying About Acquits Coaching</div>
+                                            <div class="testimonial-container">
+                                                <div class="row">
+                                                    <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
+                                                        <div class="testimonail-card-wrapper">
+                                                            <div class="saying-card">
+                                                                <div class="card testimonial-card container">
+                                                                    <div class="testimonial-wrapper">
+                                                                        <div class="testimonial-body-wrapper">
+                                                                            <div class="centered">
+                                                                                <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars"></div>
+                                                                            </div>
+                                                                            <div class="testimonial-text clearfix">
+                                                                                <h5>"Moving to recovery from addiction is very much like stepping into the light after spending years stumbling around in the dark. You really need someone who can help to guide
+                                                                                    you as you negotiate some difficult terrain. I can't thank the coaches enough for providing that guidance, wisdom, and encouragement in my recovery journey."
+                                                                                </h5>
+                                                                            </div>
+                                                                            <div class="testimonial-bottom-wrapper">
+                                                                                <div class="testimonial-image-wrapper clearfix">
+                                                                                    <div class="saying-card-image-holder pull-left color-5"><img src="/assets/avatars/51-f39ffde2beee357ec143833cc8501f62b7aca215fb748ea1631ae03663da3e29.png" alt="51"></div>
+                                                                                    <div class="saying-card-name clearfix container pull-left">
+                                                                                        <div class="testimonial-text-wrapper">
+                                                                                            <div class="testimonial-name color-5">Brad</div>
+                                                                                            <div class="saying-card-viewable">Male User</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="saying-card">
+                                                                <div class="card testimonial-card container">
+                                                                    <div class="testimonial-wrapper">
+                                                                        <div class="testimonial-body-wrapper">
+                                                                            <div class="centered">
+                                                                                <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars"></div>
+                                                                            </div>
+                                                                            <div class="testimonial-text clearfix">
+                                                                                <h5>"It is great to know there is someone that you can reach out to and be confident that you will get a response. Someone who can point you in the right direction or at least
+                                                                                    ask the kind of questions that may help you see that there is another way to view your current problems."</h5>
+                                                                            </div>
+                                                                            <div class="testimonial-bottom-wrapper">
+                                                                                <div class="testimonial-image-wrapper clearfix">
+                                                                                    <div class="saying-card-image-holder pull-left color-7"><img src="/assets/avatars/194-6b0c888b07d200a117363cf41ad9260917eb095e286e63db03011834450c76f6.png" alt="194"></div>
+                                                                                    <div class="saying-card-name clearfix container pull-left">
+                                                                                        <div class="testimonial-text-wrapper">
+                                                                                            <div class="testimonial-name color-7">Jared</div>
+                                                                                            <div class="saying-card-viewable">Male User</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="saying-card">
+                                                                <div class="card testimonial-card container">
+                                                                    <div class="testimonial-wrapper">
+                                                                        <div class="testimonial-body-wrapper">
+                                                                            <div class="centered">
+                                                                                <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars"></div>
+                                                                            </div>
+                                                                            <div class="testimonial-text clearfix">
+                                                                                <h5>"It's been key for me to have the help of a coach who knows the way and can point me in the right direction, helping me through the tough times and affirming when I'm on the
+                                                                                    right path. Every person coachshould make the most of this opportunity with Acquits Coaching!"</h5>
+                                                                            </div>
+                                                                            <div class="testimonial-bottom-wrapper">
+                                                                                <div class="testimonial-image-wrapper clearfix">
+                                                                                    <div class="saying-card-image-holder pull-left color-4"><img src="/assets/avatars/193-14b5bb9167c57d6af0828152c79c1a6f6cc38190919e7a3206df5414ed15e28b.png" alt="193"></div>
+                                                                                    <div class="saying-card-name clearfix container pull-left">
+                                                                                        <div class="testimonial-text-wrapper">
+                                                                                            <div class="testimonial-name color-4">Jeremy</div>
+                                                                                            <div class="saying-card-viewable">Male User</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="saying-card">
+                                                                <div class="card testimonial-card container">
+                                                                    <div class="testimonial-wrapper">
+                                                                        <div class="testimonial-body-wrapper">
+                                                                            <div class="centered">
+                                                                                <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars"></div>
+                                                                            </div>
+                                                                            <div class="testimonial-text clearfix">
+                                                                                <h5>"My first message to a coach was really the first time that I had opened the door to my inner circle—taking a chance that I wouldn't get hurt like I had in the past. Gratefully
+                                                                                    my correspondences with the coaches were judgment-free with a belief in me and my potential!"</h5>
+                                                                            </div>
+                                                                            <div class="testimonial-bottom-wrapper">
+                                                                                <div class="testimonial-image-wrapper clearfix">
+                                                                                    <div class="saying-card-image-holder pull-left color-5"><img src="/assets/avatars/148-9baf8a28b07d716aee661f8fe223bd4281aaa1ce8a1d90b5b71b1d9cb3469ab7.png" alt="148"></div>
+                                                                                    <div class="saying-card-name clearfix container pull-left">
+                                                                                        <div class="testimonial-text-wrapper">
+                                                                                            <div class="testimonial-name color-5">Chad</div>
+                                                                                            <div class="saying-card-viewable">Male User</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="saying-card">
+                                                                <div class="card testimonial-card container">
+                                                                    <div class="testimonial-wrapper">
+                                                                        <div class="testimonial-body-wrapper">
+                                                                            <div class="centered">
+                                                                                <div class="testimonial-star"><img src="/assets/marketing/welcome/stars-6941a136464c85e153d7d5d5188d7b7e4aabcce0bdacc22975d0c83587f93e32.svg" alt="Stars"></div>
+                                                                            </div>
+                                                                            <div class="testimonial-text clearfix">
+                                                                                <h5>"Coaching has been an invaluable asset in my recovery. When I first started recovery work I was wary of having to talk to anybody about this. I was planning to do it all on
+                                                                                    my own. But it has been a great support to me!"</h5>
+                                                                            </div>
+                                                                            <div class="testimonial-bottom-wrapper">
+                                                                                <div class="testimonial-image-wrapper clearfix">
+                                                                                    <div class="saying-card-image-holder pull-left color-5"><img src="/assets/avatars/95-34c4c0eb48651dfea8594927805f498664131cea728d9100bfe0c23631de490d.png" alt="95"></div>
+                                                                                    <div class="saying-card-name clearfix container pull-left">
+                                                                                        <div class="testimonial-text-wrapper">
+                                                                                            <div class="testimonial-name color-5">Jose</div>
+                                                                                            <div class="saying-card-viewable">Male User</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix hidden" id="submenu-item-about">
+                <div class="pad-top80" id="format">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="large-text">About</div>
+                            <div class="medium-text">Acquits coaches are trained specifically to support people who are seeking long-lasting freedom from pornography and other unwanted sexual behaviors, based in Acquits’s own approach. If a question arises outside of their competence,
+                                they will help point you in the right direction.</div>
+                            <div class="large-text">Format</div>
+                            <div class="medium-text">When you sign up for coaching. You will have unlimited messaging with a recovery expert. It will be your responsibility to reach out to the Acquits experts when needed. Our coaches will respond within 24 hrs. You’ll be able
+                                to reach out anytime you need or want. The coach will be dedicated to helping support you in reaching the place you want to go.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix hidden" id="submenu-item-faq">
+                <div class="pad-top80" id="faqs">
+                    <div class="card faq-table">
+                        <div class="card-body responsive">
+                            <div class="large-text centered">FAQ</div>
+                            <div class="card-row">
+                                <div class="faq-header">I’m Not Sure How Often I’ll Need My Coach. Is That Okay?
+                                    <div class="fa fa-angle-down expander"></div>
+                                </div>
+                                <div class="faq-body">Of course. You can be as proactive as you’d like – and there’s no requirement for how often you need to connect (just whatever is best for you).</div>
+                            </div>
+                            <div class="card-row">
+                                <div class="faq-header">Are There Times When My Coach Won’t Be Available To Communicate?
+                                    <div class="fa fa-angle-down expander"></div>
+                                </div>
+                                <div class="faq-body">Your coach will be available most days and times, but not all. One day each weekend will be a break day for them and they also need to sleep at night! (: If or when your coach goes on vacation, we’ll provide an option for
+                                    you to connect with another person subbing for your coach.</div>
+                            </div>
+                            <div class="card-row">
+                                <div class="faq-header">Why Can’t I Talk To My Coach On The Phone?
+                                    <div class="fa fa-angle-down expander"></div>
+                                </div>
+                                <div class="faq-body">While some coaching services use phone calls, they are naturally a great deal more expensive. In order to maximize access to personalized support for Acquits users, we have opted to launch first with this messaging support.
+                                    A phone-based system is being discussed and planned for potential launch in 2018.</div>
+                            </div>
+                            <div class="card-row">
+                                <div class="faq-header">What If I Really Want A Coach That Is My Same Gender?
+                                    <div class="fa fa-angle-down expander"></div>
+                                </div>
+                                <div class="faq-body">Totally fine! We’ll make sure that happens...just let us know. We’ve seen good success with mixed-gender coaching as well.</div>
+                            </div>
+                            <div class="card-row">
+                                <div class="faq-header">Can I Keep My Anonymity While Working With A Coach?
+                                    <div class="fa fa-angle-down expander"></div>
+                                </div>
+                                <div class="faq-body">Yes, you never have to give your identity at any time. You can chose to be referred by your screen name if that is most comfortable for you.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    expander();
+                </script>
+            </div>
+            <div class="clearfix hidden" id="submenu-item-termsandconditions">
+                <div class="pad-top80" id="terms_and_conditions">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="large-text">Terms And Conditions</div>
+                            <p><br></p>
+                            <p><span>As a
+Acquits user signing up for Acquits Coaching, you acknowledge that you
+understand: <b></b></span></p>
+                            <p><b>11.1&nbsp;
+</b><i>No diagnosis or assessment</i>. Acquits Coaching does not involve the diagnosis or treatment of mental disorders as defined by the National Psychiatric Association. Acquits Coaching is not a substitute for counseling, psychotherapy, psychoanalysis,
+                                mental health care, medical treatment or substance abuse treatment and Acquits users will not use it in place of any form of diagnosis, treatment or therapy.&nbsp; Nothing contained in this Site or App is intended to be
+                                used as medical advice or to diagnose, treat, cure or prevent any disease.</p>
+                            <p>&nbsp;</p>
+                            <p><b>11.2&nbsp;
+</b><i>No prescription or
+treatment</i><span>. Although Acquits Coaches offer encouragement and a chance to explore
+possibilities, they in no case dictate or “prescribe” a specific course of
+action. As noted, the assistance of a Acquits Coach is not a substitute for
+independent professional advice from a medical/health professional – nor does
+it replace professional advice by legal, financial, business, spiritual or
+other qualified professionals. Acquits users are encouraged to seek independent
+professional guidance for legal, medical, financial, business, spiritual or
+other matters. Acquits users should not stop a medication or treatment protocol
+or alter your treatment plan without first consulting their mental health,
+medical or healthcare provider(s). All decisions in these areas are exclusively
+that of the individual Acquits user and she/he acknowledges that her/his
+decisions and actions regarding personal mental and emotional wellness are
+her/his sole responsibility.<a target="_blank" rel="nofollow"></a> </span></p>
+                            <p>
+                                <a target="_blank" rel="nofollow"></a>&nbsp;</p>
+                            <p>
+                                <a target="_blank" rel="nofollow"></a><b>11.3&nbsp; </b><i>Liability.
+</i>Acquits users are fully responsible for themselves and their actions within and outside of the coaching relationship. You are liable for any and all damages, losses, liabilities, claims, suits, costs and expenses (including attorney fees) (collectively,
+                                "Claims") resulting from or relating to any action by you. You further agree to indemnify and hold harmless Acquits and its officers, directors and agents, from and against any and all damages, loss, cost, liability or
+                                expense (including attorney fees and costs) incurred by any such party in connection with any complaints, demands, claims, or legal actions alleging illness, injury, death, or damage caused by you except in the event the
+                                Claims are solely the result of the gross negligence or willful misconduct of Acquits.&nbsp; </p>
+                            <p>&nbsp;</p>
+                            <p>
+                                <a target="_blank" rel="nofollow"></a><a target="_blank" rel="nofollow"><b>11.4&nbsp; </b></a><i>Confidentiality</i>. Acquits Coaches will not at any time, either directly or indirectly, voluntarily use any personal information about Acquits users for the
+                                coach's own benefit, or disclosure, or communicate this information to a third party. </p>
+                            <p>&nbsp;</p>
+                            <p><b>11.5&nbsp; </b><i>Exceptions to
+confidentiality</i>. For the purposes of Acquits Coaching, user information, including email address, may be provided to the designated Acquits Coach so that they may contact users regarding Acquits business. Acquits users also recognize that their coach
+                                may consult with their Acquits supervisor or Acquits team leaders. &nbsp;&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p><b>11.6&nbsp; </b><i>Duty to report</i>. The general requirement that a Acquits Coach keeps information confidential does not apply when disclosure is required to comply with government laws governing individuals. When deemed
+                                appropriate at its sole discretion, Acquits may provide user information, including identifying information that may have been entered into the Site or App by the user, to authorized law enforcement agencies. Such situations
+                                are include but are not limited to child pornography, child abuse, and a rape of a child, as well as evidence of abuse, assault or rape of an adult. Any of these situations would require disclosure to the proper authorities.
+                                In cases of threatened self-harm, or threatened (or actual) harm to an adult friend or family member, we may also take action to disclose information, on a case by case basis. </p>
+                            <p>&nbsp;</p>
+                            <p><b>11.7&nbsp;
+</b><i>Coaching updates. </i>Acquits reserves the right to modify or change the rules of coaching without prior notification to current or new users. Any substantial modifications or changes, of course, would be subsequently shared with current and new
+                                users.
+                            </p>
+                            <p>&nbsp;</p>
+                            <p><b>11.8&nbsp;
+</b>By using Acquits Coaching, you agree with all the terms and conditions of this agreement.</p>
+                            <p>
+
+                            </p>
+                            <p><b>&nbsp;</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="add_modal_wrapper">
+            <div class="modal fade" id="add-ally">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <button class="close white-x"  data-dismiss="modal"></button>
+                        <div class="modal-title" ><h2 style="background-color: rgb(159, 241, 241);"><b></b>Sign Up for Coaching</b></h2></div>
+                    </div>
+                
+                    <div class="modal-body" >
+                        <form class="new_relationship" id="new_relationship" action="{{router.pathFor(coach)}}" accept-charset="UTF-8" method="post">
+
+                            <div class="row">
+                                <div class="col-md-12 mar-top10">
+
+                                    <div class="btn-group bootstrap-select custompicker mar-bot10">
+   
+                                        <div class="dropdown-menu open">
+                                            <ul class="dropdown-menu inner selectpicker" role="menu">
+                                                <li data-original-index="0" class="disabled">
+                                                    <a tabindex="-1" class="" data-normalized-text="<span class=&quot;text&quot;> --------------- </span>" href="new.html#">
+                                                        <span class="text"> --------------- </span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="1" class="selected">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>What is your relationship?</span>">
+                                                        <span class="text">What is your relationship?</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="2">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Parent</span>">
+                                                        <span class="text">Parent</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="3">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Family Member</span>">
+                                                        <span class="text">Family Member</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="4">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Religious Leader</span>">
+                                                        <span class="text">Religious Leader</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="5">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Professional Therapist</span>">
+                                                        <span class="text">Professional Therapist</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="6">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Mentor</span>">
+                                                        <span class="text">Mentor</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="7">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Friend</span>">
+                                                        <span class="text">Friend</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="8">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Significant Other</span>">
+                                                        <span class="text">Significant Other</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                                <li data-original-index="9">
+                                                    <a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Other</span>">
+                                                        <span class="text">Other</span>
+                                                        <span class="glyphicon glyphicon-ok check-mark">
+</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="ally-modal-notice">We recommend that you personally reach out to a potential ally prior to connecting them with Acquits. If you need help, read 'How to Break the ice' in the FAQ's on the Ally page. </div>
+                                </div>
+                                <div class="col-md-12">
+                                   
+                                    <p style="background-color:rgb(156, 233, 220);"> <h3>Below are list of what your Coach will have access to see.</h3></p>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                                <div class="ally-access-settings">
+                                    <div class="col-md-12">
+                                        <div class="setting">
+                                            <div class="col-xs-2">
+                                               
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <div class="setting-label">Daily Tracker</div>
+                                                <div class="setting-description">Analysis from your daily tracking of victories and setbacks.</div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                        <div class="setting">
+                                            <div class="col-xs-2">
+                     
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <div class="setting-label">Awards</div>
+                                                <div class="setting-description">A summary of ongoing achievements throughout Acquits (Ranks, Badges, Coins &amp; Points).</div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                        <div class="setting">
+                                            <div class="col-xs-2">
+                                               
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <div class="setting-label">Freedom Plan</div>
+                                                <div class="setting-description">Your personalized plan for reaching long-term freedom. </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="setting">
+                                            <div class="col-xs-2">
+                                                
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <div class="setting-label">Quick Questions</div>
+                                                <div class="setting-description">Your reflections and thoughts in response to key questions throughout Acquits.</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="setting">
+                                            <div class="col-xs-2">
+                                               
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <div class="setting-label">Actions</div>
+                                                <div class="setting-description">Your response to a variety of different suggested activities to try throughout Acquits.</div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                        <div class="setting">
+                                            <div class="col-xs-2">
+                                              
+                                                   
+                                               
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <div class="setting-label">Survey Results</div>
+                                                <div class="setting-description">Data associated with your periodic surveys to help you measure your progress.</div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                        <div class="setting">
+                                            <div class="col-xs-2">
+                                              
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <div class="setting-label">Strength And Vulnerability Inventories</div>
+                                                <div class="setting-description">Data associated with your Strength &amp; Vulnerability Inventories which provide information on a number of different possible risk factors. </div>
+                                            </div>
+                                        </div>
+                               
+                                        </div>
+                                        <div class="setting">
+                                            <div class="col-xs-2">
+                                                <div class="switch">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <div class="setting-label">Weekly Lifestyle Inventories</div>
+                                                <div class="setting-description">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+  
+                                <div class="col-md-12"><centre>
+                                    <div class="checkbox-tos">
+                                        <input type="checkbox" name="coach" id="tos" value="A coach is required" required>
+                                        <label for="tos">I understand that my Coach will be granted access to my information as outlined above.</label>
+                                    </div>
+                                </centre>
+                                    <input type="submit" name="commit" value="Get Coach" class="button btn-blue pull-right">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('click', '#add-ally .switch label', function(e) {
+                    e.stopPropagation()
+                    e.preventDefault()
+                    if ($(this).closest('.switch').find('input:checked').length == 0) {
+                        $(this).closest('.switch').find(':checkbox').prop('checked', true);
+                    } else {a
+                        $(this).closest('.switch').find(':checkbox').prop('checked', false);
+                    }
+                })
+            })
+
+            $('.modal').on('submit', 'form', function(event) {
+                if ($('#tos').prop('checked')) {
+                    return true // jquery will now submit the form
+                } else {
+                    event.preventDefault()
+                    $("label[for='tos']").addClass('redded')
+                    return false // jquery will not submit the form
+                }
+            })
+
+            $('#relationship_relationship').prepend("<option value='' disabled='disabled'> --------------- </option>");
+        </script>
+        <!--<script>
+            var timer;
+            $(document).ready(function() {
+                overlay_out()
+                $('.custompicker').selectpicker();
+
+                $('#better-code').slideUp();
+                $('#better-code-label').click(function() {
+                    $('#better-code').slideDown('hidden')
+                })
+
+                $('input#better_code_input').on('keyup', function(e) {
+                    if ($(this).val() == "") {
+                        $('#promo_code').prop('readonly', true);
+                        $('#coupons-error').addClass('hidden')
+                        return_original_value()
+                    } else {
+                        $('#promo_code').prop('readonly', false);
+                        $(this).closest('.promo-code-outer-wrapper').find('#promo_code').val($(this).val()).change()
+                        $('.promo-code-outer-wrapper').find('#promo_code').change()
+                        $('#coupons-error').html("").removeClass('hidden')
+                    }
+                });
+
+                $('[data-function=continue-contentside]').click(function() {
+                    $(this).closest('.contentside-wrapper').addClass('selected')
+                })
+                $('[data-function=back-contentside]').click(function() {
+                    $(this).closest('.contentside-wrapper').removeClass('selected')
+                })
+
+                window.setTimeout(function() {
+                    $('.billing-card').first().click();
+                }, 1000);
+
+                plan_code = "coaching"
+
+                $('#total_amount').val("9.99");
+                $('#promo_code').val('coach_first_month_discount_real').prop('readonly', true).addClass('disabled')
+                original_code_value = 'coach_first_month_discount_real';
+
+                recurlyCouponValidation();
+
+                $('#premium-modal .recurly-form').on('submit', 'form', function(event) {
+                    event.preventDefault()
+                    if ($('#terms').prop('checked')) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+
+                $('input#promo_code').on('keyup change paste', function(e) {
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        recurlyCouponValidation()
+                    }, 700);
+                });
+
+            })
+
+            function return_original_value() {
+                $('.promo-code-outer-wrapper').find('#promo_code').val(original_code_value)
+                $('.promo-code-outer-wrapper').find('#promo_code').change()
+            }
+
+            function recurlyCouponValidation() {
+                let code = $('#promo_code')
+                let total_amount = $('#total_amount')
+
+                original_amount = "9.99"
+
+                if (code.val() === "") {
+                    total_amount.val(original_amount)
+                    $('#coupons-error').html("")
+                    $('#promo_code').removeClass('error')
+                } else {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/coupons/lookup',
+                        data: {
+                            coupon_code: code.val(),
+                            plan: plan_code
+                        },
+                        success: function(data, status, xhr) {
+                            if (data.valid_code) {
+                                total = data.final_amount
+                                total_amount.val((total).toFixed(2))
+                                $('#coupons-error').html("<span class='blued'>Valid Promo!</span>")
+                                $('#promo_code').removeClass('error')
+                            } else {
+                                $('#coupons-error').html("this is not a valid coupon code")
+                                $('#coupons-error').removeClass('hidden')
+                                $('#promo_code').addClass('error')
+                                total_amount.val(original_amount)
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            $('#coupons-error').html("this is not a valid coupon code")
+                            $('#coupons-error').removeClass('hidden')
+                            $('#promo_code').addClass('error')
+                            total_amount.val(original_amount)
+                        }
+                    });
+                }
+            }
+        </script>
+        -->
+    </div>
+    <!--
+    <script>
+        $(document).ready(function() {
+            if ("" == "true") {
+                Intercom('showNewMessage');
+            }
+        })
+        $('#sign-up-coach').click(function() {
+            $('#add-coach-modal .modal').modal('show');
+        })
+    </script>
+    -->
+    <div id="billing-wrapper"></div>
+</div>
+{%endblock%}
